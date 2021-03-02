@@ -97,6 +97,8 @@ subroutine diffuse(Tprev, Tcurrent, Tdiff)
     ! print 999
     ! call print_mat(Tcurrent)
     ! print 111
+    ! 999 format(100("*"))
+    ! 111 format(/)
     
 
     forall(i = 2:9, j = 2:9)
