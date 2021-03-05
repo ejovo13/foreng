@@ -15,7 +15,7 @@ program four_five
         end if 
 
         print *, "Value not accepted, please enter an integer"
-        read (*, '(i10)', iostat=ierr) input
+        read (*, '(i2)', iostat=ierr) input
     end do
 
 
@@ -34,5 +34,6 @@ program four_five
         end if 
     end do
 
-    print *, input, " factorial is: ", factorial
+    print 99, input, factorial
+    99 format (I0, " factorial is: ", I0)
 end program
