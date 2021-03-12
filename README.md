@@ -5,4 +5,4 @@ fluent in the Fortran programming language. My motivations for learning Fortran 
 of Kalamazoo College, and I am working with Fortran source code. 
 
 Working through the textbook exercises taught me how to write high quality, well-documented code for Engineering applications. Demonstrations of some of the more interesting problems will
-be displayed in each chapter's subfolder's README.md.
+be displayed in each chapter's subfolder's README.
