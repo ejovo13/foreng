@@ -6,3 +6,5 @@ of Kalamazoo College, and I am working with Fortran source code.
 
 Working through the textbook exercises taught me how to write high quality, well-documented code for Engineering applications. Demonstrations of some of the more interesting problems will
 be displayed in each chapter's subfolder's README.
+
+This entire practice section will eventually be reorganized and turned into a Fortran module that is based off of the exercises in this book.
