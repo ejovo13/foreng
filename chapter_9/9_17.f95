@@ -158,6 +158,7 @@ contains
     end subroutine
 
     subroutine switch_rows(A, row1, row2)
+        
         real(8), dimension(:,:), intent(inout) :: A
         integer, intent(in) :: row1, row2
 
