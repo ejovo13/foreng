@@ -144,9 +144,6 @@ module least_squares
             end do
         end do
 
-        x(3) = y(3)
-        x(2) = y(2) - (x(3) * UpperTriangular(2,3))
-        x(1) = y(1) - (x(2) * UpperTriangular(1,2)) - (x(3) * UpperTriangular(1,3))
 
     end subroutine
 
