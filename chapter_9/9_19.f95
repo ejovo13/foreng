@@ -77,7 +77,7 @@ module least_squares
                     ipivot = i
                 end if
             end do
-            print *, "max_pivot for col ", nstep, " = ", max_pivot
+            ! print *, "max_pivot for col ", nstep, " = ", max_pivot
             if (is_zero(max_pivot)) then
                 STOP "Matrix is singular, stopping elimination"
             end if
@@ -86,11 +86,11 @@ module least_squares
 
             call elim_col(A_aux, nstep)
 
-            print *, "A after elimination: "
+            ! print *, "A after elimination: "
 
-            do i = 1,n
-                print *, A_aux(i,:)
-            end do
+            ! do i = 1,n
+            !     print *, A_aux(i,:)
+            ! end do
      
         end do
 
@@ -128,14 +128,14 @@ module least_squares
         U_shape = shape(UpperTriangular)
         n = U_shape(1)
 
-        print *, "Entering backsub"
-        print *, "n = ", n
-        print *, "size(x) = ", size(x)
-        print *, "size(y) = ", size(y)
+        ! print *, "Entering backsub"
+        ! print *, "n = ", n
+        ! print *, "size(x) = ", size(x)
+        ! print *, "size(y) = ", size(y)
 
         do i = n,1,-1
             do j = i,n
-                print *, "i,j = ", i, j
+                ! print *, "i,j = ", i, j
                 if (i == j) then
                     x(i) = y(i)
                 else
@@ -199,7 +199,7 @@ program least_squares_test
 
 
     X = [ -1.0, 0.0, 1.0, 2.0]
-    Y = [ -1.0, 0.0, 1.0, 8.0]
+    Y = [ -2.0, 0.0, 2.0, 16.0]
 
     
     call generate_sys_eqns(X, Y, order, A, u)
