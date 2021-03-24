@@ -6,7 +6,7 @@
 
 program polar_multiplication
 
-use polar_type
+use ejovo_types
 
 implicit none
 

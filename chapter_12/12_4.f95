@@ -2,7 +2,7 @@
 
 program test_div
 
-    use polar_type
+    use ejovo_types
 
     implicit none
 

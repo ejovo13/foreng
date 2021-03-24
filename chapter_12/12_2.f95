@@ -5,7 +5,7 @@
 ! number, and that convert a polar number into an ordinary complex number
 
 program test_polar
-use polar_type
+use ejovo_types
 
 implicit none
 
