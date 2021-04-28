@@ -63,7 +63,8 @@ use iso_fortran_env
 
     call clock%stop
 
-    print *, "Total elapsed time: ", clock%time_elapsed()
+    print *, "Cpu time: ", clock%ctime_elapsed()
+    print *, "Wall time: ", clock%wtime_elapsed()
 
 
 end program
