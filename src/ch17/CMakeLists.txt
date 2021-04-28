@@ -3,11 +3,11 @@
 
 find_package(MPI REQUIRED)
 find_package(OpenMP REQUIRED)
-# find_library(eulerf REQUIRED HINTS /home/ejovo13/lib)
+find_library(EULER_LIB eulerf REQUIRED /home/ejovo13/lib)
 
-include_directories(${MPI_Fortran_INCLUDE_DIRS})
 add_executable(mpi_test mpi_test.f90)
-target_link_libraries(mpi_test ${MPI_Fortran_LIBRARIES})
+target_include_directories(mpi_test PUBLIC ${MPI_Fortran_INCLUDE_DIRS})
+target_link_libraries(mpi_test PUBLIC ${MPI_Fortran_LIBRARIES})
 
 # if(MPI_COMPILE_FLAGS)
 #   set_target_properties(mpi_test PROPERTIES
@@ -20,7 +20,7 @@ target_link_libraries(mpi_test ${MPI_Fortran_LIBRARIES})
 # endif()
 
 add_executable(open_mp_test open_mp_test.f90)
-target_link_libraries(open_mp_test PUBLIC OpenMP::OpenMP_Fortran /home/ejovo13/lib/libeulerf.so)
+target_link_libraries(open_mp_test PUBLIC OpenMP::OpenMP_Fortran ${EULER_LIB})
 target_include_directories(open_mp_test PUBLIC /home/ejovo13/inc/Fortran_modules)
 
 
