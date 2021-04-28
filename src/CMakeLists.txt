@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.9 FATAL_ERROR)
 
 project(Fortran_For_Engineers)
 
 enable_language(Fortran)
-set(CMAKE_Fortran_COMPILER ifort)
+set(CMAKE_Fortran_COMPILER gfortran)
 
 
 include_directories(./modules)
