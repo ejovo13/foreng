@@ -2,6 +2,7 @@ program demo
 
 use chapter_4
 use chapter_5
+use chapter_6
 
 integer:: i=0, j=0, ierr
 character(100) :: errmsg
@@ -221,6 +222,88 @@ mainloop: do
 
             end do chapter5
 
+        case(6)
+            
+            call chapter_selected(i)
+
+            chapter6: do
+                
+                print *, "Problem 6: Array Terminology"
+                print *, "Problem 10: Polar to Rectangular Conversion"
+                print *, "Problem 11: Rectangular to Polar Conversion"
+                ! print *, "Problem 12: Flight of ball (pt II)"
+                ! print *, "Problem 13: Day of the year"
+                ! print *, "Problem 14: Logarithmic function evaluation"
+                ! print *, "Problem 15: Uppercase to lowercase"
+                ! print *, "Problem 16: Calculating orbits"
+                ! print *, "Problem 17: Capitalize first letter"
+                ! print *, "Problem 18: Current through a diode"
+                ! print *, "Problem 19: Binary to decimal"
+
+                call problem_select()
+
+                read(unit=5, fmt=*, iostat=ierr, iomsg=errmsg) j
+
+                if(ierr /=0) then
+                    print *, "please enter a valid integer from [-1:19]"
+                    cycle chapter6
+                end if
+
+                call program_start()
+
+                select case(j)
+                ! case(1)
+                !     call p4_1()
+                ! case(2)
+                !     print *, "Problem 2 selected"
+                ! case(3)
+                !     call p4_3()
+                ! case(4)         
+                !     call p4_4()       
+                ! case(5)
+                !     call p4_5()
+                case(6)
+                    call p6_6()
+                ! case(7)
+                !     call p4_7()
+                ! case(8)
+                !     call p4_8()
+                ! case(9)
+                !     call p4_9()
+                case(10)
+                    call p6_10()
+                case(11)
+                    call p6_11()
+                ! case(12)
+                !     call p4_12()
+                ! case(13)
+                !     call p4_13()
+                ! case(14)
+                !     call p4_14()
+                ! case(15)
+                !     call p4_15()
+                ! case(16)
+                !     call p4_16()
+                ! case(17)
+                !     call p4_17()
+                ! case(18)
+                !     call p4_18()
+                ! case(19)
+                !     call p4_19()
+                case(-1)
+                    print *, "Going to chapter select"
+                    exit chapter6
+                case(0)
+                    print *, "Exiting demo"
+                    exit mainloop
+                case default 
+                    print *, "Please enter a valid number 6, 10, or 11, -1 to go back, or 0 to exit"
+                end select                
+                
+                call program_end()                
+                
+            end do chapter6
+
         ! // TODO ADD ALL OTHER CHAPTERS
 
 
@@ -249,8 +332,7 @@ mainloop: do
 
 
 
-        case(6)
-            print *, "Chapter 6 selected"
+
         case(7)
             print *, "Chapter 7 selected"
         case(8)
