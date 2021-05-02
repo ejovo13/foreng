@@ -18,4 +18,4 @@
 # add_executable(error_test error_test.f90)
 # add_executable(flight_of_ball flight_of_ball.f90)
 
-add_library(ch4 chapter_4.f90)
+add_library(ch4 STATIC chapter_4.f90)
