@@ -1,4 +1,4 @@
-src_dir: ./src/ 
+src_dir: ./src/ch4
 output_dir: ./doc
 project_github: https://github.com/ejovo13/fortran_for_engineers 
 project_website: https://github.com 
