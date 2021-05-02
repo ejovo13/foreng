@@ -1,6 +1,7 @@
 program demo
 
 use chapter_4
+use chapter_5
 
 integer:: i=0, j=0, ierr
 character(100) :: errmsg
@@ -44,7 +45,6 @@ mainloop: do
             call chapter_selected(i)
 
             chapter4: do
-
                 
                 print *, "Problem 1: Legal expressions"
                 print *, "Problem 2: Squares of even integers"
@@ -126,14 +126,102 @@ mainloop: do
                     print *, "Please enter a valid number 1-19, -1 to go back, or 0 to exit"
                 end select                
                 
+                call program_end()                
+                
+            end do chapter4
+                       
+        case(5)
+            
+            call chapter_selected(i)
+
+            chapter5: do
+
+                print *, "Problem 1: What is the purpose of a format?"
+                print *, "Problem 2: What is printed?"
+                print *, "Problem 3: What is printed? (pt II)"
+                print *, "Problem 4: For 5_4.dat, what is read in?"
+                print *, "Problem 5: For 5_5.dat, what is read in?"
+                print *, "Problem 6: Table of logarithms"
+                ! print *, "Problem 7: Simple statistics"
+                ! print *, "Problem 8: Loop execution counts"
+                ! print *, "Problem 9: Loop execution values"
+                ! print *, "Problem 10: Loop execution values (pt II)"
+                ! print *, "Problem 11: Flight of ball"
+                ! print *, "Problem 12: Flight of ball (pt II)"
+                ! print *, "Problem 13: Day of the year"
+                ! print *, "Problem 14: Logarithmic function evaluation"
+                ! print *, "Problem 15: Uppercase to lowercase"
+                ! print *, "Problem 16: Calculating orbits"
+                ! print *, "Problem 17: Capitalize first letter"
+                ! print *, "Problem 18: Current through a diode"
+                ! print *, "Problem 19: Binary to decimal"
+
+                call problem_select()
+
+                read(unit=5, fmt=*, iostat=ierr, iomsg=errmsg) j
+
+                if(ierr /=0) then
+                    print *, "please enter a valid integer from [-1:19]"
+                    cycle chapter5
+                end if
+
+                call program_start()
+
+                select case(j)
+                case(1)
+                    call p5_1()
+                case(2)
+                    call p5_2()
+                case(3)
+                    call p5_3()
+                case(4)         
+                    call p5_4("5_4.dat")       
+                case(5)
+                    call p5_5("5_5.dat")
+                case(6)
+                    call p5_6()
+                ! case(7)
+                !     call p4_7()
+                ! case(8)
+                !     call p4_8()
+                ! case(9)
+                !     call p4_9()
+                ! case(10)
+                !     call p4_10()
+                ! case(11)
+                !     call p4_11()
+                ! case(12)
+                !     call p4_12()
+                ! case(13)
+                !     call p4_13()
+                ! case(14)
+                !     call p4_14()
+                ! case(15)
+                !     call p4_15()
+                ! case(16)
+                !     call p4_16()
+                ! case(17)
+                !     call p4_17()
+                ! case(18)
+                !     call p4_18()
+                ! case(19)
+                !     call p4_19()
+                case(-1)
+                    print *, "Going to chapter select"
+                    exit chapter5
+                case(0)
+                    print *, "Exiting demo"
+                    exit mainloop
+                case default 
+                    print *, "Please enter a valid number 1-6, -1 to go back, or 0 to exit"
+                end select                
+                
                 call program_end()
 
 
-            end do chapter4
+            end do chapter5
 
-            ! // TODO ADD ALL OTHER CHAPTERS
-
-
+        ! // TODO ADD ALL OTHER CHAPTERS
 
 
 
@@ -161,9 +249,6 @@ mainloop: do
 
 
 
-
-        case(5)
-            print *, "Chapter 5 selected"
         case(6)
             print *, "Chapter 6 selected"
         case(7)
