@@ -1,2 +1,4 @@
 add_executable(chapter_demos demo.f90)
 target_link_libraries(chapter_demos ch4)
+
+set_target_properties(chapter_demos PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/demo)
