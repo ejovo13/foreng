@@ -1,1 +1,0 @@
-add_library(ch4 STATIC chapter_4.f90)
