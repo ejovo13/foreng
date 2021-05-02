@@ -1,5 +1,5 @@
 module chapter_4
-!! All of the programming problems for chapter 4
+!! All of the programming exercises for Chapter 4: Loops and Character Manipulation
 use iso_fortran_env
 implicit none
 
@@ -178,7 +178,7 @@ contains
     !! be exectued.
 
         implicit NONE
-        integer :: irange, j, kount, index, i
+        integer :: irange, j, kount, i !, index
         integer :: count = 0
 
         a: do irange = -32768, 32767
@@ -202,9 +202,9 @@ contains
         print *, "(c) = ", count
         count = 0
 
-        d: do index = -4,-7
-            count = count + 1
-        end do d
+        ! d: do index = -4,-7
+        !     count = count + 1
+        ! end do d
 
         print *, "(d) = ", count
         count = 0
