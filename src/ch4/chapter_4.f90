@@ -5,6 +5,7 @@ implicit none
 
 contains 
 
+    ! //TODO CLEAN UP OUTPUT OF ALL PROGRAMS
     subroutine p4_1()
     !! Test if the following equalities are valid statements, and if they are,
     !! evaluate them
