@@ -14,11 +14,11 @@ include_directories(${CMAKE_Fortran_MODULE_DIRECTORY})
 
 # add_subdirectory(modules)
 
-add_subdirectory(ch4)
-add_subdirectory(ch5)
+add_library(ch4 STATIC chapter_4.f90)
+add_library(ch5 STATIC chapter_5.f90)
+add_library(ch6 STATIC chapter_6.f90)
+
 add_subdirectory(demo)
-# add_subdirectory(ch5)
-# add_subdirectory(ch6)
 # add_subdirectory(ch7)
 # add_subdirectory(ch8)
 # add_subdirectory(ch9)
