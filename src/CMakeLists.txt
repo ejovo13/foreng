@@ -15,6 +15,7 @@ include_directories(${CMAKE_Fortran_MODULE_DIRECTORY})
 # add_subdirectory(modules)
 
 add_subdirectory(ch4)
+add_subdirectory(ch5)
 add_subdirectory(demo)
 # add_subdirectory(ch5)
 # add_subdirectory(ch6)
