@@ -1,0 +1,2 @@
+add_executable(chapter_demos demo.f90)
+target_link_libraries(chapter_demos ch4)
