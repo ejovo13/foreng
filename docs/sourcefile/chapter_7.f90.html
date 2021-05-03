@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.4% of total for source files.">42 statements</a>
+    title=" 3.4% of total for source files.">61 statements</a>
      </li> 
      
      
@@ -273,7 +273,7 @@
 <a name="ln-6"></a><span class="k">contains</span>
 <a name="ln-7"></a>
 <a name="ln-8"></a><span class="k">    subroutine </span><span class="n">p7_1</span><span class="p">()</span>
-<a name="ln-9"></a>    <span class="c">!! ** DISCUSSION QUESTION **\</span>
+<a name="ln-9"></a>    <span class="c">!! ** DISCUSSION QUESTION ** &lt;br&gt;</span>
 <a name="ln-10"></a>    <span class="c">!! What is the difference between a subroutine and a function?</span>
 <a name="ln-11"></a>
 <a name="ln-12"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;A subroutine can modify arguments that are passed to it, but it will never have&quot;</span>
@@ -284,7 +284,7 @@
 <a name="ln-17"></a>    <span class="k">end subroutine</span>
 <a name="ln-18"></a>
 <a name="ln-19"></a><span class="k">    subroutine </span><span class="n">p7_2</span><span class="p">()</span>
-<a name="ln-20"></a>    <span class="c">!! ** DISCUSSION QUESTION **\</span>
+<a name="ln-20"></a>    <span class="c">!! ** DISCUSSION QUESTION ** &lt;br&gt;</span>
 <a name="ln-21"></a>    <span class="c">!! When a subroutine is called, how is data passed from the calling program to the subroutine,</span>
 <a name="ln-22"></a>    <span class="c">!! and how are the results of the subroutine returned to the calling program?</span>
 <a name="ln-23"></a>
@@ -295,7 +295,7 @@
 <a name="ln-28"></a>    <span class="k">end subroutine</span>
 <a name="ln-29"></a>
 <a name="ln-30"></a><span class="k">    subroutine </span><span class="n">p7_3</span><span class="p">()</span>
-<a name="ln-31"></a>    <span class="c">!! ** DISCUSSION QUESTION **\</span>
+<a name="ln-31"></a>    <span class="c">!! ** DISCUSSION QUESTION ** &lt;br&gt;</span>
 <a name="ln-32"></a>    <span class="c">!! What are the advantages and disadvantages of the pass-by-reference scheme used in Fortran?</span>
 <a name="ln-33"></a>
 <a name="ln-34"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Advantages: &quot;</span>
@@ -307,7 +307,7 @@
 <a name="ln-40"></a>    <span class="k">end subroutine</span>
 <a name="ln-41"></a>
 <a name="ln-42"></a><span class="k">    subroutine </span><span class="n">p7_4</span><span class="p">()</span>
-<a name="ln-43"></a>    <span class="c">!! ** DISCUSSION QUESTION ** \</span>
+<a name="ln-43"></a>    <span class="c">!! ** DISCUSSION QUESTION ** &lt;br&gt;</span>
 <a name="ln-44"></a>    <span class="c">!! What are the advantages and disadvantages of each procedure array type?</span>
 <a name="ln-45"></a>
 <a name="ln-46"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Explicit shaped dummy arrays:&quot;</span>
@@ -326,7 +326,7 @@
 <a name="ln-59"></a>    <span class="k">end subroutine</span>
 <a name="ln-60"></a>
 <a name="ln-61"></a><span class="k">    subroutine </span><span class="n">p7_5</span><span class="p">()</span>
-<a name="ln-62"></a>    <span class="c">!! ** DISCUSSION QUESTION **&lt;br&gt; I put a br here..</span>
+<a name="ln-62"></a>    <span class="c">!! ** DISCUSSION QUESTION **&lt;br&gt;</span>
 <a name="ln-63"></a>    <span class="c">!! Suppose a 15-element array is passed to a subroutine. What happens if the subroutine attempts</span>
 <a name="ln-64"></a>    <span class="c">!! to write to element a(16)?</span>
 <a name="ln-65"></a>
@@ -336,18 +336,63 @@
 <a name="ln-69"></a>
 <a name="ln-70"></a>    <span class="k">end subroutine</span>
 <a name="ln-71"></a>
-<a name="ln-72"></a>
-<a name="ln-73"></a>
-<a name="ln-74"></a>
-<a name="ln-75"></a>
+<a name="ln-72"></a><span class="k">    subroutine </span><span class="n">p7_6</span><span class="p">()</span> 
+<a name="ln-73"></a>    <span class="c">!! **DISCUSSION QUESTION** &lt;br&gt;</span>
+<a name="ln-74"></a>    <span class="c">!! If a real value is passed to a subroutine in an argument that is declared to be an integer,</span>
+<a name="ln-75"></a>    <span class="c">!! what happens?</span>
 <a name="ln-76"></a>
-<a name="ln-77"></a>
-<a name="ln-78"></a>
-<a name="ln-79"></a>
-<a name="ln-80"></a>
-<a name="ln-81"></a>
-<a name="ln-82"></a>
-<a name="ln-83"></a><span class="k">end module </span><span class="n">chapter_7</span>
+<a name="ln-77"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Sometimes the compiler will give a warning, but still allow the real to be passed&quot;</span>
+<a name="ln-78"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;In this case, however, my gfortran compiler produced an error so I can&#39;t even pass&quot;</span>
+<a name="ln-79"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;a real value into a subroutine expecting an integer.&quot;</span>
+<a name="ln-80"></a>    
+<a name="ln-81"></a>        <span class="c">! integer, intent(in) :: i</span>
+<a name="ln-82"></a>        <span class="c">! write(*,*) &quot; I = &quot;, i    </span>
+<a name="ln-83"></a>
+<a name="ln-84"></a>    <span class="k">end subroutine</span>
+<a name="ln-85"></a>
+<a name="ln-86"></a><span class="k">    subroutine </span><span class="n">p7_7</span><span class="p">()</span>
+<a name="ln-87"></a>    <span class="c">!! ** DISCUSSION QUESTION** &lt;br&gt;</span>
+<a name="ln-88"></a>    <span class="c">!! How can p7_6 be modified so that the compiler catches the argument mismatch between</span>
+<a name="ln-89"></a>    <span class="c">!! the actual argument and the dummy argument in the subroutine?</span>
+<a name="ln-90"></a>
+<a name="ln-91"></a>
+<a name="ln-92"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;We can ensure that an int will be passed to the subroutine by wrapping&quot;</span>
+<a name="ln-93"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;the parameter with the INT(x) function upon calling&quot;</span>
+<a name="ln-94"></a>
+<a name="ln-95"></a>    <span class="k">end subroutine</span>
+<a name="ln-96"></a>
+<a name="ln-97"></a><span class="k">    subroutine </span><span class="n">p7_8</span><span class="p">()</span>
+<a name="ln-98"></a>    <span class="c">!! **DISCUSSION QUESTION** &lt;br&gt;</span>
+<a name="ln-99"></a>    <span class="c">!! What is the purpose of the INTENT attribute? Where can it be used? Why should it be used?</span>
+<a name="ln-100"></a>    
+<a name="ln-101"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;The INTENT attribute signals to the compiler whether or not the variables are&quot;</span>
+<a name="ln-102"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;read, write, or read write. This attribute is specified where the variables are&quot;</span>
+<a name="ln-103"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;being declared in a procedure. They should be used so that you don&#39;t&quot;</span>
+<a name="ln-104"></a>        <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;accidentally alter a variable that you didn&#39;t want/expect to.&quot;</span>
+<a name="ln-105"></a>
+<a name="ln-106"></a>    <span class="k">end subroutine </span>
+<a name="ln-107"></a>
+<a name="ln-108"></a><span class="k">    subroutine </span><span class="n">p7_9</span><span class="p">()</span>
+<a name="ln-109"></a>    <span class="c">!! **NOT APPLICABLE**</span>
+<a name="ln-110"></a>
+<a name="ln-111"></a>    <span class="k">end subroutine</span>
+<a name="ln-112"></a>
+<a name="ln-113"></a><span class="k">    subroutine </span><span class="n">p7_10</span><span class="p">()</span>
+<a name="ln-114"></a>    <span class="c">!! **NOT APPLICABLE**</span>
+<a name="ln-115"></a>
+<a name="ln-116"></a>    <span class="k">end subroutine</span>
+<a name="ln-117"></a>
+<a name="ln-118"></a>
+<a name="ln-119"></a>
+<a name="ln-120"></a>
+<a name="ln-121"></a>
+<a name="ln-122"></a>
+<a name="ln-123"></a>
+<a name="ln-124"></a>
+<a name="ln-125"></a>
+<a name="ln-126"></a>
+<a name="ln-127"></a>
+<a name="ln-128"></a><span class="k">end module </span><span class="n">chapter_7</span>
 </pre></div>
 
     </section>

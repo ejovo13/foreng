@@ -12,9 +12,9 @@ program five_five
     ! read(10,*) item7, item8, item9, item10
 
     ! (b)
-    ! read (10, 8) item1, item2, item3, item4, item5, item6
-    ! read (10, 8) item7, item8, item9, item10
-    ! 8 FORMAT(4I10)
+    read (10, 8) item1, item2, item3, item4, item5, item6
+    read (10, 8) item7, item8, item9, item10
+    8 FORMAT(4I10)
 
     close(unit=10)
     print *, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10
