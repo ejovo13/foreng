@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +10,7 @@
     <meta name="author" content="Evan Voyles" >
     <link rel="icon" href="../favicon.png">
 
-    <title>tand &ndash; Fortran Program</title>
+    <title>chapter_7 &ndash; Fortran Program</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -113,11 +112,10 @@
     
   
   <div class="row">
-    <h1>tand
-   <small>Interface</small>
+    <h1>chapter_7 
+    <small>Module</small>
     
     </h1>
-    
     
 <div class="row">
   <div class="col-lg-12">
@@ -132,24 +130,22 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.1% of total for procedures.">20 statements</a>
+    title=" 4.6% of total for modules and submodules.">42 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/trig.f95"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/chapter_7.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/trig.f95.html'>trig.f95</a></li>
-    
-     <li><a href='../module/trig.html'>trig</a></li>
+     <li><a href='../sourcefile/chapter_7.f90.html'>chapter_7.f90</a></li>
     
   
-     <li class="active">tand</li>
+     <li class="active">chapter_7</li>
   </ol>
 </div>
 </div>
@@ -160,7 +156,6 @@
   })
 </script>
 
-    
   </div>
   
   <div class="row">
@@ -184,6 +179,24 @@
 
 
 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_1">p7_1</a>
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_2">p7_2</a>
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_3">p7_3</a>
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_4">p7_4</a>
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_5">p7_5</a>
+      
+    </div>
+  </div>
+</div>
 
 
 
@@ -191,7 +204,7 @@
 
 
 
-<em>None</em>
+
 
 
 </div>
@@ -199,69 +212,268 @@
     </div>
     
     <div class="col-md-9" id='text'>
+    <p>All of the programming exercises for Chapter 7: Procedures</p>
+      <br>
     
-    
-      <h2>interface <br>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
       
-public elemental module function tand(theta)
+      <li class="list-group-item">
+  <ul class="list-inline">
     
+    <li><a href="http://fortranwiki.org/fortran/show/ISO_FORTRAN_ENV">iso_fortran_env</a></li>
     
-   
-</h2>    
-    
-
-    
-  
-
-
-    <h3>Arguments</h3>
-    
+  </ul>
+      </li>
       
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-theta~3"></span>real,</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>theta</strong></td><td></td>
-  
-</tr>
-
-</tbody>
-</table>
+      
+      
+      </ul>
+    </div>
+    
 
     
     
-    
-    
-    
-    
-    
-      <h3>Return Value <span class="anchor" id="variable-tand"></span><small>real
-  </small></h3>
-    
-    
-    
+
     <br>
 
- </div>
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_1">p7_1</a>
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_2">p7_2</a>
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_3">p7_3</a>
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_4">p7_4</a>
+      
+      <a class="list-group-item" href="../module/chapter_7.html#proc-p7_5">p7_5</a>
+      
+    </div>
+  </div>
 </div>
 
 
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-p7_1"></span><h3>
+public subroutine <a href='../proc/p7_1.html'>p7_1</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p><strong> DISCUSSION QUESTION </strong>\
+ What is the difference between a subroutine and a function?</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-p7_2"></span><h3>
+public subroutine <a href='../proc/p7_2.html'>p7_2</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p><strong> DISCUSSION QUESTION </strong>\
+ When a subroutine is called, how is data passed from the calling program to the subroutine,
+ and how are the results of the subroutine returned to the calling program?</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-p7_3"></span><h3>
+public subroutine <a href='../proc/p7_3.html'>p7_3</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p><strong> DISCUSSION QUESTION </strong>\
+ What are the advantages and disadvantages of the pass-by-reference scheme used in Fortran?</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-p7_4"></span><h3>
+public subroutine <a href='../proc/p7_4.html'>p7_4</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p><strong> DISCUSSION QUESTION </strong> \
+ What are the advantages and disadvantages of each procedure array type?</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-p7_5"></span><h3>
+public subroutine <a href='../proc/p7_5.html'>p7_5</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p><strong> DISCUSSION QUESTION </strong>\
+ Suppose a 15-element array is passed to a subroutine. What happens if the subroutine attempts
+ to write to element a(16)?</p>
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    <br>
+    
+    
+    
+    </div>
+  </div>
+
+  
     <hr>    
     </div> <!-- /container -->
     <footer>
