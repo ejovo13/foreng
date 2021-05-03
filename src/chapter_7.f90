@@ -69,6 +69,51 @@ contains
 
     end subroutine
 
+    subroutine p7_6() 
+    !! **DISCUSSION QUESTION** <br>
+    !! If a real value is passed to a subroutine in an argument that is declared to be an integer,
+    !! what happens?
+
+        print *, "Sometimes the compiler will give a warning, but still allow the real to be passed"
+        print *, "In this case, however, my gfortran compiler produced an error so I can't even pass"
+        print *, "a real value into a subroutine expecting an integer."
+    
+        ! integer, intent(in) :: i
+        ! write(*,*) " I = ", i    
+
+    end subroutine
+
+    subroutine p7_7()
+    !! ** DISCUSSION QUESTION** <br>
+    !! How can p7_6 be modified so that the compiler catches the argument mismatch between
+    !! the actual argument and the dummy argument in the subroutine?
+
+
+        print *, "We can ensure that an int will be passed to the subroutine by wrapping"
+        print *, "the parameter with the INT(x) function upon calling"
+
+    end subroutine
+
+    subroutine p7_8()
+    !! **DISCUSSION QUESTION** <br>
+    !! What is the purpose of the INTENT attribute? Where can it be used? Why should it be used?
+    
+        print *, "The INTENT attribute signals to the compiler whether or not the variables are"
+        print *, "read, write, or read write. This attribute is specified where the variables are"
+        print *, "being declared in a procedure. They should be used so that you don't"
+        print *, "accidentally alter a variable that you didn't want/expect to."
+
+    end subroutine 
+
+    subroutine p7_9()
+    !! **NOT APPLICABLE**
+
+    end subroutine
+
+    subroutine p7_10()
+    !! **NOT APPLICABLE**
+
+    end subroutine
 
 
 
