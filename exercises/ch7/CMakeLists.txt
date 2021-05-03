@@ -1,6 +1,4 @@
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_EX}/ch7)
-include_directories(${CMAKE_Fortran_MODULE_DIRECTORY})
-
 # message("Chapter 7 include directories: ${CMAKE_Fortran_MODULE_DIRECTORY}")
 
 add_executable(7_6 7_6.f90)

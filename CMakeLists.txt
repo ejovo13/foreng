@@ -11,5 +11,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../lib)
 set(CMAKE_Fortran_MODULE_DIRECTORY ${PROJECT_BINARY_DIR}/../include)
 
+include_directories(${CMAKE_Fortran_MODULE_DIRECTORY})
+
 add_subdirectory(src)
 add_subdirectory(exercises)
