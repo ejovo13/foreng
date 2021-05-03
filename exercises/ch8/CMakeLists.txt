@@ -1,4 +1,5 @@
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_EX}/ch7)
+make_directory(${MY_EX}/ch7)
 
 add_executable(8_12 8_12.f90)
 add_executable(8_13 8_13.f90)
@@ -6,3 +7,10 @@ add_executable(8_14 8_14.f90)
 add_executable(8_16 8_16.f90)
 add_executable(8_17 8_17.f90)
 add_executable(exploration exploration.f90)
+
+configure_file(8_16.inp ${MY_EX}/ch7 COPYONLY)
+configure_file(a.dat ${MY_EX}/ch7 COPYONLY)
+configure_file(b.dat ${MY_EX}/ch7 COPYONLY)
+configure_file(mat1.dat ${MY_EX}/ch7 COPYONLY)
+configure_file(mat2.dat ${MY_EX}/ch7 COPYONLY)
+configure_file(temp.dat ${MY_EX}/ch7 COPYONLY)
