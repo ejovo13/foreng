@@ -10,3 +10,6 @@ add_library(ch9 SHARED
     my_matmul_sub.f90
     my_matmul_mod_parent.f90
     ) #trig.f90 trig_degrees.f90 trig_conversion.f90)
+
+add_library(ch11 new_types.f90)
+add_library(ch12 ejovo_types.f90 ejovo_types@line.f90 ejovo_types@point.f90 ejovo_types@polar.f90)

@@ -1,0 +1,16 @@
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_EX}/ch12)
+make_directory(${MY_EX}/ch12)
+
+add_executable(12_2 12_2.f90)
+add_executable(12_3 12_3.f90)
+add_executable(12_4 12_4.f90)
+add_executable(12_6 12_6.f90)
+add_executable(12_7 12_7.f90)
+add_executable(12_8 12_8.f90)
+
+target_link_libraries(12_2 ch12)
+target_link_libraries(12_3 ch12)
+target_link_libraries(12_4 ch12)
+target_link_libraries(12_6 ch12)
+target_link_libraries(12_7 ch12)
+target_link_libraries(12_8 ch12)
