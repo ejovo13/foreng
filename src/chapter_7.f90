@@ -59,7 +59,7 @@ contains
     end subroutine
 
     subroutine p7_5()
-    !! ** DISCUSSION QUESTION **\
+    !! ** DISCUSSION QUESTION **<br>
     !! Suppose a 15-element array is passed to a subroutine. What happens if the subroutine attempts
     !! to write to element a(16)?
 
@@ -69,7 +69,7 @@ contains
 
     end subroutine
 
-    
+
 
 
 
