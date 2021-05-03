@@ -1,3 +1,5 @@
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_EX}/ch17)
+make_directory(${MY_EX}/ch17)
 
 # find_package(Coarray REQUIRED)
 
