@@ -25,7 +25,7 @@ contains
     subroutine p4_3()
     !! Write a Fortran program to evaluate the equation y(x) = x^2 - 3x + 2 for all values between -1 and 3,
     !! in steps of 0.1.
-
+    ! // TODO add latex support
         ! Puprose: to solve exercise 4.3
         ! Data dictionary :: declared variables 
 
@@ -50,6 +50,7 @@ contains
     !!   y(t) = ------ -3t^2 + 5    t >= 0
     !!           \---   3t^2 + 5    t < 0
     !! 
+    ! //TODO print function to stdin
         real :: y, t
 
         print *, "Please enter a t value that you would like to compute"
@@ -689,14 +690,15 @@ contains
         integer, parameter :: ONE_ASCII = 49
         character(MAX_LEN) :: binary_representation
         character(:), allocatable :: binary_trimmed
-        integer :: len_trim
+        integer :: len_trim = 0
         logical :: input_is_valid = .true.
-        integer :: i
-        character(1) :: this_char
-        integer :: char_value
+        integer :: i = 0
+        character(1) :: this_char = ''
+        integer :: char_value = 0
         real :: decimal_representation = 0
-        integer :: this_bit
+        integer :: this_bit = 0
         
+        ! print *, "decimal_representation = ", decimal_representation
         
         print *, "Please enter a binary number that is between 1 and 10 bits"
         read (*,"(A10)") binary_representation
@@ -737,6 +739,8 @@ contains
         
         print 99,  binary_representation, int(decimal_representation)
         99 format("binary num: ", T15, A10, /, 'decimal:', T15, I0 )
+
+        decimal_representation = 0
 
     end subroutine
 
@@ -832,6 +836,7 @@ contains
 
     elemental function calc_current_flow(v_D, I_O, T) result(i_D)
     ! Data Dictionary
+    ! // TODO add proper documentation
         real(real64) :: i_D                              !! The current flow through the diode in amperes
         real(real64), intent(in) :: v_D                  !! The voltage across the diode, in volts
         real(real64), intent(in) :: I_O                  !! The leakage current of the diode, in amperes
