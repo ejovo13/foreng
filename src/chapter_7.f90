@@ -6,7 +6,7 @@ implicit none
 contains
 
     subroutine p7_1()
-    !! ** DISCUSSION QUESTION **\
+    !! ** DISCUSSION QUESTION ** <br>
     !! What is the difference between a subroutine and a function?
 
         print *, "A subroutine can modify arguments that are passed to it, but it will never have"
@@ -17,7 +17,7 @@ contains
     end subroutine
 
     subroutine p7_2()
-    !! ** DISCUSSION QUESTION **\
+    !! ** DISCUSSION QUESTION ** <br>
     !! When a subroutine is called, how is data passed from the calling program to the subroutine,
     !! and how are the results of the subroutine returned to the calling program?
 
@@ -28,7 +28,7 @@ contains
     end subroutine
 
     subroutine p7_3()
-    !! ** DISCUSSION QUESTION **\
+    !! ** DISCUSSION QUESTION ** <br>
     !! What are the advantages and disadvantages of the pass-by-reference scheme used in Fortran?
 
         print *, "Advantages: "
@@ -40,7 +40,7 @@ contains
     end subroutine
 
     subroutine p7_4()
-    !! ** DISCUSSION QUESTION ** \
+    !! ** DISCUSSION QUESTION ** <br>
     !! What are the advantages and disadvantages of each procedure array type?
 
         print *, "Explicit shaped dummy arrays:"
@@ -59,7 +59,7 @@ contains
     end subroutine
 
     subroutine p7_5()
-    !! ** DISCUSSION QUESTION **<br> I put a br here..
+    !! ** DISCUSSION QUESTION **<br>
     !! Suppose a 15-element array is passed to a subroutine. What happens if the subroutine attempts
     !! to write to element a(16)?
 
