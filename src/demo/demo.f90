@@ -3,9 +3,11 @@ program demo
 use chapter_4
 use chapter_5
 use chapter_6
+use chapter_7
 
 integer:: i=0, j=0, ierr
 character(100) :: errmsg
+real :: p7_6_real = 1.0
 
 print*  ! empty line
 print 123
@@ -306,35 +308,127 @@ mainloop: do
 
         ! // TODO ADD ALL OTHER CHAPTERS
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         case(7)
-            print *, "Chapter 7 selected"
+            
+            call chapter_selected(i)
+
+            chapter7: do
+                
+                print *, "Problem 1: Difference between subroutine and function"
+                print *, "Problem 2: How is data passed in Fortran procedures?"
+                print *, "Problem 3: Advantages and disadvantages of pass-by-reference?"
+                print *, "Problem 4: How can arrays be declared as dummy variables?"
+                print *, "Problem 5: Array error-bound subscripting"
+                print *, "Problem 6: Pass REAL value to INTEGER subroutine"
+                print *, "Problem 7: Check mismateched arguments in Problem 6"
+                print *, "Problem 8: Loop execution counts"
+                print *, "Problem 9: Loop execution values"
+                print *, "Problem 10: Loop execution values (pt II)"
+                print *, "Problem 11: Flight of ball"
+                print *, "Problem 12: Flight of ball (pt II)"
+                print *, "Problem 13: Day of the year"
+                print *, "Problem 14: Logarithmic function evaluation"
+                print *, "Problem 15: Uppercase to lowercase"
+                print *, "Problem 16: Calculating orbits"
+                print *, "Problem 17: Capitalize first letter"
+                print *, "Problem 18: Current through a diode"
+                print *, "Problem 19: Binary to decimal"
+                print *, "Problem 20: Loop execution counts"
+                print *, "Problem 21: Loop execution values"
+                print *, "Problem 22: Loop execution values (pt II)"
+                print *, "Problem 23: Flight of ball"
+                print *, "Problem 24: Flight of ball (pt II)"
+                print *, "Problem 25: Day of the year"
+                print *, "Problem 26: Logarithmic function evaluation"
+                print *, "Problem 27: Uppercase to lowercase"
+
+                call problem_select()
+
+                read(unit=5, fmt=*, iostat=ierr, iomsg=errmsg) j
+
+                if(ierr /=0) then
+                    print *, "please enter a valid integer from [-1:19]"
+                    cycle chapter7
+                end if
+
+                call program_start()
+
+                select case(j)
+                case(1)
+                    call p7_1()
+                case(2)
+                    call p7_2()
+                case(3)
+                    call p7_3()
+                case(4)         
+                    call p7_4()       
+                case(5)
+                    call p7_5()
+                case(6)
+                    call p7_6()
+                case(7)
+                    call p7_7()
+                case(8)
+                    call p4_8()
+                case(9)
+                    call p4_9()
+                case(10)
+                    call p4_10()
+                case(11)
+                    call p4_11()
+                case(12)
+                    call p4_12()
+                case(13)
+                    call p4_13()
+                case(14)
+                    call p4_14()
+                case(15)
+                    call p4_15()
+                case(16)
+                    call p4_16()
+                case(17)
+                    call p4_17()
+                case(18)
+                    call p4_18()
+                case(19)
+                    call p4_19()
+                case(-1)
+                    print *, "Going to chapter select"
+                    exit chapter7
+                case(0)
+                    print *, "Exiting demo"
+                    exit mainloop
+                case default 
+                    print *, "Please enter a valid number 1-19, -1 to go back, or 0 to exit"
+                end select                
+                
+                call program_end()                
+                
+            end do chapter7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         case(8)
             print *, "Chapter 8 selected"
         case(9)
