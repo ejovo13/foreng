@@ -130,21 +130,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>14.3% of total for derived types.</p>Including implementation: 6 statements,  5.7% of total for derived types.">6 statements</a>
+    title="<p>10.4% of total for derived types.</p>Including implementation: 7 statements,  5.3% of total for derived types.">7 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/points_t.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/ejovo_types.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/points_t.f90.html'>points_t.f90</a></li>
+     <li><a href='../sourcefile/ejovo_types.f90.html'>ejovo_types.f90</a></li>
     
-     <li><a href='../module/points_t.html'>points_t</a></li>
+     <li><a href='../module/ejovo_types.html'>ejovo_types</a></li>
     
   
      <li class="active">polar</li>
@@ -175,11 +175,9 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../type/polar.html#variable-kind">kind</a>
+      <a class="list-group-item" href="../type/polar.html#variable-r~2">r</a>
       
-      <a class="list-group-item" href="../type/polar.html#variable-r">r</a>
-      
-      <a class="list-group-item" href="../type/polar.html#variable-th">th</a>
+      <a class="list-group-item" href="../type/polar.html#variable-theta">theta</a>
       
     </div>
   </div>
@@ -207,7 +205,9 @@
   <div id="boundprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../type/polar.html#boundprocedure-to_cart">to_cart</a>
+      <a class="list-group-item" href="../type/polar.html#boundprocedure-mult">mult</a>
+      
+      <a class="list-group-item" href="../type/polar.html#boundprocedure-div">div</a>
       
     </div>
   </div>
@@ -222,7 +222,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-      <h2>type, public, extends(<a href='../type/point.html'>point</a>) :: polar</h2>
+      <h2>type, public :: polar</h2>
     
     
     
@@ -241,11 +241,9 @@
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../type/polar.html#variable-kind">kind</a>
+      <a class="list-group-item" href="../type/polar.html#variable-r~2">r</a>
       
-      <a class="list-group-item" href="../type/polar.html#variable-r">r</a>
-      
-      <a class="list-group-item" href="../type/polar.html#variable-th">th</a>
+      <a class="list-group-item" href="../type/polar.html#variable-theta">theta</a>
       
     </div>
   </div>
@@ -273,7 +271,9 @@
   <div id="boundprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../type/polar.html#boundprocedure-to_cart">to_cart</a>
+      <a class="list-group-item" href="../type/polar.html#boundprocedure-mult">mult</a>
+      
+      <a class="list-group-item" href="../type/polar.html#boundprocedure-div">div</a>
       
     </div>
   </div>
@@ -305,21 +305,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-kind"></span>integer,</td>
-  
-  <td>public</td>
-  <td></td><td>::</td>
-  <td><strong>kind</strong></td><td> =</td><td>8</td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-r"></span>real,</td>
+  <td><span class="anchor" id="variable-r~2"></span>real,</td>
   
   <td>public</td>
   <td></td><td>::</td>
@@ -333,11 +319,11 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-th"></span>real,</td>
+  <td><span class="anchor" id="variable-theta"></span>real,</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>th</strong></td><td></td><td></td><td></td>
+  <td><strong>theta</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -358,7 +344,7 @@
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-to_cart"></span><h3>procedure, public :: <strong>to_cart</strong>  => <a href='../interface/pol_to_cart.html'>pol_to_cart</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-mult"></span><h3>procedure, public, pass :: <strong>mult</strong>  
     
   </h3></div>
   
@@ -375,7 +361,7 @@
           
     
     <h3>
-public module function pol_to_cart(p1) result(c1)
+public pure module function mult(p1, p2) result(p3)
     
     
    
@@ -410,6 +396,21 @@ public module function pol_to_cart(p1) result(c1)
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/polar.html'>polar</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -421,7 +422,100 @@ public module function pol_to_cart(p1) result(c1)
   
   
   
-     <h4>Return Value <small>type(<a href='../type/cart.html'>cart</a>)
+     <h4>Return Value <small>type(<a href='../type/polar.html'>polar</a>)
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-div"></span><h3>procedure, public, pass :: <strong>div</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public pure module function div(p1, p2) result(p3)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/polar.html'>polar</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/polar.html'>polar</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/polar.html'>polar</a>)
   </small></h4>
   
     

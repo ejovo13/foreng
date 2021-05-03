@@ -130,21 +130,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 7.1% of total for derived types.</p>Including implementation: 3 statements,  2.8% of total for derived types.">3 statements</a>
+    title="<p>10.4% of total for derived types.</p>Including implementation: 7 statements,  5.3% of total for derived types.">7 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/points_t.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/ejovo_types.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/points_t.f90.html'>points_t.f90</a></li>
+     <li><a href='../sourcefile/ejovo_types.f90.html'>ejovo_types.f90</a></li>
     
-     <li><a href='../module/points_t.html'>points_t</a></li>
+     <li><a href='../module/ejovo_types.html'>ejovo_types</a></li>
     
   
      <li class="active">point</li>
@@ -175,7 +175,9 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../type/point.html#variable-kind">kind</a>
+      <a class="list-group-item" href="../type/point.html#variable-x~4">x</a>
+      
+      <a class="list-group-item" href="../type/point.html#variable-y~4">y</a>
       
     </div>
   </div>
@@ -198,6 +200,20 @@
 
 
 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/point.html#boundprocedure-dist">dist</a>
+      
+      <a class="list-group-item" href="../type/point.html#boundprocedure-find_line">find_line</a>
+      
+    </div>
+  </div>
+</div>
+
+
 
 
 
@@ -206,7 +222,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-      <h2>type, public, abstract :: point</h2>
+      <h2>type, public :: point</h2>
     
     
     
@@ -225,7 +241,9 @@
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../type/point.html#variable-kind">kind</a>
+      <a class="list-group-item" href="../type/point.html#variable-x~4">x</a>
+      
+      <a class="list-group-item" href="../type/point.html#variable-y~4">y</a>
       
     </div>
   </div>
@@ -246,6 +264,20 @@
 
 
 
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/point.html#boundprocedure-dist">dist</a>
+      
+      <a class="list-group-item" href="../type/point.html#boundprocedure-find_line">find_line</a>
+      
+    </div>
+  </div>
+</div>
 
 
 
@@ -273,11 +305,25 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-kind"></span>integer,</td>
+  <td><span class="anchor" id="variable-x~4"></span>real,</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>kind</strong></td><td> =</td><td>8</td><td></td>
+  <td><strong>x</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-y~4"></span>real,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>y</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -292,6 +338,197 @@
     
     
     
+     
+    <section>
+    <h2>Type-Bound Procedures</h2>
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-dist"></span><h3>procedure, public, pass :: <strong>dist</strong>  => <a href='../interface/distance_between_points.html'>distance_between_points</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public pure module function distance_between_points(p1, p2) result(d1)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point.html'>point</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point.html'>point</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-find_line"></span><h3>procedure, public, pass :: <strong>find_line</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public pure module function find_line(p1, p2) result(l)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point.html'>point</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point.html'>point</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/line.html'>line</a>)
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+    </section>
     
     
     
