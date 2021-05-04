@@ -23,6 +23,7 @@ implicit none
     P = 0
     T = 250
     n = 1
+    V = 10
 
     print *, "At T = 273, n = 1: "
 
@@ -46,7 +47,7 @@ implicit none
     print 3
 
     P = 1
-    T = 300
+    T = 250
 
     print *, "At T = 300, n = 1: "
 
