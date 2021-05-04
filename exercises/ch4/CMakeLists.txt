@@ -1,5 +1,7 @@
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_EX}/ch4)
 
+add_library(ch4_means ch4_means.f90)
+
 add_executable(4_2 4_2.f90)
 add_executable(4_3 4_3.f90)
 add_executable(4_4 4_4.f90)
@@ -23,7 +25,14 @@ add_executable(4_26 4_26.f90)
 add_executable(4_27 4_27.f90)
 add_executable(4_28 4_28.f90)
 add_executable(4_29 4_29.f90)
+add_executable(4_30 4_30.f90)
+add_executable(4_31 4_31.f90)
+add_executable(4_32 4_32.f90)
 add_executable(error_test error_test.f90)
 add_executable(flight_of_ball flight_of_ball.f90)
 
 target_link_libraries(4_27 trig)
+target_link_libraries(4_31 ch4_means)
+target_link_libraries(4_32 ch4_means)
+
+
