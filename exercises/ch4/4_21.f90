@@ -3,6 +3,8 @@
 ! Up to five octal digits
 program octal_to_decimal
 
+    implicit none
+
     integer, parameter :: MAX_OCTAL_DIGITS = 5
     integer :: i, ierr, num_oct_digits, decimal_conversion = 0
     character(LEN=100) :: errmsg
