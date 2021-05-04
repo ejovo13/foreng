@@ -41,10 +41,8 @@ function poisson(k, t, lamda) result (P)
 
 end function
 
-recursive function fact(x) result (x_fact)
+recursive integer function fact(x) result (x_fact)
     integer, intent(in) :: x
-    integer :: x_fact
-
     if (x == 0) then
         x_fact = 1
         return
