@@ -37,7 +37,7 @@ implicit none
 
     do i = 1,16
 
-        T = T + STEP_SIZE
+        T = 250 + STEP_SIZE*(i-1)
 
         P = (T * n * R)/V
 
@@ -57,7 +57,7 @@ implicit none
 
     do i = 1,16
 
-        T = T + STEP_SIZE
+        T = 250 + STEP_SIZE*(i-1)
 
         P = (T * n * R)/V
 
