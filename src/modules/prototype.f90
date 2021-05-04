@@ -181,6 +181,7 @@ contains
     ! REAL FUNCTION urand(min,max)
     !
     !       Return a real value between [min, max)
+    !       Uniform distribution
     !
     !--------------------------------------------------------------------------
     real function urand(min,max)
@@ -201,5 +202,7 @@ contains
         ! Shift the midpoint to the midpoint of the new range
         urand = temp_rand*scale + shift    
     end function
+
+    
 
 end module prototype
