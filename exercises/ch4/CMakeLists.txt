@@ -29,6 +29,7 @@ add_executable(4_30 4_30.f90)
 add_executable(4_31 4_31.f90)
 add_executable(4_32 4_32.f90)
 add_executable(4_33 4_33.f90)
+add_executable(4_34 4_34.f90)
 add_executable(error_test error_test.f90)
 add_executable(flight_of_ball flight_of_ball.f90)
 
