@@ -3,6 +3,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_EX}/ch7)
 
 add_library(lls linear_least_squares.f90)
 add_library(ch7_timer ch7_timer.f90)
+add_library(ch7_functions ch7_functions.f90)
 
 target_link_libraries(lls ch4_means)
 
@@ -23,6 +24,7 @@ add_executable(7_26 7_26.f90)
 add_executable(7_27 7_27.f90)
 add_executable(7_28 7_28.f90)
 add_executable(7_29 7_29.f90)
+add_executable(7_31 7_31.f90)
 
 target_link_libraries(7_10 ch7)
 target_link_libraries(7_14 ch7)
@@ -33,3 +35,4 @@ target_link_libraries(7_26 lls)
 target_link_libraries(7_27 lls)
 target_link_libraries(7_28 ch6_sets ch9)
 target_link_libraries(7_29 ch7_timer)
+target_link_libraries(7_31 ch7_functions)
