@@ -1,6 +1,10 @@
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${MY_EX}/ch7)
 # message("Chapter 7 include directories: ${CMAKE_Fortran_MODULE_DIRECTORY}")
 
+add_library(lls linear_least_squares.f90)
+
+target_link_libraries(lls ch4_means)
+
 add_executable(7_6 7_6.f90)
 add_executable(7_10 7_10.f90) 
 add_executable(7_12 7_12.f90)
@@ -14,9 +18,13 @@ add_executable(7_21 7_21.f90)
 add_executable(7_23 7_23.f90)
 add_executable(7_24 7_24.f90)
 add_executable(7_25 7_25.f90)
+add_executable(7_26 7_26.f90)
+add_executable(7_27 7_27.f90)
 
 target_link_libraries(7_10 ch7)
 target_link_libraries(7_14 ch7)
 target_link_libraries(7_15 ch7)
 target_link_libraries(7_18 trig)
 target_link_libraries(7_24 ch9)
+target_link_libraries(7_26 lls)
+target_link_libraries(7_27 lls)
