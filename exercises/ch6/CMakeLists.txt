@@ -6,6 +6,8 @@ add_executable(6_10 6_10.f90)
 add_executable(6_11 6_11.f90)
 add_executable(6_12 6_12.f90)
 add_executable(6_13 6_13.f90)
+add_executable(6_14 6_14.f90)
+add_executable(6_15 6_15.f90)
 
 target_link_libraries(6_12 ch9)
 target_link_libraries(6_13 ch9)
