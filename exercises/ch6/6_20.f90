@@ -6,8 +6,6 @@ use ch6_points
 
 implicit none
 
-    integer :: ierr
-    character(100) :: errmsg
     real, dimension(3) :: point1, point2
 
 
