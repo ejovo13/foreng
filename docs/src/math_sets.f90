@@ -16,6 +16,7 @@ interface intersection
 end interface
 
 interface union
+!! Compute the union of two sets
     module procedure union_int
     module procedure union_r32
     module procedure union_r64
@@ -58,7 +59,7 @@ contains
         do i = 1, A_card
 
             if (belongs_to(A(i), B)) then
-                !! If element of set1 is ALSO in set2...
+                ! If element of set1 is ALSO in set2...
 
                 if (allocated(inters)) then
                     inters = [inters, A(i)]
@@ -73,7 +74,7 @@ contains
         end do
 
         if (.not. allocated(inters)) then 
-            !! If the intersection is the empty set
+            ! If the intersection is the empty set
             allocate(inters(1))
             inters = zero/zero
 
@@ -98,8 +99,7 @@ contains
         do i = 1, A_card
 
             if (belongs_to(A(i), B, eps)) then
-                !! If element of set1 is ALSO in set2...
-                print *, "MATCH!!"
+                ! If element of set1 is ALSO in set2...
                 if (allocated(inters)) then
                     inters = [inters, A(i)]
                 else
@@ -113,7 +113,7 @@ contains
         end do
 
         if (.not. allocated(inters)) then 
-            !! If the intersection is the empty set
+            ! If the intersection is the empty set
             allocate(inters(1))
             inters = zero/zero
 
@@ -138,7 +138,7 @@ contains
         do i = 1, A_card
 
             if (belongs_to(A(i), B, eps)) then
-                !! If element of set1 is ALSO in set2...
+                ! If element of set1 is ALSO in set2...
 
                 if (allocated(inters)) then
                     inters = [inters, A(i)]
@@ -153,7 +153,7 @@ contains
         end do
 
         if (.not. allocated(inters)) then 
-            !! If the intersection is the empty set
+            ! If the intersection is the empty set
             allocate(inters(1))
             inters = zero/zero
 
@@ -172,14 +172,14 @@ contains
 
         B_cardinality = size(B)
 
-        !! Set union right away to A
+        ! Set union right away to A
 
         union_set = A
 
         do i = 1, B_cardinality
 
             if(belongs_to(B(i), union_set)) then
-            !! If set2(i) is already a part of the union, then don't add it
+            ! If set2(i) is already a part of the union, then don't add it
                 cycle
             else
                 union_set = [union_set, B(i)]
@@ -200,14 +200,14 @@ contains
 
         B_cardinality = size(B)
 
-        !! Set union right away to A
+        ! Set union right away to A
 
         union_set = A
 
         do i = 1, B_cardinality
 
             if(belongs_to(B(i), union_set)) then
-            !! If set2(i) is already a part of the union, then don't add it
+            ! If set2(i) is already a part of the union, then don't add it
                 print *, "MATCH FOUND!!"
                 cycle
             else
@@ -229,14 +229,14 @@ contains
 
         B_cardinality = size(B)
 
-        !! Set union right away to A
+        ! Set union right away to A
 
         union_set = A
 
         do i = 1, B_cardinality
 
             if(belongs_to(B(i), union_set)) then
-            !! If set2(i) is already a part of the union, then don't add it
+            ! If set2(i) is already a part of the union, then don't add it
                 cycle
             else
                 union_set = [union_set, B(i)]
