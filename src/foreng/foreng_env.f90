@@ -6,6 +6,7 @@ use iso_fortran_env, only: real64, real32, int64, int32, int16
 implicit none
 
 ! public :: sgl, dbl, short, long, pi, pi_s
+public int128
 
  
 !     integer, parameter :: SGL = real32
@@ -16,6 +17,7 @@ implicit none
     real(real64), parameter :: PI_64 = 3.141592653589793
     real(real64), parameter :: PI = PI_64
     real(real32), parameter :: PI_32 = 3.14159265
+    integer, parameter :: int128 = selected_int_kind(38)
 
 !=============================================================================!
 !=                      List of incorporated modules                         =!
