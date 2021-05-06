@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.0% of total for source files.">71 statements</a>
+    title=" 6.0% of total for source files.">137 statements</a>
      </li> 
      
      
@@ -169,17 +169,17 @@
 
 
 
-
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#submods-0">Submodules</a></h3></div>
-  <div id="submods-0" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/trig~2.html">trig</a>
+      <a class="list-group-item" href="../module/foreng_math_trig.html">foreng_math_trig</a>
       
     </div>
   </div>
 </div>
+
 
 
 
@@ -225,17 +225,17 @@
 
 
 
-
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#submods-1">Submodules</a></h3></div>
-  <div id="submods-1" class="panel-collapse collapse">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/trig~2.html">trig</a>
+      <a class="list-group-item" href="../module/foreng_math_trig.html">foreng_math_trig</a>
       
     </div>
   </div>
 </div>
+
 
 
 
@@ -265,105 +265,187 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">submodule</span> <span class="p">(</span><span class="n">foreng_math</span><span class="p">)</span> <span class="n">trig</span>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">module </span><span class="n">foreng_math_trig</span>
 <a name="ln-2"></a>
-<a name="ln-3"></a><span class="k">implicit none </span>
+<a name="ln-3"></a><span class="k">use </span><span class="n">foreng_env</span>
 <a name="ln-4"></a>
-<a name="ln-5"></a>
-<a name="ln-6"></a><span class="k">contains</span>
-<a name="ln-7"></a>
-<a name="ln-8"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">sind_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">sind</span><span class="p">)</span>
-<a name="ln-9"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
-<a name="ln-10"></a>        <span class="n">sind</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-11"></a>    <span class="k">end function</span>
-<a name="ln-12"></a>
-<a name="ln-13"></a><span class="k">    module procedure </span><span class="n">sind_r64</span>
-<a name="ln-14"></a>        <span class="n">sind</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-15"></a>    <span class="k">end procedure</span>
-<a name="ln-16"></a>
-<a name="ln-17"></a><span class="k">    module procedure </span><span class="n">cosd_r32</span>
-<a name="ln-18"></a>        <span class="n">cosd</span> <span class="o">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-19"></a>    <span class="k">end procedure</span>
-<a name="ln-20"></a>
-<a name="ln-21"></a><span class="k">    module procedure </span><span class="n">cosd_r64</span>
-<a name="ln-22"></a>        <span class="n">cosd</span> <span class="o">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-23"></a>    <span class="k">end procedure</span>
+<a name="ln-5"></a><span class="k">implicit none</span> 
+<a name="ln-6"></a>
+<a name="ln-7"></a><span class="c">!=============================================================================!</span>
+<a name="ln-8"></a><span class="c">!=                         Trigonometry Interface                            =!</span>
+<a name="ln-9"></a><span class="c">!=============================================================================!</span>
+<a name="ln-10"></a><span class="k">interface </span><span class="n">sind</span>
+<a name="ln-11"></a>    <span class="k">module procedure </span><span class="n">sind_r32</span>
+<a name="ln-12"></a>    <span class="k">module procedure </span><span class="n">sind_r64</span>
+<a name="ln-13"></a><span class="k">end interface</span>
+<a name="ln-14"></a>
+<a name="ln-15"></a><span class="k">interface </span><span class="n">cosd</span>
+<a name="ln-16"></a>    <span class="k">module procedure </span><span class="n">cosd_r32</span>
+<a name="ln-17"></a>    <span class="k">module procedure </span><span class="n">cosd_r64</span>
+<a name="ln-18"></a><span class="k">end interface</span>
+<a name="ln-19"></a>
+<a name="ln-20"></a><span class="k">interface </span><span class="n">tand</span>
+<a name="ln-21"></a>    <span class="k">module procedure </span><span class="n">tand_r32</span>
+<a name="ln-22"></a>    <span class="k">module procedure </span><span class="n">tand_r64</span>
+<a name="ln-23"></a><span class="k">end interface</span>
 <a name="ln-24"></a>
-<a name="ln-25"></a><span class="k">    module procedure </span><span class="n">tand_r32</span>
-<a name="ln-26"></a>        <span class="n">tand</span> <span class="o">=</span> <span class="nb">tan</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-27"></a>    <span class="k">end procedure</span>
-<a name="ln-28"></a>
-<a name="ln-29"></a><span class="k">    module procedure </span><span class="n">tand_r64</span>
-<a name="ln-30"></a>        <span class="n">tand</span> <span class="o">=</span> <span class="nb">tan</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-31"></a>    <span class="k">end procedure</span>
-<a name="ln-32"></a>
-<a name="ln-33"></a><span class="k">    module procedure </span><span class="n">asind_r32</span>
-<a name="ln-34"></a>        <span class="n">asind</span> <span class="o">=</span> <span class="nb">asin</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-35"></a>    <span class="k">end procedure</span>
-<a name="ln-36"></a>
-<a name="ln-37"></a><span class="k">    module procedure </span><span class="n">asind_r64</span>
-<a name="ln-38"></a>        <span class="n">asind</span> <span class="o">=</span> <span class="nb">asin</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-39"></a>    <span class="k">end procedure</span>
-<a name="ln-40"></a>
-<a name="ln-41"></a><span class="k">    module procedure </span><span class="n">acosd_r32</span>
-<a name="ln-42"></a>        <span class="n">acosd</span> <span class="o">=</span> <span class="nb">acos</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-43"></a>    <span class="k">end procedure</span>
+<a name="ln-25"></a><span class="k">interface </span><span class="n">asind</span>
+<a name="ln-26"></a>    <span class="k">module procedure </span><span class="n">asind_r32</span>
+<a name="ln-27"></a>    <span class="k">module procedure </span><span class="n">asind_r64</span>
+<a name="ln-28"></a><span class="k">end interface</span>
+<a name="ln-29"></a>
+<a name="ln-30"></a><span class="k">interface </span><span class="n">acosd</span>
+<a name="ln-31"></a>    <span class="k">module procedure </span><span class="n">acosd_r32</span>
+<a name="ln-32"></a>    <span class="k">module procedure </span><span class="n">acosd_r64</span>
+<a name="ln-33"></a><span class="k">end interface</span>
+<a name="ln-34"></a>
+<a name="ln-35"></a><span class="k">interface </span><span class="n">atand</span>
+<a name="ln-36"></a>    <span class="k">module procedure </span><span class="n">atand_r32</span>
+<a name="ln-37"></a>    <span class="k">module procedure </span><span class="n">atand_r64</span>
+<a name="ln-38"></a><span class="k">end interface</span>
+<a name="ln-39"></a>
+<a name="ln-40"></a><span class="k">interface </span><span class="n">sinhd</span>
+<a name="ln-41"></a>    <span class="k">module procedure </span><span class="n">sinhd_r32</span>
+<a name="ln-42"></a>    <span class="k">module procedure </span><span class="n">sinhd_r64</span>
+<a name="ln-43"></a><span class="k">end interface</span>
 <a name="ln-44"></a>
-<a name="ln-45"></a><span class="k">    module procedure </span><span class="n">acosd_r64</span>
-<a name="ln-46"></a>        <span class="n">acosd</span> <span class="o">=</span> <span class="nb">acos</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-47"></a>    <span class="k">end procedure</span>
-<a name="ln-48"></a>
-<a name="ln-49"></a><span class="k">    module procedure </span><span class="n">atand_r32</span>
-<a name="ln-50"></a>        <span class="n">atand</span> <span class="o">=</span> <span class="nb">atan</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-51"></a>    <span class="k">end procedure</span>
-<a name="ln-52"></a>
-<a name="ln-53"></a><span class="k">    module procedure </span><span class="n">atand_r64</span>
-<a name="ln-54"></a>        <span class="n">atand</span> <span class="o">=</span> <span class="nb">atan</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-55"></a>    <span class="k">end procedure</span>
-<a name="ln-56"></a>
-<a name="ln-57"></a><span class="k">    module procedure </span><span class="n">sinhd_r32</span>
-<a name="ln-58"></a>        <span class="n">sinhd</span> <span class="o">=</span> <span class="nb">sinh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-59"></a>    <span class="k">end procedure</span>
-<a name="ln-60"></a>
-<a name="ln-61"></a><span class="k">    module procedure </span><span class="n">sinhd_r64</span>
-<a name="ln-62"></a>        <span class="n">sinhd</span> <span class="o">=</span> <span class="nb">sinh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-63"></a>    <span class="k">end procedure</span>
+<a name="ln-45"></a><span class="k">interface </span><span class="n">coshd</span>
+<a name="ln-46"></a>    <span class="k">module procedure </span><span class="n">coshd_r32</span>
+<a name="ln-47"></a>    <span class="k">module procedure </span><span class="n">coshd_r64</span>
+<a name="ln-48"></a><span class="k">end interface</span>
+<a name="ln-49"></a>
+<a name="ln-50"></a><span class="k">interface </span><span class="n">tanhd</span>
+<a name="ln-51"></a>    <span class="k">module procedure </span><span class="n">tanhd_r32</span>
+<a name="ln-52"></a>    <span class="k">module procedure </span><span class="n">tanhd_r64</span>
+<a name="ln-53"></a><span class="k">end interface</span>
+<a name="ln-54"></a>
+<a name="ln-55"></a><span class="k">interface </span><span class="n">deg_to_rad</span>    
+<a name="ln-56"></a>    <span class="k">module procedure </span><span class="n">deg_to_rad_r32</span>
+<a name="ln-57"></a>    <span class="k">module procedure </span><span class="n">deg_to_rad_r64</span>
+<a name="ln-58"></a><span class="k">end interface</span>
+<a name="ln-59"></a>
+<a name="ln-60"></a><span class="k">interface </span><span class="n">rad_to_deg</span>
+<a name="ln-61"></a>    <span class="k">module procedure </span><span class="n">rad_to_deg_r32</span>
+<a name="ln-62"></a>    <span class="k">module procedure </span><span class="n">rad_to_deg_r64</span>
+<a name="ln-63"></a><span class="k">end interface</span>
 <a name="ln-64"></a>
-<a name="ln-65"></a><span class="k">    module procedure </span><span class="n">coshd_r32</span>
-<a name="ln-66"></a>        <span class="n">coshd</span> <span class="o">=</span> <span class="nb">cosh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-67"></a>    <span class="k">end procedure</span>
+<a name="ln-65"></a><span class="c">!=============================================================================!</span>
+<a name="ln-66"></a><span class="c">!=                         Trigonometry Functions                            =!</span>
+<a name="ln-67"></a><span class="c">!=============================================================================!</span>
 <a name="ln-68"></a>
-<a name="ln-69"></a><span class="k">    module procedure </span><span class="n">coshd_r64</span>
-<a name="ln-70"></a>        <span class="n">coshd</span> <span class="o">=</span> <span class="nb">cosh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-71"></a>    <span class="k">end procedure</span>
-<a name="ln-72"></a>
-<a name="ln-73"></a><span class="k">    module procedure </span><span class="n">tanhd_r32</span>
-<a name="ln-74"></a>        <span class="n">tanhd</span> <span class="o">=</span> <span class="nb">tanh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-75"></a>    <span class="k">end procedure</span>
-<a name="ln-76"></a>
-<a name="ln-77"></a><span class="k">    module procedure </span><span class="n">tanhd_r64</span>
-<a name="ln-78"></a>        <span class="n">tanhd</span> <span class="o">=</span> <span class="nb">tanh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
-<a name="ln-79"></a>    <span class="k">end procedure</span>
+<a name="ln-69"></a><span class="k">contains</span>
+<a name="ln-70"></a>
+<a name="ln-71"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">sind_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">sind</span><span class="p">)</span>
+<a name="ln-72"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-73"></a>        <span class="n">sind</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-74"></a>    <span class="k">end function</span>
+<a name="ln-75"></a>
+<a name="ln-76"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">sind_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">sind</span><span class="p">)</span>
+<a name="ln-77"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-78"></a>        <span class="n">sind</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-79"></a>    <span class="k">end function</span>
 <a name="ln-80"></a>
-<a name="ln-81"></a><span class="k">    module procedure </span><span class="n">deg_to_rad_r32</span>
-<a name="ln-82"></a>        <span class="n">radians</span> <span class="o">=</span> <span class="n">degrees</span><span class="o">/</span><span class="mi">180_real32</span> <span class="o">*</span> <span class="n">PI_32</span>
-<a name="ln-83"></a>    <span class="k">end procedure</span>
-<a name="ln-84"></a>
-<a name="ln-85"></a><span class="k">    module procedure </span><span class="n">deg_to_rad_r64</span>
-<a name="ln-86"></a>        <span class="n">radians</span> <span class="o">=</span> <span class="n">degrees</span><span class="o">/</span><span class="mi">180_real64</span> <span class="o">*</span> <span class="n">PI</span>
-<a name="ln-87"></a>    <span class="k">end procedure</span>
-<a name="ln-88"></a>
-<a name="ln-89"></a><span class="k">    module procedure </span><span class="n">rad_to_deg_r32</span>
-<a name="ln-90"></a>        <span class="n">degrees</span> <span class="o">=</span> <span class="n">radians</span><span class="o">/</span><span class="n">PI_32</span> <span class="o">*</span> <span class="mi">180_real32</span>
-<a name="ln-91"></a>    <span class="k">end procedure</span>
-<a name="ln-92"></a>
-<a name="ln-93"></a><span class="k">    module procedure </span><span class="n">rad_to_deg_r64</span>
-<a name="ln-94"></a>        <span class="n">degrees</span> <span class="o">=</span> <span class="n">radians</span><span class="o">/</span><span class="n">PI</span> <span class="o">*</span> <span class="mi">180_real64</span>
-<a name="ln-95"></a>    <span class="k">end procedure</span>
-<a name="ln-96"></a>
-<a name="ln-97"></a>
-<a name="ln-98"></a>
-<a name="ln-99"></a><span class="k">end submodule</span>
+<a name="ln-81"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">cosd_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">cosd</span><span class="p">)</span>
+<a name="ln-82"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-83"></a>        <span class="n">cosd</span> <span class="o">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-84"></a>    <span class="k">end function</span>
+<a name="ln-85"></a>
+<a name="ln-86"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">cosd_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">cosd</span><span class="p">)</span>
+<a name="ln-87"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-88"></a>        <span class="n">cosd</span> <span class="o">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-89"></a>    <span class="k">end function</span>
+<a name="ln-90"></a>
+<a name="ln-91"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">tand_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">tand</span><span class="p">)</span>
+<a name="ln-92"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-93"></a>        <span class="n">tand</span> <span class="o">=</span> <span class="nb">tan</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-94"></a>    <span class="k">end function</span>
+<a name="ln-95"></a>
+<a name="ln-96"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">tand_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">tand</span><span class="p">)</span>
+<a name="ln-97"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-98"></a>        <span class="n">tand</span> <span class="o">=</span> <span class="nb">tan</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-99"></a>    <span class="k">end function</span>
+<a name="ln-100"></a>
+<a name="ln-101"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">asind_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">asind</span><span class="p">)</span>
+<a name="ln-102"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-103"></a>        <span class="n">asind</span> <span class="o">=</span> <span class="nb">asin</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-104"></a>    <span class="k">end function</span>
+<a name="ln-105"></a>
+<a name="ln-106"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">asind_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">asind</span><span class="p">)</span>
+<a name="ln-107"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-108"></a>        <span class="n">asind</span> <span class="o">=</span> <span class="nb">asin</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-109"></a>    <span class="k">end function</span>
+<a name="ln-110"></a>
+<a name="ln-111"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">acosd_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">acosd</span><span class="p">)</span>
+<a name="ln-112"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-113"></a>        <span class="n">acosd</span> <span class="o">=</span> <span class="nb">acos</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-114"></a>    <span class="k">end function</span>
+<a name="ln-115"></a>
+<a name="ln-116"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">acosd_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">acosd</span><span class="p">)</span>
+<a name="ln-117"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-118"></a>        <span class="n">acosd</span> <span class="o">=</span> <span class="nb">acos</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-119"></a>    <span class="k">end function</span>
+<a name="ln-120"></a>
+<a name="ln-121"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">atand_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">atand</span><span class="p">)</span>
+<a name="ln-122"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-123"></a>        <span class="n">atand</span> <span class="o">=</span> <span class="nb">atan</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-124"></a>    <span class="k">end function</span>
+<a name="ln-125"></a>
+<a name="ln-126"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">atand_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">atand</span><span class="p">)</span>
+<a name="ln-127"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-128"></a>        <span class="n">atand</span> <span class="o">=</span> <span class="nb">atan</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-129"></a>    <span class="k">end function</span>
+<a name="ln-130"></a>
+<a name="ln-131"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">sinhd_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">sinhd</span><span class="p">)</span>
+<a name="ln-132"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-133"></a>        <span class="n">sinhd</span> <span class="o">=</span> <span class="nb">sinh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-134"></a>    <span class="k">end function</span>
+<a name="ln-135"></a>
+<a name="ln-136"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">sinhd_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">sinhd</span><span class="p">)</span>
+<a name="ln-137"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-138"></a>        <span class="n">sinhd</span> <span class="o">=</span> <span class="nb">sinh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-139"></a>    <span class="k">end function</span>
+<a name="ln-140"></a>
+<a name="ln-141"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">coshd_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">coshd</span><span class="p">)</span>
+<a name="ln-142"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-143"></a>        <span class="n">coshd</span> <span class="o">=</span> <span class="nb">cosh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-144"></a>    <span class="k">end function</span>
+<a name="ln-145"></a>
+<a name="ln-146"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">coshd_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">coshd</span><span class="p">)</span>
+<a name="ln-147"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-148"></a>        <span class="n">coshd</span> <span class="o">=</span> <span class="nb">cosh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-149"></a>    <span class="k">end function</span>
+<a name="ln-150"></a>
+<a name="ln-151"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">tanhd_r32</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">tanhd</span><span class="p">)</span>
+<a name="ln-152"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-153"></a>        <span class="n">tanhd</span> <span class="o">=</span> <span class="nb">tanh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-154"></a>    <span class="k">end function</span>
+<a name="ln-155"></a>
+<a name="ln-156"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">tanhd_r64</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">tanhd</span><span class="p">)</span>
+<a name="ln-157"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span>
+<a name="ln-158"></a>        <span class="n">tanhd</span> <span class="o">=</span> <span class="nb">tanh</span><span class="p">(</span><span class="n">deg_to_rad</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+<a name="ln-159"></a>    <span class="k">end function</span>
+<a name="ln-160"></a>
+<a name="ln-161"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">deg_to_rad_r32</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">radians</span><span class="p">)</span>
+<a name="ln-162"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">degrees</span>
+<a name="ln-163"></a>        <span class="n">radians</span> <span class="o">=</span> <span class="n">degrees</span><span class="o">/</span><span class="mi">180_real32</span> <span class="o">*</span> <span class="n">PI_32</span>
+<a name="ln-164"></a>    <span class="k">end function</span>
+<a name="ln-165"></a>
+<a name="ln-166"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">deg_to_rad_r64</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">radians</span><span class="p">)</span>
+<a name="ln-167"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">degrees</span>
+<a name="ln-168"></a>        <span class="n">radians</span> <span class="o">=</span> <span class="n">degrees</span><span class="o">/</span><span class="mi">180_real64</span> <span class="o">*</span> <span class="n">PI</span>
+<a name="ln-169"></a>    <span class="k">end function</span>
+<a name="ln-170"></a>
+<a name="ln-171"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="k">function </span><span class="n">rad_to_deg_r32</span><span class="p">(</span><span class="n">radians</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span>
+<a name="ln-172"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">radians</span>
+<a name="ln-173"></a>        <span class="n">degrees</span> <span class="o">=</span> <span class="n">radians</span><span class="o">/</span><span class="n">PI_32</span> <span class="o">*</span> <span class="mi">180_real32</span>
+<a name="ln-174"></a>    <span class="k">end function</span>
+<a name="ln-175"></a>
+<a name="ln-176"></a><span class="k">    elemental </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="k">function </span><span class="n">rad_to_deg_r64</span><span class="p">(</span><span class="n">radians</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span>
+<a name="ln-177"></a>        <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">radians</span>
+<a name="ln-178"></a>        <span class="n">degrees</span> <span class="o">=</span> <span class="n">radians</span><span class="o">/</span><span class="n">PI</span> <span class="o">*</span> <span class="mi">180_real64</span>
+<a name="ln-179"></a>    <span class="k">end function</span>
+<a name="ln-180"></a>
+<a name="ln-181"></a><span class="k">end module</span>
 </pre></div>
 
     </section>

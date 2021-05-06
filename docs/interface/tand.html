@@ -130,21 +130,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.1% of total for procedures.</p>Including implementation: 140 statements,  3.7% of total for procedures.">4 statements</a>
+    title="<p> 0.2% of total for procedures.</p>Including implementation: 12 statements,  0.6% of total for procedures.">4 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/math.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/math_trig.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/math.f90.html'>math.f90</a></li>
+     <li><a href='../sourcefile/math_trig.f90.html'>math_trig.f90</a></li>
     
-     <li><a href='../module/foreng_math.html'>foreng_math</a></li>
+     <li><a href='../module/foreng_math_trig.html'>foreng_math_trig</a></li>
     
   
      <li class="active">tand</li>
@@ -266,8 +266,8 @@
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-tand_r32"></span><h3>
-public interface <a href='../interface/tand_r32.html'>tand_r32</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-tand_r32"></span><h3>
+public elemental function <a href='../proc/tand_r32.html'>tand_r32</a>(theta) result(tand)
     
     
    
@@ -278,8 +278,46 @@ public interface <a href='../interface/tand_r32.html'>tand_r32</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>theta</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real32)
+  </small></h4>
+  
     
 
   </div>
@@ -288,8 +326,8 @@ public interface <a href='../interface/tand_r32.html'>tand_r32</a>()
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-tand_r64"></span><h3>
-public interface <a href='../interface/tand_r64.html'>tand_r64</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-tand_r64"></span><h3>
+public elemental function <a href='../proc/tand_r64.html'>tand_r64</a>(theta) result(tand)
     
     
    
@@ -300,8 +338,46 @@ public interface <a href='../interface/tand_r64.html'>tand_r64</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>theta</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64)
+  </small></h4>
+  
     
 
   </div>

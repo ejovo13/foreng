@@ -130,21 +130,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.1% of total for procedures.</p>Including implementation: 161 statements,  4.3% of total for procedures.">5 statements</a>
+    title="<p> 0.3% of total for procedures.</p>Including implementation: 64 statements,  3.4% of total for procedures.">5 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/math.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/math_sets.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/math.f90.html'>math.f90</a></li>
+     <li><a href='../sourcefile/math_sets.f90.html'>math_sets.f90</a></li>
     
-     <li><a href='../module/foreng_math.html'>foreng_math</a></li>
+     <li><a href='../module/foreng_math_sets.html'>foreng_math_sets</a></li>
     
   
      <li class="active">belongs_to</li>
@@ -270,8 +270,8 @@
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-belongs_to_int"></span><h3>
-public interface <a href='../interface/belongs_to_int.html'>belongs_to_int</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-belongs_to_int"></span><h3>
+public function <a href='../proc/belongs_to_int.html'>belongs_to_int</a>(x, A) result(bool)
     
     
    
@@ -282,8 +282,61 @@ public interface <a href='../interface/belongs_to_int.html'>belongs_to_int</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td></td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>A</strong></td><td><p>Check if an element belongs to a set</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>logical
+  </small></h4>
+  
     
 
   </div>
@@ -292,8 +345,8 @@ public interface <a href='../interface/belongs_to_int.html'>belongs_to_int</a>()
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-belongs_to_r32"></span><h3>
-public interface <a href='../interface/belongs_to_r32.html'>belongs_to_r32</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-belongs_to_r32"></span><h3>
+public function <a href='../proc/belongs_to_r32.html'>belongs_to_r32</a>(x, A, eps) result(bool)
     
     
    
@@ -304,8 +357,76 @@ public interface <a href='../interface/belongs_to_r32.html'>belongs_to_r32</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td></td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td></td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>logical
+  </small></h4>
+  
     
 
   </div>
@@ -314,8 +435,8 @@ public interface <a href='../interface/belongs_to_r32.html'>belongs_to_r32</a>()
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-belongs_to_r64"></span><h3>
-public interface <a href='../interface/belongs_to_r64.html'>belongs_to_r64</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-belongs_to_r64"></span><h3>
+public function <a href='../proc/belongs_to_r64.html'>belongs_to_r64</a>(x, A, eps) result(bool)
     
     
    
@@ -326,8 +447,76 @@ public interface <a href='../interface/belongs_to_r64.html'>belongs_to_r64</a>()
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td></td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>A</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td></td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>logical
+  </small></h4>
+  
     
 
   </div>

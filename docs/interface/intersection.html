@@ -130,21 +130,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.1% of total for procedures.</p>Including implementation: 161 statements,  4.3% of total for procedures.">5 statements</a>
+    title="<p> 0.3% of total for procedures.</p>Including implementation: 82 statements,  4.3% of total for procedures.">5 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/math.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/math_sets.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/math.f90.html'>math.f90</a></li>
+     <li><a href='../sourcefile/math_sets.f90.html'>math_sets.f90</a></li>
     
-     <li><a href='../module/foreng_math.html'>foreng_math</a></li>
+     <li><a href='../module/foreng_math_sets.html'>foreng_math_sets</a></li>
     
   
      <li class="active">intersection</li>
@@ -270,8 +270,8 @@
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-intersection_int"></span><h3>
-public interface <a href='../interface/intersection_int.html'>intersection_int</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_int"></span><h3>
+public function <a href='../proc/intersection_int.html'>intersection_int</a>(setA, setB) result(inters)
     
     
    
@@ -279,11 +279,72 @@ public interface <a href='../interface/intersection_int.html'>intersection_int</
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>If element of set1 is ALSO in set2...</p><a href="../proc/intersection_int.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>setA</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>setB</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer,
+  dimension(:), allocatable</small></h4>
+  
     
 
   </div>
@@ -292,8 +353,8 @@ public interface <a href='../interface/intersection_int.html'>intersection_int</
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-intersection_r32"></span><h3>
-public interface <a href='../interface/intersection_r32.html'>intersection_r32</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_r32"></span><h3>
+public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(setA, setB) result(inters)
     
     
    
@@ -301,11 +362,73 @@ public interface <a href='../interface/intersection_r32.html'>intersection_r32</
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>If element of set1 is ALSO in set2...
+ If the intersection is the empty set</p>
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>setA</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>setB</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real32),
+  dimension(:), allocatable</small></h4>
+  
     
 
   </div>
@@ -314,8 +437,8 @@ public interface <a href='../interface/intersection_r32.html'>intersection_r32</
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-intersection_r64"></span><h3>
-public interface <a href='../interface/intersection_r64.html'>intersection_r64</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_r64"></span><h3>
+public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(setA, setB) result(inters)
     
     
    
@@ -323,11 +446,72 @@ public interface <a href='../interface/intersection_r64.html'>intersection_r64</
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>If element of set1 is ALSO in set2...</p><a href="../proc/intersection_r64.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>setA</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>setB</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64),
+  dimension(:), allocatable</small></h4>
+  
     
 
   </div>

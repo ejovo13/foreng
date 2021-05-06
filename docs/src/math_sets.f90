@@ -1,11 +1,49 @@
-submodule (foreng_math) sets
+module foreng_math_sets
+
+use foreng_env
 
 implicit none
 
+!=============================================================================!
+!=                               Set Interface                               =!
+!=============================================================================!
+interface intersection 
+    module procedure intersection_int
+    module procedure intersection_r32
+    module procedure intersection_r64
 
+end interface
+
+interface union
+    module procedure union_int
+    module procedure union_r32
+    module procedure union_r64
+end interface
+
+interface belongs_to
+    module procedure belongs_to_int
+    module procedure belongs_to_r32
+    module procedure belongs_to_r64
+end interface
+
+interface array_epsilon
+    module procedure array_epsilon_r32
+    module procedure array_epsilon_r64
+end interface
+
+interface abs_max_val
+    module procedure abs_max_val_r32
+    module procedure abs_max_val_r64   
+end interface 
+
+!=============================================================================!
+!=                               Set Functions                               =!
+!=============================================================================!
 contains 
 
-    module procedure intersection_int
+    function intersection_int(setA, setB) result(inters)
+        integer, dimension(:), intent(in) :: setA, setB
+        integer, dimension(:), allocatable :: inters
 
         integer :: setA_card
         integer :: i
@@ -37,9 +75,11 @@ contains
 
         end if
 
-    end procedure
+    end function
 
-    module procedure intersection_r32
+    function intersection_r32(setA, setB) result(inters)
+        real(real32), dimension(:), intent(in) :: setA, setB
+        real(real32), dimension(:), allocatable :: inters
 
         integer :: setA_card
         integer :: i
@@ -74,9 +114,11 @@ contains
 
         end if
 
-    end procedure
+    end function
 
-    module procedure intersection_r64
+    function intersection_r64(setA, setB) result(inters)
+        real(real64), dimension(:), intent(in) :: setA, setB
+        real(real64), dimension(:), allocatable :: inters
 
         integer :: setA_card
         integer :: i
@@ -111,9 +153,11 @@ contains
 
         end if
 
-    end procedure
+    end function
 
-    module procedure union_int
+    function union_int(setA, setB) result(union_set)
+        integer, intent(in), dimension(:) :: setA, setB
+        integer, dimension(:), allocatable :: union_set
 
         integer :: setB_cardinality
         integer :: i
@@ -136,9 +180,11 @@ contains
 
         end do
 
-    end procedure
+    end function
 
-    module procedure union_r32
+    function union_r32(setA, setB) result(union_set)
+        real(real32), intent(in), dimension(:) :: setA, setB
+        real(real32), dimension(:), allocatable :: union_set
 
         integer :: setB_cardinality
         integer :: i
@@ -162,9 +208,11 @@ contains
 
         end do
 
-    end procedure
+    end function
 
-    module procedure union_r64
+    function union_r64(setA, setB) result(union_set)
+        real(real64), intent(in), dimension(:) :: setA, setB
+        real(real64), dimension(:), allocatable :: union_set
 
         integer :: setB_cardinality
         integer :: i
@@ -187,9 +235,11 @@ contains
 
         end do
 
-    end procedure
+    end function
 
-    module procedure belongs_to_int
+    logical function belongs_to_int(x, A) result(bool)
+        integer, intent(in) :: x 
+        integer, dimension(:) :: A
     !! Check if an element belongs to a set
 
         integer :: cardinality !! Cardinality (size) of the set to check
@@ -210,9 +260,12 @@ contains
 
         end do
 
-    end procedure
+    end function
 
-    module procedure belongs_to_r32
+    logical function belongs_to_r32(x, A, eps) result(bool)
+        real(real32), intent(in) :: x 
+        real(real32), dimension(:) :: A
+        real(real32), optional :: eps
         !! Check if an element belongs to a set
 
         integer :: cardinality !! Cardinality (size) of the set to check
@@ -240,9 +293,12 @@ contains
 
         end do
 
-    end procedure
+    end function
 
-    module procedure belongs_to_r64
+    logical function belongs_to_r64(x, A, eps) result(bool)
+        real(real64), intent(in) :: x 
+        real(real64), dimension(:) :: A
+        real(real64), optional :: eps
         !! Check if an element belongs to a set
     
             integer :: cardinality !! Cardinality (size) of the set to check
@@ -267,34 +323,38 @@ contains
     
             end do
     
-    end procedure    
+    end function    
 
-    module procedure array_epsilon_r32
+    real(real32) function array_epsilon_r32(array) result(eps)
+        real(real32), dimension(:), intent(in) :: array   
 
         real(real32) :: max_val
         
         max_val = abs_max_val(array)
         eps = epsilon(max_val)
 
-    end procedure
+    end function
 
-    module procedure array_epsilon_r64
+    real(real64) function array_epsilon_r64(array) result(eps)
+        real(real64), dimension(:), intent(in) :: array  
 
         real(real64) :: max_val
         
         max_val = abs_max_val(array)
         eps = epsilon(max_val)
 
-    end procedure
+    end function
 
-    module procedure abs_max_val_r32
+    real(real32) function abs_max_val_r32(array) result(abs_max_val)
+        real(real32), dimension(:), intent(in) :: array
         abs_max_val = maxval(abs(array))
-    end procedure
+    end function
 
-    module procedure abs_max_val_r64
+    real(real64) function abs_max_val_r64(array) result(abs_max_val)
+        real(real64), dimension(:), intent(in) :: array
         abs_max_val = maxval(abs(array))
-    end procedure
+    end function
 
 
 
-end submodule
+end module

@@ -130,21 +130,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.1% of total for procedures.</p>Including implementation: 108 statements,  2.9% of total for procedures.">4 statements</a>
+    title="<p> 0.2% of total for procedures.</p>Including implementation: 16 statements,  0.8% of total for procedures.">4 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/math.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/math_sets.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/math.f90.html'>math.f90</a></li>
+     <li><a href='../sourcefile/math_sets.f90.html'>math_sets.f90</a></li>
     
-     <li><a href='../module/foreng_math.html'>foreng_math</a></li>
+     <li><a href='../module/foreng_math_sets.html'>foreng_math_sets</a></li>
     
   
      <li class="active">array_epsilon</li>
@@ -266,8 +266,8 @@
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-array_epsilon_r32"></span><h3>
-public interface <a href='../interface/array_epsilon_r32.html'>array_epsilon_r32</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-array_epsilon_r32"></span><h3>
+public function <a href='../proc/array_epsilon_r32.html'>array_epsilon_r32</a>(array) result(eps)
     
     
    
@@ -278,8 +278,46 @@ public interface <a href='../interface/array_epsilon_r32.html'>array_epsilon_r32
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real32)
+  </small></h4>
+  
     
 
   </div>
@@ -288,8 +326,8 @@ public interface <a href='../interface/array_epsilon_r32.html'>array_epsilon_r32
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-array_epsilon_r64"></span><h3>
-public interface <a href='../interface/array_epsilon_r64.html'>array_epsilon_r64</a>()
+  <div class="panel-heading codesum"><span class="anchor" id="proc-array_epsilon_r64"></span><h3>
+public function <a href='../proc/array_epsilon_r64.html'>array_epsilon_r64</a>(array) result(eps)
     
     
    
@@ -300,8 +338,46 @@ public interface <a href='../interface/array_epsilon_r64.html'>array_epsilon_r64
     
     <h4>Arguments</h4>
     
-      <em>None</em>
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
     
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64)
+  </small></h4>
+  
     
 
   </div>
