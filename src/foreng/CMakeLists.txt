@@ -1,7 +1,9 @@
 add_library(foreng_env foreng_env.f90)
+add_library(foreng foreng.f90)
 add_library(math math.f90 math_trig.f90 math_sets.f90)
 
 target_link_libraries(math foreng_env)
+target_link_libraries(foreng math)
 
 
 enable_testing()
