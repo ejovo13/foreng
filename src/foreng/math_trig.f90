@@ -8,39 +8,85 @@ implicit none
 !=                         Trigonometry Interface                            =!
 !=============================================================================!
 interface sind
-!! This is an interface comment
+!! Calculate \(\sin(\theta)\) where \(\theta\) is in degrees
 !!```fortran
 !!
-!!print *, "sup bitch"
+!!real(real32) :: theta_r32 = 90
+!!real(real64) :: theta_r64 = 30
 !!
-!!
-!!``
+!!print *, sind(theta_r32) ! = 1.000 
+!!print *, sind(theta_r64) ! = 0.500
+!!```
     module procedure sind_r32
-    !! This is an interface procedure comment
     module procedure sind_r64
 end interface
 
 interface cosd
+!! Calculate \(\cos(\theta)\) where \(\theta\) is in degrees
+!!```fortran
+!!
+!!real(real32) :: theta_r32 = 90
+!!real(real64) :: theta_r64 = 60
+!!
+!!print *, cosd(theta_r32) ! = 0.000 
+!!print *, cosd(theta_r64) ! = 0.500
+!!```
     module procedure cosd_r32
     module procedure cosd_r64
 end interface
 
 interface tand
+!! Calculate \(\tan(\theta)\) where \(\theta\) is in degrees
+!!```fortran
+!!
+!!real(real32) :: theta_r32 = 45
+!!real(real64) :: theta_r64 = -45
+!!
+!!print *, tand(theta_r32) ! = 1.000 
+!!print *, tand(theta_r64) ! = -1.000
+!!```
     module procedure tand_r32
     module procedure tand_r64
 end interface
 
 interface asind
+!! Calculate \(\textrm{asin}(x)\) and return \(\theta\) in degrees
+!!```fortran
+!!
+!!real(real32) :: x_r32 = 1
+!!real(real64) :: x_r64 = 0
+!!
+!!print *, asind(x_r32) ! = 90.000
+!!print *, asind(x_r64) ! = 0.000
+!!```
     module procedure asind_r32
     module procedure asind_r64
 end interface
 
 interface acosd
+!! Calculate \(\textrm{acos}(x)\) and return \(\theta\) in degrees
+!!```fortran
+!!
+!!real(real32) :: x_r32 = 1
+!!real(real64) :: x_r64 = 0
+!!
+!!print *, acosd(x_r32) ! = 0.000
+!!print *, acosd(x_r64) ! = 90.000
+!!```
     module procedure acosd_r32
     module procedure acosd_r64
 end interface
 
 interface atand
+!! Calculate \(\textrm{atan}(x)\) and return \(\theta\) in degrees
+!!```fortran
+!!
+!!real(real32) :: x_r32 = 1
+!!real(real64) :: x_r64 = -1
+!!
+!!print *, acosd(x_r32) ! = 45.000
+!!print *, acosd(x_r64) ! = -45.000
+!!```
     module procedure atand_r32
     module procedure atand_r64
 end interface
@@ -61,11 +107,13 @@ interface tanhd
 end interface
 
 interface deg_to_rad    
+!! Convert \(\theta\) from degrees to radians
     module procedure deg_to_rad_r32
     module procedure deg_to_rad_r64
 end interface
 
 interface rad_to_deg
+!! Conver \(\theta\) from radians to degrees
     module procedure rad_to_deg_r32
     module procedure rad_to_deg_r64
 end interface
@@ -77,93 +125,116 @@ end interface
 contains
 
     elemental real(real32) function sind_r32(theta) result(sind)
-    !! This is a function definition comment
-        real(real32), intent(in) :: theta
+    !! Single precision
+        real(real32), intent(in) :: theta !! \(\theta\) in degrees
         sind = sin(deg_to_rad(theta))
     end function
 
     elemental real(real64) function sind_r64(theta) result(sind)
-        real(real64), intent(in) :: theta
+    !! Double precision
+        real(real64), intent(in) :: theta !! \(\theta\) in degrees
         sind = sin(deg_to_rad(theta))
     end function
 
     elemental real(real32) function cosd_r32(theta) result(cosd)
-        real(real32), intent(in) :: theta
+    !! Single precision
+        real(real32), intent(in) :: theta !! \(\theta\) in degrees
         cosd = cos(deg_to_rad(theta))
     end function
 
     elemental real(real64) function cosd_r64(theta) result(cosd)
-        real(real64), intent(in) :: theta
+    !! Double precision
+        real(real64), intent(in) :: theta !! \(\theta\) in degrees
         cosd = cos(deg_to_rad(theta))
     end function
 
     elemental real(real32) function tand_r32(theta) result(tand)
-        real(real32), intent(in) :: theta
+    !! Single precision
+        real(real32), intent(in) :: theta !! \(\theta\) in degrees
         tand = tan(deg_to_rad(theta))
     end function
 
     elemental real(real64) function tand_r64(theta) result(tand)
-        real(real64), intent(in) :: theta
+    !! Double precision
+        real(real64), intent(in) :: theta !! \(\theta\) in degrees
         tand = tan(deg_to_rad(theta))
     end function
 
-    elemental real(real32) function asind_r32(theta) result(asind)
-        real(real32), intent(in) :: theta
-        asind = asin(deg_to_rad(theta))
+    elemental function asind_r32(x) result(theta)
+    !! Single precision
+        real(real32), intent(in) :: x 
+        real(real32) :: theta !! \(\theta\) in degrees
+        theta = rad_to_deg(asin(x))
     end function
 
-    elemental real(real64) function asind_r64(theta) result(asind)
-        real(real64), intent(in) :: theta
-        asind = asin(deg_to_rad(theta))
+    elemental function asind_r64(x) result(theta)
+    !! Double precision
+        real(real64), intent(in) :: x 
+        real(real64) :: theta !! \(\theta\) in degrees
+        theta = rad_to_deg(asin(x))
     end function
 
-    elemental real(real32) function acosd_r32(theta) result(acosd)
-        real(real32), intent(in) :: theta
-        acosd = acos(deg_to_rad(theta))
+    elemental function acosd_r32(x) result(theta)
+    !! Single precision
+        real(real32), intent(in) :: x
+        real(real32) :: theta !! \(\theta\) in degrees
+        theta = rad_to_deg(acos(x))
     end function
 
-    elemental real(real64) function acosd_r64(theta) result(acosd)
-        real(real64), intent(in) :: theta
-        acosd = acos(deg_to_rad(theta))
+    elemental function acosd_r64(x) result(theta)
+    !! Double precision
+        real(real64), intent(in) :: x 
+        real(real64) :: theta !! \(\theta\) in degrees
+        theta = rad_to_deg(acos(x))
     end function
 
-    elemental real(real32) function atand_r32(theta) result(atand)
-        real(real32), intent(in) :: theta
-        atand = atan(deg_to_rad(theta))
+    elemental function atand_r32(x) result(theta)
+    !! Single precision
+        real(real32), intent(in) :: x
+        real(real32) :: theta !! \(\theta\) in degrees
+        theta = rad_to_deg(atan(x))
     end function
 
-    elemental real(real64) function atand_r64(theta) result(atand)
-        real(real64), intent(in) :: theta
-        atand = atan(deg_to_rad(theta))
+    elemental function atand_r64(x) result(theta)
+    !! Double precision
+        real(real64), intent(in) :: x 
+        real(real64) :: theta !! \(\theta\) in degrees
+        theta = rad_to_deg(atan(x))
     end function
 
     elemental real(real32) function sinhd_r32(theta) result(sinhd)
-        real(real32), intent(in) :: theta
+    !! Single precision
+        real(real32), intent(in) :: theta !! \(\theta\) in degrees
         sinhd = sinh(deg_to_rad(theta))
     end function
 
     elemental real(real64) function sinhd_r64(theta) result(sinhd)
-        real(real64), intent(in) :: theta
+    !! Double precision
+        real(real64), intent(in) :: theta !! \(\theta\) in degrees
         sinhd = sinh(deg_to_rad(theta))
     end function
 
     elemental real(real32) function coshd_r32(theta) result(coshd)
-        real(real32), intent(in) :: theta
+    !! Single precision
+        real(real32), intent(in) :: theta !! \(\theta\) in degrees
         coshd = cosh(deg_to_rad(theta))
     end function
 
     elemental real(real64) function coshd_r64(theta) result(coshd)
-        real(real64), intent(in) :: theta
+    !! Double precision
+        real(real64), intent(in) :: theta !! \(\theta\) in degrees
         coshd = cosh(deg_to_rad(theta))
     end function
 
     elemental real(real32) function tanhd_r32(theta) result(tanhd)
-        real(real32), intent(in) :: theta
+    !! Single precision
+        real(real32), intent(in) :: theta !! \(\theta\) in degrees
         tanhd = tanh(deg_to_rad(theta))
     end function
 
     elemental real(real64) function tanhd_r64(theta) result(tanhd)
-        real(real64), intent(in) :: theta
+    !! Double precision
+        real(real64), intent(in) :: theta !! \(\theta\) in degrees
         tanhd = tanh(deg_to_rad(theta))
     end function
 

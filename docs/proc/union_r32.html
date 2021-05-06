@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">16 statements</a>
+    title=" 0.9% of total for procedures.">17 statements</a>
      </li> 
      
      
@@ -197,7 +197,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public function union_r32(setA, setB) result(union_set)
+public function union_r32(A, B) result(union_set)
     
     
    
@@ -207,7 +207,7 @@ public function union_r32(setA, setB) result(union_set)
 
 
     
-    <p>Set union right away to setA</p>
+    <p>Set union right away to A</p>
 <p>If set2(i) is already a part of the union, then don't add it</p>
     
 
@@ -229,12 +229,12 @@ public function union_r32(setA, setB) result(union_set)
   
 <tr>
   
-  <td><span class="anchor" id="variable-seta~5"></span>real(kind=real32),</td>
+  <td><span class="anchor" id="variable-a~5"></span>real(kind=real32),</td>
   <td>intent(in),</td>
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -244,12 +244,12 @@ public function union_r32(setA, setB) result(union_set)
   
 <tr>
   
-  <td><span class="anchor" id="variable-setb~5"></span>real(kind=real32),</td>
+  <td><span class="anchor" id="variable-b~5"></span>real(kind=real32),</td>
   <td>intent(in),</td>
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -265,7 +265,9 @@ public function union_r32(setA, setB) result(union_set)
     
    <h3>Return Value <small><span class="anchor" id="variable-union_set~2"></span>real(kind=real32),
   dimension(:),allocatable</small></h3>
-    
+    <p>
+<script type="math/tex"> A \cup B</script>
+</p>
     
     
     

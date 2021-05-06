@@ -207,6 +207,9 @@ public function belongs_to_r32(x, A, eps) result(bool)
 
 
     
+    <p>Check if a value <script type="math/tex">x</script> belongs to a set within a certain tolerance <script type="math/tex">\epsilon</script>. If <script type="math/tex">\epsilon</script> is not specified, it will automatically
+ calculated using the <script type="math/tex">\verb|array_epsilon|</script> function</p>
+    
 
     <h3>Arguments</h3>
     
@@ -226,7 +229,7 @@ public function belongs_to_r32(x, A, eps) result(bool)
   
 <tr>
   
-  <td><span class="anchor" id="variable-x~6"></span>real(kind=real32),</td>
+  <td><span class="anchor" id="variable-x~12"></span>real(kind=real32),</td>
   <td>intent(in)</td>
   <td></td>
   
@@ -241,7 +244,7 @@ public function belongs_to_r32(x, A, eps) result(bool)
   
 <tr>
   
-  <td><span class="anchor" id="variable-a~2"></span>real(kind=real32),</td>
+  <td><span class="anchor" id="variable-a~8"></span>real(kind=real32),</td>
   <td></td>
   <td></td>
   
@@ -261,7 +264,9 @@ public function belongs_to_r32(x, A, eps) result(bool)
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>eps</strong></td><td><p>
+<script type="math/tex">x = y \iff \textrm{abs}(x - y) < \epsilon</script>
+</p></td>
   
 </tr>
 

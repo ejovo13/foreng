@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.3% of total for procedures.</p>Including implementation: 82 statements,  4.3% of total for procedures.">5 statements</a>
+    title="<p> 0.3% of total for procedures.</p>Including implementation: 85 statements,  4.4% of total for procedures.">5 statements</a>
      </li> 
      
      
@@ -211,10 +211,10 @@
     
     <div class="col-md-9" id='text'>
       <h2>public interface intersection</h2>
-   
+   <p>Compute the intersection of two sets</p>
      
      
-    
+    <br>
 
      <section class="visible-xs visible-sm hidden-md">
        
@@ -271,7 +271,7 @@
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_int"></span><h3>
-public function <a href='../proc/intersection_int.html'>intersection_int</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_int.html'>intersection_int</a>(A, B) result(inters)
     
     
    
@@ -312,7 +312,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -327,7 +327,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -344,7 +344,9 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   
      <h4>Return Value <small>integer,
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
   </div>
@@ -354,7 +356,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_r32"></span><h3>
-public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(A, B) result(inters)
     
     
    
@@ -396,7 +398,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -411,7 +413,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -428,7 +430,9 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   
      <h4>Return Value <small>real(kind=real32),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
   </div>
@@ -438,7 +442,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_r64"></span><h3>
-public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(A, B) result(inters)
     
     
    
@@ -479,7 +483,7 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -494,7 +498,7 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -511,7 +515,9 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   
      <h4>Return Value <small>real(kind=real64),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
   </div>

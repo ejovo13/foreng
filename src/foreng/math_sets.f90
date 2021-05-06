@@ -8,6 +8,7 @@ implicit none
 !=                               Set Interface                               =!
 !=============================================================================!
 interface intersection 
+!! Compute the intersection of two sets
     module procedure intersection_int
     module procedure intersection_r32
     module procedure intersection_r64
@@ -15,12 +16,15 @@ interface intersection
 end interface
 
 interface union
+!! Compute the union of two sets
     module procedure union_int
     module procedure union_r32
     module procedure union_r64
 end interface
 
 interface belongs_to
+!! Check if \(x \in \textrm{A}\) <br>
+!! \(x\) belongs to \(A\) if there is at least one element \(y\) in \(A\) for which \(x = y\)
     module procedure belongs_to_int
     module procedure belongs_to_r32
     module procedure belongs_to_r64
@@ -41,26 +45,27 @@ end interface
 !=============================================================================!
 contains 
 
-    function intersection_int(setA, setB) result(inters)
-        integer, dimension(:), intent(in) :: setA, setB
-        integer, dimension(:), allocatable :: inters
+    function intersection_int(A, B) result(inters)
+        integer, dimension(:), intent(in) :: A !! set A
+        integer, dimension(:), intent(in) :: B !! set B
+        integer, dimension(:), allocatable :: inters !! \( A \cap B\)
 
-        integer :: setA_card
+        integer :: A_card
         integer :: i
         integer :: zero = 0
 
-        setA_card = size(setA)
+        A_card = size(A)
 
-        do i = 1, setA_card
+        do i = 1, A_card
 
-            if (belongs_to(setA(i), setB)) then
-                !! If element of set1 is ALSO in set2...
+            if (belongs_to(A(i), B)) then
+                ! If element of set1 is ALSO in set2...
 
                 if (allocated(inters)) then
-                    inters = [inters, setA(i)]
+                    inters = [inters, A(i)]
                 else
                     allocate(inters(1))
-                    inters = setA(i)
+                    inters = A(i)
                 end if
             else 
                 cycle
@@ -69,7 +74,7 @@ contains
         end do
 
         if (.not. allocated(inters)) then 
-            !! If the intersection is the empty set
+            ! If the intersection is the empty set
             allocate(inters(1))
             inters = zero/zero
 
@@ -77,29 +82,29 @@ contains
 
     end function
 
-    function intersection_r32(setA, setB) result(inters)
-        real(real32), dimension(:), intent(in) :: setA, setB
-        real(real32), dimension(:), allocatable :: inters
+    function intersection_r32(A, B) result(inters)
+        real(real32), dimension(:), intent(in) :: A !! set A
+        real(real32), dimension(:), intent(in) :: B !! set B
+        real(real32), dimension(:), allocatable :: inters !! \( A \cap B\)
 
-        integer :: setA_card
+        integer :: A_card
         integer :: i
         real(real32) :: zero = 0
         real(real32) :: eps
 
-        eps = array_epsilon([setA, setB])
+        eps = array_epsilon([A, B])
     
-        setA_card = size(setA)
+        A_card = size(A)
 
-        do i = 1, setA_card
+        do i = 1, A_card
 
-            if (belongs_to(setA(i), setB, eps)) then
-                !! If element of set1 is ALSO in set2...
-                print *, "MATCH!!"
+            if (belongs_to(A(i), B, eps)) then
+                ! If element of set1 is ALSO in set2...
                 if (allocated(inters)) then
-                    inters = [inters, setA(i)]
+                    inters = [inters, A(i)]
                 else
                     allocate(inters(1))
-                    inters = setA(i)
+                    inters = A(i)
                 end if
             else 
                 cycle
@@ -108,7 +113,7 @@ contains
         end do
 
         if (.not. allocated(inters)) then 
-            !! If the intersection is the empty set
+            ! If the intersection is the empty set
             allocate(inters(1))
             inters = zero/zero
 
@@ -116,29 +121,30 @@ contains
 
     end function
 
-    function intersection_r64(setA, setB) result(inters)
-        real(real64), dimension(:), intent(in) :: setA, setB
-        real(real64), dimension(:), allocatable :: inters
+    function intersection_r64(A, B) result(inters)
+        real(real64), dimension(:), intent(in) :: A !! set A
+        real(real64), dimension(:), intent(in) :: B !! set B
+        real(real64), dimension(:), allocatable :: inters !! \( A \cap B\)
 
-        integer :: setA_card
+        integer :: A_card
         integer :: i
         real(real64) :: zero = 0
         real(real64) :: eps
 
-        eps = array_epsilon([setA, setB])
+        eps = array_epsilon([A, B])
 
-        setA_card = size(setA)
+        A_card = size(A)
 
-        do i = 1, setA_card
+        do i = 1, A_card
 
-            if (belongs_to(setA(i), setB, eps)) then
-                !! If element of set1 is ALSO in set2...
+            if (belongs_to(A(i), B, eps)) then
+                ! If element of set1 is ALSO in set2...
 
                 if (allocated(inters)) then
-                    inters = [inters, setA(i)]
+                    inters = [inters, A(i)]
                 else
                     allocate(inters(1))
-                    inters = setA(i)
+                    inters = A(i)
                 end if
             else 
                 cycle
@@ -147,7 +153,7 @@ contains
         end do
 
         if (.not. allocated(inters)) then 
-            !! If the intersection is the empty set
+            ! If the intersection is the empty set
             allocate(inters(1))
             inters = zero/zero
 
@@ -155,82 +161,85 @@ contains
 
     end function
 
-    function union_int(setA, setB) result(union_set)
-        integer, intent(in), dimension(:) :: setA, setB
-        integer, dimension(:), allocatable :: union_set
+    function union_int(A, B) result(union_set)
+        integer, intent(in), dimension(:) :: A !! set A
+        integer, intent(in), dimension(:) :: B !! set B
+        integer, dimension(:), allocatable :: union_set !! \( A \cup B\)
 
-        integer :: setB_cardinality
+        integer :: B_cardinality
         integer :: i
 
 
-        setB_cardinality = size(setB)
+        B_cardinality = size(B)
 
-        !! Set union right away to setA
+        ! Set union right away to A
 
-        union_set = setA
+        union_set = A
 
-        do i = 1, setB_cardinality
+        do i = 1, B_cardinality
 
-            if(belongs_to(setB(i), union_set)) then
-            !! If set2(i) is already a part of the union, then don't add it
+            if(belongs_to(B(i), union_set)) then
+            ! If set2(i) is already a part of the union, then don't add it
                 cycle
             else
-                union_set = [union_set, setB(i)]
+                union_set = [union_set, B(i)]
             end if
 
         end do
 
     end function
 
-    function union_r32(setA, setB) result(union_set)
-        real(real32), intent(in), dimension(:) :: setA, setB
-        real(real32), dimension(:), allocatable :: union_set
+    function union_r32(A, B) result(union_set)
+        real(real32), intent(in), dimension(:) :: A !! set A
+        real(real32), intent(in), dimension(:) :: B !! set B
+        real(real32), dimension(:), allocatable :: union_set !! \( A \cup B\)
 
-        integer :: setB_cardinality
+        integer :: B_cardinality
         integer :: i
 
 
-        setB_cardinality = size(setB)
+        B_cardinality = size(B)
 
-        !! Set union right away to setA
+        ! Set union right away to A
 
-        union_set = setA
+        union_set = A
 
-        do i = 1, setB_cardinality
+        do i = 1, B_cardinality
 
-            if(belongs_to(setB(i), union_set)) then
-            !! If set2(i) is already a part of the union, then don't add it
+            if(belongs_to(B(i), union_set)) then
+            ! If set2(i) is already a part of the union, then don't add it
                 print *, "MATCH FOUND!!"
                 cycle
             else
-                union_set = [union_set, setB(i)]
+                union_set = [union_set, B(i)]
             end if
 
         end do
 
     end function
 
-    function union_r64(setA, setB) result(union_set)
-        real(real64), intent(in), dimension(:) :: setA, setB
-        real(real64), dimension(:), allocatable :: union_set
+    function union_r64(A, B) result(union_set)
+        real(real64), intent(in), dimension(:) :: A !! set A
+        real(real64), intent(in), dimension(:) :: B !! set B
+        real(real64), dimension(:), allocatable :: union_set !! \( A \cup B\)
 
-        integer :: setB_cardinality
+        integer :: B_cardinality
         integer :: i
 
 
-        setB_cardinality = size(setB)
+        B_cardinality = size(B)
 
-        !! Set union right away to setA
+        ! Set union right away to A
 
-        union_set = setA
+        union_set = A
 
-        do i = 1, setB_cardinality
+        do i = 1, B_cardinality
 
-            if(belongs_to(setB(i), union_set)) then
-            !! If set2(i) is already a part of the union, then don't add it
+            if(belongs_to(B(i), union_set)) then
+            ! If set2(i) is already a part of the union, then don't add it
                 cycle
             else
-                union_set = [union_set, setB(i)]
+                union_set = [union_set, B(i)]
             end if
 
         end do
@@ -238,11 +247,12 @@ contains
     end function
 
     logical function belongs_to_int(x, A) result(bool)
+    !! Check if a value \(x\) belongs to a set \(\textrm{A}\)
         integer, intent(in) :: x 
         integer, dimension(:) :: A
-    !! Check if an element belongs to a set
+        ! Check if an element belongs to a set
 
-        integer :: cardinality !! Cardinality (size) of the set to check
+        integer :: cardinality ! Cardinality (size) of the set to check
         integer :: i
 
         cardinality = size(A)
@@ -263,12 +273,14 @@ contains
     end function
 
     logical function belongs_to_r32(x, A, eps) result(bool)
+    !! Check if a value \(x\) belongs to a set within a certain tolerance \(\epsilon\). If \(\epsilon\) is not specified, it will automatically
+    !! calculated using the \(\verb|array_epsilon|\) function
         real(real32), intent(in) :: x 
         real(real32), dimension(:) :: A
-        real(real32), optional :: eps
-        !! Check if an element belongs to a set
+        real(real32), optional :: eps !! \(x = y \iff \textrm{abs}(x - y) < \epsilon\)
+        ! Check if an element belongs to a set
 
-        integer :: cardinality !! Cardinality (size) of the set to check
+        integer :: cardinality ! Cardinality (size) of the set to check
         integer :: i
         real(real32) :: eps_
 
@@ -296,12 +308,14 @@ contains
     end function
 
     logical function belongs_to_r64(x, A, eps) result(bool)
+    !! Check if a value \(x\) belongs to a set within a certain tolerance \(\epsilon\). If \(\epsilon\) is not specified, it will automatically
+    !! calculated using the \(\verb|array_epsilon|\) function
         real(real64), intent(in) :: x 
         real(real64), dimension(:) :: A
-        real(real64), optional :: eps
-        !! Check if an element belongs to a set
+        real(real64), optional :: eps !! \(x = y \iff \textrm{abs}(x - y) < \epsilon\)
+        ! Check if an element belongs to a set
     
-            integer :: cardinality !! Cardinality (size) of the set to check
+            integer :: cardinality ! Cardinality (size) of the set to check
             integer :: i
     
             if(.not. present(eps)) then

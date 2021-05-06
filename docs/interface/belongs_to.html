@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.3% of total for procedures.</p>Including implementation: 64 statements,  3.4% of total for procedures.">5 statements</a>
+    title="<p> 0.3% of total for procedures.</p>Including implementation: 64 statements,  3.3% of total for procedures.">5 statements</a>
      </li> 
      
      
@@ -211,10 +211,12 @@
     
     <div class="col-md-9" id='text'>
       <h2>public interface belongs_to</h2>
-   
+   <p>Check if <script type="math/tex">x \in \textrm{A}</script> <br>
+ <script type="math/tex">x</script> belongs to <script type="math/tex">A</script> if there is at least one element <script type="math/tex">y</script> in <script type="math/tex">A</script> for which <script type="math/tex">x = y</script>
+</p>
      
      
-    
+    <br>
 
      <section class="visible-xs visible-sm hidden-md">
        
@@ -279,6 +281,15 @@ public function <a href='../proc/belongs_to_int.html'>belongs_to_int</a>(x, A) r
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set <script type="math/tex">\textrm{A}</script>
+</p>
     
     <h4>Arguments</h4>
     
@@ -319,7 +330,7 @@ public function <a href='../proc/belongs_to_int.html'>belongs_to_int</a>(x, A) r
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>A</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>A</strong></td><td></td>
   
 </tr>
 
@@ -354,6 +365,15 @@ public function <a href='../proc/belongs_to_r32.html'>belongs_to_r32</a>(x, A, e
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set within a certain tolerance <script type="math/tex">\epsilon</script>. If <script type="math/tex">\epsilon</script> is not specified, it will automatically
+ calculated using the <script type="math/tex">\verb|array_epsilon|</script> function</p>
     
     <h4>Arguments</h4>
     
@@ -409,7 +429,9 @@ public function <a href='../proc/belongs_to_r32.html'>belongs_to_r32</a>(x, A, e
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>eps</strong></td><td><p>
+<script type="math/tex">x = y \iff \textrm{abs}(x - y) < \epsilon</script>
+</p></td>
   
 </tr>
 
@@ -444,6 +466,15 @@ public function <a href='../proc/belongs_to_r64.html'>belongs_to_r64</a>(x, A, e
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set within a certain tolerance <script type="math/tex">\epsilon</script>. If <script type="math/tex">\epsilon</script> is not specified, it will automatically
+ calculated using the <script type="math/tex">\verb|array_epsilon|</script> function</p>
     
     <h4>Arguments</h4>
     
@@ -499,7 +530,9 @@ public function <a href='../proc/belongs_to_r64.html'>belongs_to_r64</a>(x, A, e
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>eps</strong></td><td><p>
+<script type="math/tex">x = y \iff \textrm{abs}(x - y) < \epsilon</script>
+</p></td>
   
 </tr>
 

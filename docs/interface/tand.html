@@ -209,10 +209,16 @@
     
     <div class="col-md-9" id='text'>
       <h2>public interface tand</h2>
-   
+   <p>Calculate <script type="math/tex">\tan(\theta)</script> where <script type="math/tex">\theta</script> is in degrees</p>
+<div class="codehilite"><pre><span></span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta_r32</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta_r64</span> <span class="o">=</span> <span class="o">-</span><span class="mi">45</span>
+
+<span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="n">tand</span><span class="p">(</span><span class="n">theta_r32</span><span class="p">)</span> <span class="c">! = 1.000 </span>
+<span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="n">tand</span><span class="p">(</span><span class="n">theta_r64</span><span class="p">)</span> <span class="c">! = -1.000</span>
+</pre></div>
      
      
-    
+    <br>
 
      <section class="visible-xs visible-sm hidden-md">
        
@@ -275,6 +281,14 @@ public elemental function <a href='../proc/tand_r32.html'>tand_r32</a>(theta) re
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Single precision</p>
     
     <h4>Arguments</h4>
     
@@ -300,7 +314,8 @@ public elemental function <a href='../proc/tand_r32.html'>tand_r32</a>(theta) re
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>theta</strong></td><td></td>
+  <td><strong>theta</strong></td><td><p>
+<script type="math/tex">\theta</script> in degrees</p></td>
   
 </tr>
 
@@ -335,6 +350,14 @@ public elemental function <a href='../proc/tand_r64.html'>tand_r64</a>(theta) re
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Double precision</p>
     
     <h4>Arguments</h4>
     
@@ -360,7 +383,8 @@ public elemental function <a href='../proc/tand_r64.html'>tand_r64</a>(theta) re
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>theta</strong></td><td></td>
+  <td><strong>theta</strong></td><td><p>
+<script type="math/tex">\theta</script> in degrees</p></td>
   
 </tr>
 

@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.2% of total for procedures.</p>Including implementation: 12 statements,  0.6% of total for procedures.">4 statements</a>
+    title="<p> 0.2% of total for procedures.</p>Including implementation: 14 statements,  0.7% of total for procedures.">4 statements</a>
      </li> 
      
      
@@ -209,10 +209,16 @@
     
     <div class="col-md-9" id='text'>
       <h2>public interface atand</h2>
-   
+   <p>Calculate <script type="math/tex">\textrm{atan}(x)</script> and return <script type="math/tex">\theta</script> in degrees</p>
+<div class="codehilite"><pre><span></span><span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x_r32</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x_r64</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="n">acosd</span><span class="p">(</span><span class="n">x_r32</span><span class="p">)</span> <span class="c">! = 45.000</span>
+<span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="n">acosd</span><span class="p">(</span><span class="n">x_r64</span><span class="p">)</span> <span class="c">! = -45.000</span>
+</pre></div>
      
      
-    
+    <br>
 
      <section class="visible-xs visible-sm hidden-md">
        
@@ -267,7 +273,7 @@
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-atand_r32"></span><h3>
-public elemental function <a href='../proc/atand_r32.html'>atand_r32</a>(theta) result(atand)
+public elemental function <a href='../proc/atand_r32.html'>atand_r32</a>(x) result(theta)
     
     
    
@@ -275,6 +281,14 @@ public elemental function <a href='../proc/atand_r32.html'>atand_r32</a>(theta) 
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Single precision</p>
     
     <h4>Arguments</h4>
     
@@ -300,7 +314,7 @@ public elemental function <a href='../proc/atand_r32.html'>atand_r32</a>(theta) 
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>theta</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
   
 </tr>
 
@@ -317,7 +331,8 @@ public elemental function <a href='../proc/atand_r32.html'>atand_r32</a>(theta) 
   
      <h4>Return Value <small>real(kind=real32)
   </small></h4>
-  
+  <p>
+<script type="math/tex">\theta</script> in degrees</p>
     
 
   </div>
@@ -327,7 +342,7 @@ public elemental function <a href='../proc/atand_r32.html'>atand_r32</a>(theta) 
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-atand_r64"></span><h3>
-public elemental function <a href='../proc/atand_r64.html'>atand_r64</a>(theta) result(atand)
+public elemental function <a href='../proc/atand_r64.html'>atand_r64</a>(x) result(theta)
     
     
    
@@ -335,6 +350,14 @@ public elemental function <a href='../proc/atand_r64.html'>atand_r64</a>(theta) 
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Double precision</p>
     
     <h4>Arguments</h4>
     
@@ -360,7 +383,7 @@ public elemental function <a href='../proc/atand_r64.html'>atand_r64</a>(theta) 
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>theta</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
   
 </tr>
 
@@ -377,7 +400,8 @@ public elemental function <a href='../proc/atand_r64.html'>atand_r64</a>(theta) 
   
      <h4>Return Value <small>real(kind=real64)
   </small></h4>
-  
+  <p>
+<script type="math/tex">\theta</script> in degrees</p>
     
 
   </div>

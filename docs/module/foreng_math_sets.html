@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="12.3% of total for modules and submodules.">230 statements</a>
+    title="12.6% of total for modules and submodules.">236 statements</a>
      </li> 
      
      
@@ -378,6 +378,11 @@
     
   </h3></div>
   
+  <div class="panel-body">
+    
+    <p>Compute the intersection of two sets</p>
+  </div>
+  
   <ul class="list-group">
   
   
@@ -386,7 +391,7 @@
     
     
     <h3>
-public function <a href='../proc/intersection_int.html'>intersection_int</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_int.html'>intersection_int</a>(A, B) result(inters)
     
     
    
@@ -425,7 +430,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -440,7 +445,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -457,7 +462,9 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   
      <h4>Return Value <small>integer,
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
     </li>
@@ -466,7 +473,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
     
     
     <h3>
-public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(A, B) result(inters)
     
     
    
@@ -506,7 +513,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -521,7 +528,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -538,7 +545,9 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   
      <h4>Return Value <small>real(kind=real32),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
     </li>
@@ -547,7 +556,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
     
     
     <h3>
-public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(A, B) result(inters)
     
     
    
@@ -586,7 +595,7 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -601,7 +610,7 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -618,7 +627,9 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   
      <h4>Return Value <small>real(kind=real64),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
     </li>
@@ -642,7 +653,7 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
     
     
     <h3>
-public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) result(union_set)
+public function <a href='../proc/union_int.html'>union_int</a>(A, B) result(union_set)
     
     
    
@@ -655,7 +666,7 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
 
 
 
-<p>Set union right away to setA</p><a href="../proc/union_int.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Set union right away to A</p><a href="../proc/union_int.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -681,7 +692,7 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -696,7 +707,7 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -713,7 +724,9 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
   
      <h4>Return Value <small>integer,
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cup B</script>
+</p>
     
 
     </li>
@@ -722,7 +735,7 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
     
     
     <h3>
-public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) result(union_set)
+public function <a href='../proc/union_r32.html'>union_r32</a>(A, B) result(union_set)
     
     
    
@@ -735,7 +748,7 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
 
 
 
-<p>Set union right away to setA</p><a href="../proc/union_r32.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Set union right away to A</p><a href="../proc/union_r32.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -761,7 +774,7 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -776,7 +789,7 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -793,7 +806,9 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
   
      <h4>Return Value <small>real(kind=real32),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cup B</script>
+</p>
     
 
     </li>
@@ -802,7 +817,7 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
     
     
     <h3>
-public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) result(union_set)
+public function <a href='../proc/union_r64.html'>union_r64</a>(A, B) result(union_set)
     
     
    
@@ -815,7 +830,7 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
 
 
 
-<p>Set union right away to setA</p><a href="../proc/union_r64.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Set union right away to A</p><a href="../proc/union_r64.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -841,7 +856,7 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -856,7 +871,7 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -873,7 +888,9 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
   
      <h4>Return Value <small>real(kind=real64),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cup B</script>
+</p>
     
 
     </li>
@@ -889,6 +906,13 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
     
   </h3></div>
   
+  <div class="panel-body">
+    
+    <p>Check if <script type="math/tex">x \in \textrm{A}</script> <br>
+ <script type="math/tex">x</script> belongs to <script type="math/tex">A</script> if there is at least one element <script type="math/tex">y</script> in <script type="math/tex">A</script> for which <script type="math/tex">x = y</script>
+</p>
+  </div>
+  
   <ul class="list-group">
   
   
@@ -903,6 +927,15 @@ public function <a href='../proc/belongs_to_int.html'>belongs_to_int</a>(x, A) r
    
 </h3>
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set <script type="math/tex">\textrm{A}</script>
+</p>
     
     <h4>Arguments</h4>
     
@@ -943,7 +976,7 @@ public function <a href='../proc/belongs_to_int.html'>belongs_to_int</a>(x, A) r
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>A</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>A</strong></td><td></td>
   
 </tr>
 
@@ -975,6 +1008,15 @@ public function <a href='../proc/belongs_to_r32.html'>belongs_to_r32</a>(x, A, e
    
 </h3>
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set within a certain tolerance <script type="math/tex">\epsilon</script>. If <script type="math/tex">\epsilon</script> is not specified, it will automatically
+ calculated using the <script type="math/tex">\verb|array_epsilon|</script> function</p>
     
     <h4>Arguments</h4>
     
@@ -1030,7 +1072,9 @@ public function <a href='../proc/belongs_to_r32.html'>belongs_to_r32</a>(x, A, e
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>eps</strong></td><td><p>
+<script type="math/tex">x = y \iff \textrm{abs}(x - y) < \epsilon</script>
+</p></td>
   
 </tr>
 
@@ -1062,6 +1106,15 @@ public function <a href='../proc/belongs_to_r64.html'>belongs_to_r64</a>(x, A, e
    
 </h3>
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set within a certain tolerance <script type="math/tex">\epsilon</script>. If <script type="math/tex">\epsilon</script> is not specified, it will automatically
+ calculated using the <script type="math/tex">\verb|array_epsilon|</script> function</p>
     
     <h4>Arguments</h4>
     
@@ -1117,7 +1170,9 @@ public function <a href='../proc/belongs_to_r64.html'>belongs_to_r64</a>(x, A, e
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>eps</strong></td><td><p>
+<script type="math/tex">x = y \iff \textrm{abs}(x - y) < \epsilon</script>
+</p></td>
   
 </tr>
 
@@ -1417,7 +1472,7 @@ public function <a href='../proc/abs_max_val_r64.html'>abs_max_val_r64</a>(array
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_int"></span><h3>
-public function <a href='../proc/intersection_int.html'>intersection_int</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_int.html'>intersection_int</a>(A, B) result(inters)
     
     
    
@@ -1458,7 +1513,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -1473,7 +1528,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -1490,7 +1545,9 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
   
      <h4>Return Value <small>integer,
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
   </div>
@@ -1500,7 +1557,7 @@ public function <a href='../proc/intersection_int.html'>intersection_int</a>(set
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_r32"></span><h3>
-public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(A, B) result(inters)
     
     
    
@@ -1542,7 +1599,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -1557,7 +1614,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -1574,7 +1631,9 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
   
      <h4>Return Value <small>real(kind=real32),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
   </div>
@@ -1584,7 +1643,7 @@ public function <a href='../proc/intersection_r32.html'>intersection_r32</a>(set
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-intersection_r64"></span><h3>
-public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(setA, setB) result(inters)
+public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(A, B) result(inters)
     
     
    
@@ -1625,7 +1684,7 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -1640,7 +1699,7 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -1657,7 +1716,9 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
   
      <h4>Return Value <small>real(kind=real64),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cap B</script>
+</p>
     
 
   </div>
@@ -1667,7 +1728,7 @@ public function <a href='../proc/intersection_r64.html'>intersection_r64</a>(set
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-union_int"></span><h3>
-public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) result(union_set)
+public function <a href='../proc/union_int.html'>union_int</a>(A, B) result(union_set)
     
     
    
@@ -1682,7 +1743,7 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
 
 
 
-<p>Set union right away to setA</p><a href="../proc/union_int.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Set union right away to A</p><a href="../proc/union_int.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1708,7 +1769,7 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -1723,7 +1784,7 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -1740,7 +1801,9 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
   
      <h4>Return Value <small>integer,
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cup B</script>
+</p>
     
 
   </div>
@@ -1750,7 +1813,7 @@ public function <a href='../proc/union_int.html'>union_int</a>(setA, setB) resul
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-union_r32"></span><h3>
-public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) result(union_set)
+public function <a href='../proc/union_r32.html'>union_r32</a>(A, B) result(union_set)
     
     
    
@@ -1765,7 +1828,7 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
 
 
 
-<p>Set union right away to setA</p><a href="../proc/union_r32.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Set union right away to A</p><a href="../proc/union_r32.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1791,7 +1854,7 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -1806,7 +1869,7 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -1823,7 +1886,9 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
   
      <h4>Return Value <small>real(kind=real32),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cup B</script>
+</p>
     
 
   </div>
@@ -1833,7 +1898,7 @@ public function <a href='../proc/union_r32.html'>union_r32</a>(setA, setB) resul
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-union_r64"></span><h3>
-public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) result(union_set)
+public function <a href='../proc/union_r64.html'>union_r64</a>(A, B) result(union_set)
     
     
    
@@ -1848,7 +1913,7 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
 
 
 
-<p>Set union right away to setA</p><a href="../proc/union_r64.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Set union right away to A</p><a href="../proc/union_r64.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
     <h4>Arguments</h4>
     
@@ -1874,7 +1939,7 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setA</strong></td><td></td>
+  <td><strong>A</strong></td><td><p>set A</p></td>
   
 </tr>
 
@@ -1889,7 +1954,7 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>setB</strong></td><td></td>
+  <td><strong>B</strong></td><td><p>set B</p></td>
   
 </tr>
 
@@ -1906,7 +1971,9 @@ public function <a href='../proc/union_r64.html'>union_r64</a>(setA, setB) resul
   
      <h4>Return Value <small>real(kind=real64),
   dimension(:), allocatable</small></h4>
-  
+  <p>
+<script type="math/tex"> A \cup B</script>
+</p>
     
 
   </div>
@@ -1924,6 +1991,15 @@ public function <a href='../proc/belongs_to_int.html'>belongs_to_int</a>(x, A) r
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set <script type="math/tex">\textrm{A}</script>
+</p>
     
     <h4>Arguments</h4>
     
@@ -1964,7 +2040,7 @@ public function <a href='../proc/belongs_to_int.html'>belongs_to_int</a>(x, A) r
   <td></td>
   
   <td>dimension(:)</td><td>::</td>
-  <td><strong>A</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>A</strong></td><td></td>
   
 </tr>
 
@@ -1999,6 +2075,15 @@ public function <a href='../proc/belongs_to_r32.html'>belongs_to_r32</a>(x, A, e
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set within a certain tolerance <script type="math/tex">\epsilon</script>. If <script type="math/tex">\epsilon</script> is not specified, it will automatically
+ calculated using the <script type="math/tex">\verb|array_epsilon|</script> function</p>
     
     <h4>Arguments</h4>
     
@@ -2054,7 +2139,9 @@ public function <a href='../proc/belongs_to_r32.html'>belongs_to_r32</a>(x, A, e
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>eps</strong></td><td><p>
+<script type="math/tex">x = y \iff \textrm{abs}(x - y) < \epsilon</script>
+</p></td>
   
 </tr>
 
@@ -2089,6 +2176,15 @@ public function <a href='../proc/belongs_to_r64.html'>belongs_to_r64</a>(x, A, e
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Check if a value <script type="math/tex">x</script> belongs to a set within a certain tolerance <script type="math/tex">\epsilon</script>. If <script type="math/tex">\epsilon</script> is not specified, it will automatically
+ calculated using the <script type="math/tex">\verb|array_epsilon|</script> function</p>
     
     <h4>Arguments</h4>
     
@@ -2144,7 +2240,9 @@ public function <a href='../proc/belongs_to_r64.html'>belongs_to_r64</a>(x, A, e
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>eps</strong></td><td><p>Check if an element belongs to a set</p></td>
+  <td><strong>eps</strong></td><td><p>
+<script type="math/tex">x = y \iff \textrm{abs}(x - y) < \epsilon</script>
+</p></td>
   
 </tr>
 

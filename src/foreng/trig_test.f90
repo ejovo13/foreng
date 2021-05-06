@@ -20,6 +20,14 @@ implicit none
 
     print *, "MAXVAL(max_vals) = ", maxval(max_vals)
 
+    print *, "asind(1.0) = ", asind(1.0)
+    print *, "acosd(0.0) = ", acosd(1.0)
+
+    print *, "sind(30) = ", sind(30d0)
+    print *, "tand(-45) = ", tand(-45d0)
+
+    print *, "atand(-1) = ", atand(-1d0)
+    print *, "atand(1) = " , atand(1d0)
 
 
 end program

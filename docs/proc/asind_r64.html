@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">4 statements</a>
+    title=" 0.3% of total for procedures.">5 statements</a>
      </li> 
      
      
@@ -197,7 +197,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public elemental function asind_r64(theta) result(asind)
+public elemental function asind_r64(x) result(theta)
     
     
    
@@ -206,6 +206,8 @@ public elemental function asind_r64(theta) result(asind)
   
 
 
+    
+    <p>Double precision</p>
     
 
     <h3>Arguments</h3>
@@ -226,12 +228,12 @@ public elemental function asind_r64(theta) result(asind)
   
 <tr>
   
-  <td><span class="anchor" id="variable-theta~9"></span>real(kind=real64),</td>
+  <td><span class="anchor" id="variable-x~6"></span>real(kind=real64),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>theta</strong></td><td></td>
+  <td><strong>x</strong></td><td></td>
   
 </tr>
 
@@ -245,9 +247,10 @@ public elemental function asind_r64(theta) result(asind)
     
     
     
-   <h3>Return Value <small><span class="anchor" id="variable-asind~2"></span>real(kind=real64)
+   <h3>Return Value <small><span class="anchor" id="variable-theta~9"></span>real(kind=real64)
   </small></h3>
-    
+    <p>
+<script type="math/tex">\theta</script> in degrees</p>
     
     
     
