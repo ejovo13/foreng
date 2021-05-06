@@ -6,6 +6,8 @@ use foreng_env
 use foreng_math_misc
 implicit none
 
+!// TODO add documentation
+
 !=============================================================================!
 !=                          Generic Mean Interface                           =!
 !=============================================================================!
@@ -83,16 +85,16 @@ end interface
 !=============================================================================!
 contains
 
-    function rank_1_mean_r32(data_, type_) result(mean_)
+    function rank_1_mean_r32(data_, type) result(mean_)
     !! Calculate the mean of a 1d data set, given the "type"
 
-        character(LEN=*), intent(in), optional :: type_
+        character(LEN=*), intent(in), optional :: type
         real(real32), intent(in), dimension(:) :: data_
         real(real32) :: mean_
 
-        if (present(type_)) then 
+        if (present(type)) then 
             !! Check which mean to call
-            select case(type_)
+            select case(type)
 
                 case("arithmetic")
 
@@ -122,16 +124,16 @@ contains
 
     end function
 
-    function rank_1_mean_r64(data_, type_) result(mean_)
+    function rank_1_mean_r64(data_, type) result(mean_)
     !! Calculate the mean of a 1d data set, given the "type"
 
-        character(LEN=*), intent(in), optional :: type_
+        character(LEN=*), intent(in), optional :: type
         real(real64), intent(in), dimension(:) :: data_
         real(real64) :: mean_
 
-        if (present(type_)) then 
+        if (present(type)) then 
             !! Check which mean to call
-            select case(type_)
+            select case(type)
 
                 case("arithmetic")
 
@@ -161,16 +163,16 @@ contains
 
     end function
 
-    function rank_1_mean_i32(data_, type_) result(mean_)
+    function rank_1_mean_i32(data_, type) result(mean_)
     !! Calculate the mean of a 1d data set, given the "type"
 
-        character(LEN=*), intent(in), optional :: type_
+        character(LEN=*), intent(in), optional :: type
         integer(int32), intent(in), dimension(:) :: data_
         real(real32) :: mean_
 
-        if (present(type_)) then 
+        if (present(type)) then 
             !! Check which mean to call
-            select case(type_)
+            select case(type)
 
                 case("arithmetic")
 
@@ -200,16 +202,16 @@ contains
 
     end function
 
-    function rank_1_mean_i64(data_, type_) result(mean_)
+    function rank_1_mean_i64(data_, type) result(mean_)
     !! Calculate the mean of a 1d data set, given the "type"
 
-        character(LEN=*), intent(in), optional :: type_
+        character(LEN=*), intent(in), optional :: type
         integer(int64), intent(in), dimension(:) :: data_
         real(real64) :: mean_
 
-        if (present(type_)) then 
+        if (present(type)) then 
             !! Check which mean to call
-            select case(type_)
+            select case(type)
 
                 case("arithmetic")
 
@@ -284,7 +286,7 @@ contains
 
         n_elements = size(data_)
 
-        arithmetic_mean_ = sum(data_)/n_elements
+        arithmetic_mean_ = real(sum(data_), real32)/n_elements
 
     end function
 
@@ -298,7 +300,7 @@ contains
 
         n_elements = size(data_)
 
-        arithmetic_mean_ = sum(data_)/n_elements
+        arithmetic_mean_ = real(sum(data_), real64)/n_elements
 
     end function
 
@@ -402,7 +404,7 @@ contains
         real(real32), allocatable :: inverses(:)
 
         n_elements = size(data_)
-        inverses = 1/data_
+        inverses = 1.0/data_
 
         harmonic_mean_ = n_elements/sum(inverses)
 
@@ -456,13 +458,13 @@ contains
     function rank1_geometric_mean_i32(data_) result(geometric_mean_)
 
         integer(int32), intent(in) :: data_(:)
-        real(real32) :: geometric_mean_
+        real(real64) :: geometric_mean_
         !! Rank 1 array containing the elements to calculate the mean for
         integer :: n_elements
 
         n_elements = size(data_)
 
-        geometric_mean_ = nth_root(real(product(data_), real32), n_elements)
+        geometric_mean_ = real(product(data_), real64) ** (1.0/n_elements)
 
     end function
 
