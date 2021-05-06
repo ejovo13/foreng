@@ -5,6 +5,10 @@ module foreng_math_geom
 use foreng_env
 implicit none
 
+! // TODO add types : point2d, point3d, vector3d
+! // TODO add point conversion (polar to cartesioan)
+! // TODO add point3 conversion (cartesian to spherical)
+
 contains 
 
     function cross_product(v1, v2) result (normal)
