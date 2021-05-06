@@ -5,9 +5,10 @@ implicit none
 
 contains
 
-    module procedure sind_r32
+    elemental real(real32) function sind_r32(theta) result(sind)
+        real(real32), intent(in) :: theta
         sind = sin(deg_to_rad(theta))
-    end procedure
+    end function
 
     module procedure sind_r64
         sind = sin(deg_to_rad(theta))
