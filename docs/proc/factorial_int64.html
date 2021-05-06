@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for procedures.">13 statements</a>
+    title=" 0.7% of total for procedures.">16 statements</a>
      </li> 
      
      
@@ -207,6 +207,9 @@ public recursive function factorial_int64(x) result(x_fact)
 
 
     
+    <p>Recursively compute the factorial of a 64-bit integer. The max value that can be passed is 20
+ If x is less than 0 or greater 20, the function will return 0</p>
+    
 
     <h3>Arguments</h3>
     
@@ -226,12 +229,14 @@ public recursive function factorial_int64(x) result(x_fact)
   
 <tr>
   
-  <td><span class="anchor" id="variable-x~13"></span>integer(kind=int64),</td>
+  <td><span class="anchor" id="variable-x~17"></span>integer(kind=int64),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>x</strong></td><td></td>
+  <td><strong>x</strong></td><td><p>
+<script type="math/tex"> 0 \leq x \leq 20 </script>
+</p></td>
   
 </tr>
 

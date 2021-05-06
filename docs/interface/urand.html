@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.2% of total for procedures.</p>Including implementation: 50 statements,  2.0% of total for procedures.">6 statements</a>
+    title="<p> 0.3% of total for procedures.</p>Including implementation: 58 statements,  2.5% of total for procedures.">6 statements</a>
      </li> 
      
      
@@ -192,13 +192,13 @@
   <div id="modprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_r32~2">urand_r32</a>
+      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_r32">urand_r32</a>
       
-      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_r64~2">urand_r64</a>
+      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_r64">urand_r64</a>
       
-      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_i32~2">urand_i32</a>
+      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_i32">urand_i32</a>
       
-      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_i64~2">urand_i64</a>
+      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_i64">urand_i64</a>
       
     </div>
   </div>
@@ -213,7 +213,7 @@
     
     <div class="col-md-9" id='text'>
       <h2>public interface urand</h2>
-   <p>Return a uniform random variable from min to max</p>
+   <p>Return a uniform random variable from min (inclusive) to max (inclusive for integer functions, exclusive for real)</p>
      
      
     <br>
@@ -247,13 +247,13 @@
   <div id="modprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_r32~2">urand_r32</a>
+      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_r32">urand_r32</a>
       
-      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_r64~2">urand_r64</a>
+      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_r64">urand_r64</a>
       
-      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_i32~2">urand_i32</a>
+      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_i32">urand_i32</a>
       
-      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_i64~2">urand_i64</a>
+      <a class="list-group-item" href="../interface/urand.html#moduleprocedure-urand_i64">urand_i64</a>
       
     </div>
   </div>
@@ -275,7 +275,7 @@
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-urand_r32"></span><h3>
-public function <a href='../proc/urand_r32.html'>urand_r32</a>(min, max)
+public function <a href='../proc/urand_r32.html'>urand_r32</a>(min, max) result(x)
     
     
    
@@ -283,6 +283,14 @@ public function <a href='../proc/urand_r32.html'>urand_r32</a>(min, max)
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Return a uniform random variable [min, max)</p>
     
     <h4>Arguments</h4>
     
@@ -308,7 +316,8 @@ public function <a href='../proc/urand_r32.html'>urand_r32</a>(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>min</strong></td><td></td>
+  <td><strong>min</strong></td><td><p>
+<script type="math/tex">a</script>, inclusive</p></td>
   
 </tr>
 
@@ -323,7 +332,8 @@ public function <a href='../proc/urand_r32.html'>urand_r32</a>(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>max</strong></td><td></td>
+  <td><strong>max</strong></td><td><p>
+<script type="math/tex">b</script>, exclusive</p></td>
   
 </tr>
 
@@ -340,7 +350,9 @@ public function <a href='../proc/urand_r32.html'>urand_r32</a>(min, max)
   
      <h4>Return Value <small>real(kind=real32)
   </small></h4>
-  
+  <p>
+<script type="math/tex">x \sim \mathcal{U}[a, b)</script>
+</p>
     
 
   </div>
@@ -350,7 +362,7 @@ public function <a href='../proc/urand_r32.html'>urand_r32</a>(min, max)
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-urand_r64"></span><h3>
-public function <a href='../proc/urand_r64.html'>urand_r64</a>(min, max)
+public function <a href='../proc/urand_r64.html'>urand_r64</a>(min, max) result(x)
     
     
    
@@ -358,6 +370,14 @@ public function <a href='../proc/urand_r64.html'>urand_r64</a>(min, max)
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Return a uniform random variable [min, max)</p>
     
     <h4>Arguments</h4>
     
@@ -383,7 +403,8 @@ public function <a href='../proc/urand_r64.html'>urand_r64</a>(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>min</strong></td><td></td>
+  <td><strong>min</strong></td><td><p>
+<script type="math/tex">a</script>, inclusive</p></td>
   
 </tr>
 
@@ -398,7 +419,8 @@ public function <a href='../proc/urand_r64.html'>urand_r64</a>(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>max</strong></td><td></td>
+  <td><strong>max</strong></td><td><p>
+<script type="math/tex">b</script>, exclusive</p></td>
   
 </tr>
 
@@ -415,7 +437,9 @@ public function <a href='../proc/urand_r64.html'>urand_r64</a>(min, max)
   
      <h4>Return Value <small>real(kind=real64)
   </small></h4>
-  
+  <p>
+<script type="math/tex">x \sim \mathcal{U}[a, b)</script>
+</p>
     
 
   </div>
@@ -425,7 +449,7 @@ public function <a href='../proc/urand_r64.html'>urand_r64</a>(min, max)
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-urand_i32"></span><h3>
-public function <a href='../proc/urand_i32.html'>urand_i32</a>(min, max)
+public function <a href='../proc/urand_i32.html'>urand_i32</a>(min, max) result(x)
     
     
    
@@ -466,7 +490,8 @@ public function <a href='../proc/urand_i32.html'>urand_i32</a>(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>min</strong></td><td></td>
+  <td><strong>min</strong></td><td><p>
+<script type="math/tex">a</script>, inclusive</p></td>
   
 </tr>
 
@@ -481,7 +506,8 @@ public function <a href='../proc/urand_i32.html'>urand_i32</a>(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>max</strong></td><td></td>
+  <td><strong>max</strong></td><td><p>
+<script type="math/tex">b</script>, inclusive</p></td>
   
 </tr>
 
@@ -498,7 +524,9 @@ public function <a href='../proc/urand_i32.html'>urand_i32</a>(min, max)
   
      <h4>Return Value <small>integer(kind=int32)
   </small></h4>
-  
+  <p>
+<script type="math/tex">x \sim \mathcal{U}[a, b]</script>
+</p>
     
 
   </div>
@@ -508,7 +536,7 @@ public function <a href='../proc/urand_i32.html'>urand_i32</a>(min, max)
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-urand_i64"></span><h3>
-public function <a href='../proc/urand_i64.html'>urand_i64</a>(min, max)
+public function <a href='../proc/urand_i64.html'>urand_i64</a>(min, max) result(x)
     
     
    
@@ -516,6 +544,14 @@ public function <a href='../proc/urand_i64.html'>urand_i64</a>(min, max)
   <div class="panel-body">
        
     
+
+
+
+
+
+
+
+<p>Return a uniform random variable [min, max] </p>
     
     <h4>Arguments</h4>
     
@@ -541,7 +577,8 @@ public function <a href='../proc/urand_i64.html'>urand_i64</a>(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>min</strong></td><td></td>
+  <td><strong>min</strong></td><td><p>
+<script type="math/tex">a</script>, inclusive</p></td>
   
 </tr>
 
@@ -556,7 +593,8 @@ public function <a href='../proc/urand_i64.html'>urand_i64</a>(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>max</strong></td><td></td>
+  <td><strong>max</strong></td><td><p>
+<script type="math/tex">b</script>, inclusive</p></td>
   
 </tr>
 
@@ -573,7 +611,9 @@ public function <a href='../proc/urand_i64.html'>urand_i64</a>(min, max)
   
      <h4>Return Value <small>integer(kind=int64)
   </small></h4>
-  
+  <p>
+<script type="math/tex">x \sim \mathcal{U}[a, b]</script>
+</p>
     
 
   </div>

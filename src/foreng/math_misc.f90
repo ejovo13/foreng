@@ -17,7 +17,7 @@ end interface
 !=                            nth Root Interface                             =!
 !=============================================================================!
 interface nth_root
-!! Compute \(x!\)
+!! Compute \(\sqrt[n]{x}\)
     module procedure nth_root_r32
     module procedure nth_root_r64
 end interface
@@ -26,7 +26,7 @@ end interface
 !=                     Infinite Series Interface                             =!
 !=============================================================================!
 interface exp_series
-!! Compute \(x!\)
+!! Compute \(e^x\) using a truncated taylor series
     module procedure exp_series_r32
     module procedure exp_series_r64
 end interface
@@ -39,13 +39,17 @@ end interface
 contains
 
     recursive function factorial_int16(x) result (x_fact)
-        
-        integer(int16), intent(in) :: x
+    !! Recursively compute the factorial of a 16-bit integer. The max value that can be passed is 7
+    !! If x is less than 0 or greater 7, the function will return 0
+        integer(int16), intent(in) :: x !! \( 0 \leq x \leq 7\)
         integer(int16) :: x_fact !! \(x!\)
 
         if ( x >= 8) then 
             x_fact = 0
             return 
+        else if ( x < 0) then
+            x_fact = 0
+            return
         end if
 
 
@@ -58,13 +62,17 @@ contains
     end function
 
     recursive function factorial_int32(x) result (x_fact)
-
-        integer(int32), intent(in) :: x
+    !! Recursively compute the factorial of a 32-bit integer. The max value that can be passed is 16
+    !! If x is less than 0 or greater 16, the function will return 0
+        integer(int32), intent(in) :: x !! \( 0 \leq x \leq 16 \)
         integer(int32) :: x_fact !! \(x!\)
 
         if ( x >= 17) then 
             x_fact = 0
             return 
+        else if ( x < 0) then
+            x_fact = 0
+            return
         end if
 
         if (x == 0) then
@@ -76,13 +84,17 @@ contains
     end function
 
     recursive function factorial_int64(x) result (x_fact)
-
-        integer(int64), intent(in) :: x
+    !! Recursively compute the factorial of a 64-bit integer. The max value that can be passed is 20
+    !! If x is less than 0 or greater 20, the function will return 0
+        integer(int64), intent(in) :: x !! \( 0 \leq x \leq 20 \)
         integer(int64) :: x_fact !! \(x!\)
 
         if ( x >= 21) then 
             x_fact = 0
             return 
+        else if ( x < 0) then
+            x_fact = 0
+            return
         end if
 
         if (x == 0) then
@@ -94,29 +106,33 @@ contains
     end function
 
     recursive function factorial_int128(x) result (x_fact)
-    !! Supported for gnufortran compiler with kind = 16
-    integer(int128), intent(in) :: x
-    integer(int128) :: x_fact !! \(x!\)
+    !! Recursively compute the factorial of a 128-bit integer [supported on gfortran]. The max value that can be passed is 33
+    !! If x is less than 0 or greater 33, the function will return 0
+        integer(int128), intent(in) :: x !! \( 0 \leq x \leq 33 \)
+        integer(int128) :: x_fact !! \(x!\)
 
-    if ( x >= 34) then 
-        x_fact = 0
-        return 
-    end if
+        if ( x >= 34) then 
+            x_fact = 0
+            return 
+        else if ( x < 0) then
+            x_fact = 0
+            return
+        end if
 
-    if (x == 0) then
-        x_fact = 1_int128
-        return
-    end if
-    x_fact = x * factorial(x - 1_int128)
+        if (x == 0) then
+            x_fact = 1_int128
+            return
+        end if
+        x_fact = x * factorial(x - 1_int128)
 
-end function
+    end function
 
 !=============================================================================!
 !=                     Infinite Series Functions                             =!
 !=============================================================================!
 
     real function exp_series_r32(x) result(exp)
-    !! Calculate e^x using a taylor series with 12 terms
+    !! Compute \(e^x\) using a taylor series with 12 terms
 
         real(real32), intent(in) :: x
 
@@ -134,7 +150,7 @@ end function
     end function
 
     real(real64) function exp_series_r64(x) result(exp)
-    !! Calculate e^x using a taylor series with 20 terms
+    !! Calculate \(e^x\) using a taylor series with 20 terms
 
         real(real64), intent(in) :: x
 

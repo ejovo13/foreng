@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.6% of total for procedures.</p>Including implementation: 170 statements,  6.8% of total for procedures.">14 statements</a>
+    title="<p> 0.6% of total for procedures.</p>Including implementation: 170 statements,  7.2% of total for procedures.">14 statements</a>
      </li> 
      
      
@@ -229,10 +229,19 @@
     
     <div class="col-md-9" id='text'>
       <h2>public interface fill_urand</h2>
-   
+   <p>Fill a rank 1, 2, or 3 array with a uniform random variable from min (inclusive) to max (inclusive for integer functions, exclusive for real)</p>
+<p>Example usage:</p>
+<div class="codehilite"><pre><span></span><span class="kt">integer</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x_i32</span>
+<span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x_r32</span>
+<span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x_64</span>
+
+<span class="k">call </span><span class="n">fill_urand</span><span class="p">(</span><span class="n">x_i32</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c">! Fill rank1, integer array</span>
+<span class="k">call </span><span class="n">fill_urand</span><span class="p">(</span><span class="n">x_r32</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c">! Fill rank2, real(real32) array</span>
+<span class="k">call </span><span class="n">fill_urand</span><span class="p">(</span><span class="n">x_r64</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="mf">0.d0</span><span class="p">,</span> <span class="mi">1</span><span class="mf">0.d0</span><span class="p">)</span> <span class="c">! Fill rank3, real(real64) array</span>
+</pre></div>
      
      
-    
+    <br>
 
      <section class="visible-xs visible-sm hidden-md">
        

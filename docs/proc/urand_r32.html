@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">11 statements</a>
+    title=" 0.5% of total for procedures.">13 statements</a>
      </li> 
      
      
@@ -197,7 +197,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public function urand_r32(min, max)
+public function urand_r32(min, max) result(x)
     
     
    
@@ -206,6 +206,8 @@ public function urand_r32(min, max)
   
 
 
+    
+    <p>Return a uniform random variable [min, max)</p>
     
 
     <h3>Arguments</h3>
@@ -231,7 +233,8 @@ public function urand_r32(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>min</strong></td><td></td>
+  <td><strong>min</strong></td><td><p>
+<script type="math/tex">a</script>, inclusive</p></td>
   
 </tr>
 
@@ -246,7 +249,8 @@ public function urand_r32(min, max)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>max</strong></td><td></td>
+  <td><strong>max</strong></td><td><p>
+<script type="math/tex">b</script>, exclusive</p></td>
   
 </tr>
 
@@ -260,9 +264,11 @@ public function urand_r32(min, max)
     
     
     
-   <h3>Return Value <small><span class="anchor" id="variable-urand_r32"></span>real(kind=real32)
+   <h3>Return Value <small><span class="anchor" id="variable-x~11"></span>real(kind=real32)
   </small></h3>
-    
+    <p>
+<script type="math/tex">x \sim \mathcal{U}[a, b)</script>
+</p>
     
     
     
