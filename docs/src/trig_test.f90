@@ -1,20 +1,24 @@
 program trig_test
 
-    use trig_degrees
+use foreng_math
+implicit none
 
-    implicit none
+    real(real64) :: thetad = 90
+    real(real64) :: theta 
+    real(real64), dimension(3) :: max_vals = [-10.d0, 0d0, 5d0]
 
-    integer :: thi = 180
-    real :: thr = 180.0
-    real(8) :: thd = 180.0
+    theta = deg_to_rad(thetad)
 
-    print *, "thi 180 as rad = ", deg2rad(thi)
-    print *, "thd 180 as rad = ", deg2rad(thd)
-    print *, "thr 180 as rad = ", deg2rad(thr)
+    print *, "theta = ", theta
+    print *, "thetad = ", thetad
 
-    print *, "sind of 90 ", sind(90.0)
-    print *, "cosd of 180 ", cosd(180.0)
-    print *, "tand of 45 ", tand(45.0)
+    print *, "sin(theta) = ", sin(theta)
+    print *, "sind(thetad) = ", sind(thetad)
+
+    print *, "sinh(theta) = ", sinh(theta)
+    print *, "sinhd(theta) = ", sinhd(thetad)
+
+    print *, "MAXVAL(max_vals) = ", maxval(max_vals)
 
 
 

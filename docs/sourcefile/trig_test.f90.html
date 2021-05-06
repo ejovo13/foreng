@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.7% of total for source files.">13 statements</a>
+    title=" 0.6% of total for source files.">15 statements</a>
      </li> 
      
      
@@ -267,25 +267,29 @@
       <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">program </span><span class="n">trig_test</span>
 <a name="ln-2"></a>
-<a name="ln-3"></a>    <span class="k">use </span><span class="n">trig_degrees</span>
-<a name="ln-4"></a>
-<a name="ln-5"></a>    <span class="k">implicit none</span>
-<a name="ln-6"></a>
-<a name="ln-7"></a><span class="k">    </span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">thi</span> <span class="o">=</span> <span class="mi">180</span>
-<a name="ln-8"></a>    <span class="kt">real</span> <span class="kd">::</span> <span class="n">thr</span> <span class="o">=</span> <span class="mi">18</span><span class="mf">0.0</span>
-<a name="ln-9"></a>    <span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">thd</span> <span class="o">=</span> <span class="mi">18</span><span class="mf">0.0</span>
-<a name="ln-10"></a>
-<a name="ln-11"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;thi 180 as rad = &quot;</span><span class="p">,</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">thi</span><span class="p">)</span>
-<a name="ln-12"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;thd 180 as rad = &quot;</span><span class="p">,</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">thd</span><span class="p">)</span>
-<a name="ln-13"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;thr 180 as rad = &quot;</span><span class="p">,</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">thr</span><span class="p">)</span>
+<a name="ln-3"></a><span class="k">use </span><span class="n">foreng_math</span>
+<a name="ln-4"></a><span class="k">implicit none</span>
+<a name="ln-5"></a>
+<a name="ln-6"></a><span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="kd">::</span> <span class="n">thetad</span> <span class="o">=</span> <span class="mi">90</span>
+<a name="ln-7"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">)</span> <span class="kd">::</span> <span class="n">theta</span> 
+<a name="ln-8"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="kd">::</span> <span class="n">max_vals</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="mf">0.d0</span><span class="p">,</span> <span class="mi">0</span><span class="n">d0</span><span class="p">,</span> <span class="mi">5</span><span class="n">d0</span><span class="p">]</span>
+<a name="ln-9"></a>
+<a name="ln-10"></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">deg_to_rad</span><span class="p">(</span><span class="n">thetad</span><span class="p">)</span>
+<a name="ln-11"></a>
+<a name="ln-12"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;theta = &quot;</span><span class="p">,</span> <span class="n">theta</span>
+<a name="ln-13"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;thetad = &quot;</span><span class="p">,</span> <span class="n">thetad</span>
 <a name="ln-14"></a>
-<a name="ln-15"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;sind of 90 &quot;</span><span class="p">,</span> <span class="n">sind</span><span class="p">(</span><span class="mi">9</span><span class="mf">0.0</span><span class="p">)</span>
-<a name="ln-16"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;cosd of 180 &quot;</span><span class="p">,</span> <span class="n">cosd</span><span class="p">(</span><span class="mi">18</span><span class="mf">0.0</span><span class="p">)</span>
-<a name="ln-17"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;tand of 45 &quot;</span><span class="p">,</span> <span class="n">tand</span><span class="p">(</span><span class="mi">4</span><span class="mf">5.0</span><span class="p">)</span>
-<a name="ln-18"></a>
-<a name="ln-19"></a>
+<a name="ln-15"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;sin(theta) = &quot;</span><span class="p">,</span> <span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<a name="ln-16"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;sind(thetad) = &quot;</span><span class="p">,</span> <span class="n">sind</span><span class="p">(</span><span class="n">thetad</span><span class="p">)</span>
+<a name="ln-17"></a>
+<a name="ln-18"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;sinh(theta) = &quot;</span><span class="p">,</span> <span class="nb">sinh</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<a name="ln-19"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;sinhd(theta) = &quot;</span><span class="p">,</span> <span class="n">sinhd</span><span class="p">(</span><span class="n">thetad</span><span class="p">)</span>
 <a name="ln-20"></a>
-<a name="ln-21"></a><span class="k">end program</span>
+<a name="ln-21"></a>    <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;MAXVAL(max_vals) = &quot;</span><span class="p">,</span> <span class="nb">maxval</span><span class="p">(</span><span class="n">max_vals</span><span class="p">)</span>
+<a name="ln-22"></a>
+<a name="ln-23"></a>
+<a name="ln-24"></a>
+<a name="ln-25"></a><span class="k">end program</span>
 </pre></div>
 
     </section>

@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.6% of total for source files.">68 statements</a>
+    title=" 2.9% of total for source files.">68 statements</a>
      </li> 
      
      
@@ -448,28 +448,31 @@
 <a name="ln-181"></a>    <span class="c">! REAL FUNCTION urand(min,max)</span>
 <a name="ln-182"></a>    <span class="c">!</span>
 <a name="ln-183"></a>    <span class="c">!       Return a real value between [min, max)</span>
-<a name="ln-184"></a>    <span class="c">!</span>
-<a name="ln-185"></a>    <span class="c">!--------------------------------------------------------------------------</span>
-<a name="ln-186"></a>    <span class="kt">real </span><span class="k">function </span><span class="n">urand</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">)</span>
-<a name="ln-187"></a>        <span class="kt">real</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span>
-<a name="ln-188"></a><span class="nb">        </span>
-<a name="ln-189"></a><span class="nb">        </span><span class="kt">real</span> <span class="kd">::</span> <span class="n">temp_rand</span> <span class="c">! A value between 0 and 1</span>
-<a name="ln-190"></a>        <span class="kt">real</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">rand_mid</span> <span class="o">=</span> <span class="mf">0.5</span>
-<a name="ln-191"></a>        <span class="kt">real</span> <span class="kd">::</span> <span class="nb">scale</span> <span class="c">! What we should multiply the range by</span>
-<a name="ln-192"></a>        <span class="kt">real</span> <span class="kd">::</span> <span class="n">shift</span> <span class="c">! What we should shift the dist by</span>
-<a name="ln-193"></a>
-<a name="ln-194"></a>        <span class="c">! mid_point = (min + max) / 2</span>
-<a name="ln-195"></a>        <span class="n">shift</span> <span class="o">=</span> <span class="nb">min</span>
-<a name="ln-196"></a><span class="nb">        scale</span> <span class="o">=</span> <span class="nb">max</span> <span class="o">-</span> <span class="nb">min</span>
-<a name="ln-197"></a>
-<a name="ln-198"></a><span class="nb">        </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">temp_rand</span><span class="p">)</span>
-<a name="ln-199"></a>        <span class="c">! print *, temp_rand</span>
-<a name="ln-200"></a>
-<a name="ln-201"></a>        <span class="c">! Shift the midpoint to the midpoint of the new range</span>
-<a name="ln-202"></a>        <span class="n">urand</span> <span class="o">=</span> <span class="n">temp_rand</span><span class="o">*</span><span class="nb">scale</span> <span class="o">+</span> <span class="n">shift</span>    
-<a name="ln-203"></a>    <span class="k">end function</span>
-<a name="ln-204"></a>
-<a name="ln-205"></a><span class="k">end module </span><span class="n">prototype</span>
+<a name="ln-184"></a>    <span class="c">!       Uniform distribution</span>
+<a name="ln-185"></a>    <span class="c">!</span>
+<a name="ln-186"></a>    <span class="c">!--------------------------------------------------------------------------</span>
+<a name="ln-187"></a>    <span class="kt">real </span><span class="k">function </span><span class="n">urand</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">)</span>
+<a name="ln-188"></a>        <span class="kt">real</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="nb">min</span><span class="p">,</span> <span class="nb">max</span>
+<a name="ln-189"></a><span class="nb">        </span>
+<a name="ln-190"></a><span class="nb">        </span><span class="kt">real</span> <span class="kd">::</span> <span class="n">temp_rand</span> <span class="c">! A value between 0 and 1</span>
+<a name="ln-191"></a>        <span class="kt">real</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">rand_mid</span> <span class="o">=</span> <span class="mf">0.5</span>
+<a name="ln-192"></a>        <span class="kt">real</span> <span class="kd">::</span> <span class="nb">scale</span> <span class="c">! What we should multiply the range by</span>
+<a name="ln-193"></a>        <span class="kt">real</span> <span class="kd">::</span> <span class="n">shift</span> <span class="c">! What we should shift the dist by</span>
+<a name="ln-194"></a>
+<a name="ln-195"></a>        <span class="c">! mid_point = (min + max) / 2</span>
+<a name="ln-196"></a>        <span class="n">shift</span> <span class="o">=</span> <span class="nb">min</span>
+<a name="ln-197"></a><span class="nb">        scale</span> <span class="o">=</span> <span class="nb">max</span> <span class="o">-</span> <span class="nb">min</span>
+<a name="ln-198"></a>
+<a name="ln-199"></a><span class="nb">        </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">temp_rand</span><span class="p">)</span>
+<a name="ln-200"></a>        <span class="c">! print *, temp_rand</span>
+<a name="ln-201"></a>
+<a name="ln-202"></a>        <span class="c">! Shift the midpoint to the midpoint of the new range</span>
+<a name="ln-203"></a>        <span class="n">urand</span> <span class="o">=</span> <span class="n">temp_rand</span><span class="o">*</span><span class="nb">scale</span> <span class="o">+</span> <span class="n">shift</span>    
+<a name="ln-204"></a>    <span class="k">end function</span>
+<a name="ln-205"></a>
+<a name="ln-206"></a><span class="k">    </span>
+<a name="ln-207"></a>
+<a name="ln-208"></a><span class="k">end module </span><span class="n">prototype</span>
 </pre></div>
 
     </section>
