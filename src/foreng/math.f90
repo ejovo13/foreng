@@ -3,6 +3,9 @@ module foreng_math
 
 use foreng_math_trig
 use foreng_math_sets
+use foreng_math_misc
+use foreng_math_stats
+use foreng_math_prob
 
 implicit none
 
