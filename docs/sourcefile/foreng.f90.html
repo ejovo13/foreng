@@ -10,7 +10,7 @@
     <meta name="author" content="Evan Voyles" >
     <link rel="icon" href="../favicon.png">
 
-    <title>foreng_env.f90 &ndash; Fortran Program</title>
+    <title>foreng.f90 &ndash; Fortran Program</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -112,7 +112,7 @@
     
   
   <div class="row">
-    <h1>foreng_env.f90
+    <h1>foreng.f90
     <small>Source File</small>
     
     </h1>
@@ -130,12 +130,12 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for source files.">7 statements</a>
+    title=" 0.2% of total for source files.">4 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/foreng_env.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/foreng.f90"> Source File</a></li>
      
      
   </ul>
@@ -143,7 +143,7 @@
   
     
   
-     <li class="active">foreng_env.f90</li>
+     <li class="active">foreng.f90</li>
   </ol>
 </div>
 </div>
@@ -174,7 +174,7 @@
   <div id="mods-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/foreng_env.html">foreng_env</a>
+      <a class="list-group-item" href="../module/foreng.html">foreng</a>
       
     </div>
   </div>
@@ -198,7 +198,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../sourcefile/foreng_env.f90.html#src">foreng_env.f90</a>
+    <a class="list-group-item" href="../sourcefile/foreng.f90.html#src">foreng.f90</a>
   </div>
 </div>
 
@@ -230,7 +230,7 @@
   <div id="mods-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/foreng_env.html">foreng_env</a>
+      <a class="list-group-item" href="../module/foreng.html">foreng</a>
       
     </div>
   </div>
@@ -254,7 +254,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../sourcefile/foreng_env.f90.html#src">foreng_env.f90</a>
+    <a class="list-group-item" href="../sourcefile/foreng.f90.html#src">foreng.f90</a>
   </div>
 </div>
 
@@ -265,35 +265,13 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">module </span><span class="n">foreng_env</span>
-<a name="ln-2"></a><span class="c">!! Top level module for all of the useful functions written for Fortran for Scientists and Engineers</span>
-<a name="ln-3"></a>
-<a name="ln-4"></a><span class="k">use </span><span class="n">iso_fortran_env</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">real64</span><span class="p">,</span> <span class="n">real32</span><span class="p">,</span> <span class="n">int64</span><span class="p">,</span> <span class="n">int32</span><span class="p">,</span> <span class="n">int16</span>
-<a name="ln-5"></a>
-<a name="ln-6"></a><span class="k">implicit none</span>
-<a name="ln-7"></a>
-<a name="ln-8"></a><span class="c">! public :: sgl, dbl, short, long, pi, pi_s</span>
-<a name="ln-9"></a>
-<a name="ln-10"></a> 
-<a name="ln-11"></a><span class="c">!     integer, parameter :: SGL = real32</span>
-<a name="ln-12"></a><span class="c">!     integer, parameter :: DBL = real64</span>
-<a name="ln-13"></a><span class="c">!     integer, parameter :: SHORT = int16</span>
-<a name="ln-14"></a><span class="c">!     integer, parameter :: LONG = int64</span>
-<a name="ln-15"></a>
-<a name="ln-16"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">PI_64</span> <span class="o">=</span> <span class="mf">3.141592653589793</span>
-<a name="ln-17"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">PI</span> <span class="o">=</span> <span class="n">PI_64</span>
-<a name="ln-18"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">PI_32</span> <span class="o">=</span> <span class="mf">3.14159265</span>
-<a name="ln-19"></a>
-<a name="ln-20"></a><span class="c">!=============================================================================!</span>
-<a name="ln-21"></a><span class="c">!=                      List of incorporated modules                         =!</span>
-<a name="ln-22"></a><span class="c">!=============================================================================!</span>
-<a name="ln-23"></a>
-<a name="ln-24"></a><span class="c">! Math</span>
-<a name="ln-25"></a><span class="c">!   _trig</span>
-<a name="ln-26"></a><span class="c">!   _sets</span>
-<a name="ln-27"></a>
-<a name="ln-28"></a>
-<a name="ln-29"></a><span class="k">end module</span>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">module </span><span class="n">foreng</span>
+<a name="ln-2"></a>
+<a name="ln-3"></a><span class="k">use </span><span class="n">foreng_math</span>
+<a name="ln-4"></a>
+<a name="ln-5"></a><span class="k">implicit none</span>
+<a name="ln-6"></a>
+<a name="ln-7"></a><span class="k">end module</span>
 </pre></div>
 
     </section>
