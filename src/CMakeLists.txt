@@ -5,5 +5,7 @@ make_directory(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 add_library(all_chapters chapter_4.f90 chapter_5.f90 chapter_6.f90 chapter_7.f90)
 
+
+add_subdirectory(foreng)
 add_subdirectory(modules)
 add_subdirectory(demo)
