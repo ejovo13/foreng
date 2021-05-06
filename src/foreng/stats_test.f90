@@ -14,6 +14,7 @@ implicit none
     print *, "std_dev(x_r32) = ", std_dev(x_r32)
     print *, "std_dev(x_r64) = ", std_dev(x_r64)
     
+
     
 end program 
 
