@@ -8,7 +8,15 @@ implicit none
 !=                         Trigonometry Interface                            =!
 !=============================================================================!
 interface sind
+!! This is an interface comment
+!!```fortran
+!!
+!!print *, "sup bitch"
+!!
+!!
+!!``
     module procedure sind_r32
+    !! This is an interface procedure comment
     module procedure sind_r64
 end interface
 
@@ -69,6 +77,7 @@ end interface
 contains
 
     elemental real(real32) function sind_r32(theta) result(sind)
+    !! This is a function definition comment
         real(real32), intent(in) :: theta
         sind = sin(deg_to_rad(theta))
     end function
