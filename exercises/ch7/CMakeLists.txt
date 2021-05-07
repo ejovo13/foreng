@@ -27,6 +27,7 @@ add_executable(7_29 7_29.f90)
 add_executable(7_31 7_31.f90)
 add_executable(7_32 7_32.f90)
 add_executable(7_33 7_33.f90)
+add_executable(7_34 7_34.f90)
 
 target_link_libraries(7_10 ch7)
 target_link_libraries(7_14 ch7)
