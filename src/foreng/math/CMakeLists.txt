@@ -1,6 +1,6 @@
 add_library( 
     
-    math 
+    foreng_math 
 
     math.f90 
     math_trig.f90 
@@ -13,4 +13,4 @@ add_library(
 
 )
 
-target_link_libraries(math foreng_env)
+target_link_libraries(foreng_math foreng_env)
