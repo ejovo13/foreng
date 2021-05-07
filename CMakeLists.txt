@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.9 FATAL_ERROR)
 project(Fortran_For_Engineers)
 
 enable_language(Fortran)
+enable_testing()
 set(CMAKE_Fortran_COMPILER gfortran)
 set(MY_BIN ${CMAKE_BINARY_DIR}/../bin)
 set(MY_EX ${MY_BIN}/exercises)
