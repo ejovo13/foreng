@@ -1,7 +1,6 @@
 submodule (coordinates) compass
 
-    use trig
-
+    use foreng_math
 
 
 

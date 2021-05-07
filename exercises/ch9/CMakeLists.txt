@@ -17,7 +17,7 @@ configure_file(9_17_pos.dat ${MY_EX}/ch9 COPYONLY)
 configure_file(9_17_time.dat ${MY_EX}/ch9 COPYONLY)
 
 target_link_libraries(9_7 ch9)
-target_link_libraries(9_15 trig)
+target_link_libraries(9_15 foreng)
 target_link_libraries(9_18 ch9)
 target_link_libraries(9_20 ch9)
 target_link_libraries(9_22 ch9)

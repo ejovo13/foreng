@@ -7,7 +7,7 @@
 
 program sine_taylor
 
-use trig
+use foreng_math
 
 implicit none
 

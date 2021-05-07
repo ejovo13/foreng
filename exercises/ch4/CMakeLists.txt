@@ -34,7 +34,7 @@ add_executable(4_35 4_35.f90)
 add_executable(error_test error_test.f90)
 add_executable(flight_of_ball flight_of_ball.f90)
 
-target_link_libraries(4_27 trig)
+target_link_libraries(4_27 foreng)
 target_link_libraries(4_31 ch4_means)
 target_link_libraries(4_32 ch4_means)
 

@@ -1,5 +1,5 @@
 add_library(ch7 SHARED ejovo.f90 rand001.f90)
-add_library(trig SHARED trig.f90 trig_degrees.f90 hyperbolics.f90)
+# add_library(trig SHARED trig.f90 trig_degrees.f90 hyperbolics.f90)
 
 add_library(ch9 SHARED
     prototype.f90 

@@ -1,6 +1,6 @@
 module radar
 
-    use trig
+    use foreng_math
 
     real, parameter :: ALPHA = 0.7
     real, parameter :: BETA = 0.38

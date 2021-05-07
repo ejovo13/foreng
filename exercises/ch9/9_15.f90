@@ -4,7 +4,7 @@
 
 program trig_test
 
-    use trig
+    use foreng_math
 
     implicit none
 
@@ -16,7 +16,7 @@ program trig_test
     integer :: i
 
 
-    print *, "thi 180 as rad = ", deg_to_rad(thi)
+    ! print *, "thi 180 as rad = ", deg_to_rad(thi)
     print *, "thd 180 as rad = ", deg_to_rad(thd)
     print *, "thr 180 as rad = ", deg_to_rad(thr)
 
