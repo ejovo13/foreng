@@ -7,6 +7,5 @@ use foreng_math_misc
 use foreng_math_stats
 use foreng_math_prob
 use foreng_math_geom
-use foreng_math_conv
 
 end module

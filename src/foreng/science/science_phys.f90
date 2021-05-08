@@ -1,6 +1,9 @@
 module foreng_science_phys
 
 use foreng_env
+use foreng_science_const
+
+implicit none
 
 contains
 
@@ -24,6 +27,19 @@ contains
         real :: dB_ 
 
         dB_ = log10(P2_/P1_)
+
+    end function
+
+    function calc_gravity(m1, m2, r) result(F)
+
+        real(real64), intent(in) :: m1 !! mass of body 1 in kg
+        real(real64), intent(in) :: m2 !! mass of body 2 in kg
+        real(real64), intent(in) :: r  !! distance between bodies in meters
+
+        real(real64) :: F !! Gravitational force
+
+        F = (GRAVITATIONAL_CONSTANT * m1 * m2) / (r*r)
+
 
     end function
 

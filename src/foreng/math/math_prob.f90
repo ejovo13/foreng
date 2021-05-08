@@ -3,6 +3,7 @@
 module foreng_math_prob
 
 use foreng_env
+use foreng_math_misc
 implicit none
 
 !=============================================================================!
@@ -397,7 +398,7 @@ contains
     end subroutine
 
 !=============================================================================!
-!=                             Poisson Functions                            =!
+!=                     Poisson Distribution Functions                        =!
 !=============================================================================!
 
 
@@ -413,14 +414,39 @@ contains
         real, intent(in) :: lamda        ! The paramater of a poisson distribution
         real :: P                        ! The probability that k observations occured in time t
         integer :: k_fact
-        integer :: fact
     
-        k_fact = fact(k)
+        k_fact = factorial(k)
         P = exp(-lamda * t) * (((lamda * t) ** k)/ k_fact)
     
     end function
 
+!=============================================================================!
+!=                     Normal Distribution Functions                         =!
+!=============================================================================!
 
+    function standard_normal_rand() result (x)
+
+        real(real64) :: x 
+
+        real(real64) :: x_1, x_2, r
+
+        test_xs: do
+
+            x_1 = urand_r64(-1._real64, 1._real64)
+            x_2 = urand_r64(-1._real64, 1._real64)
+
+            r = x_1*x_1 + x_2*x_2
+
+            if (r >= 1) then
+                cycle test_xs
+            else
+                exit test_xs
+            end if
+        end do test_xs
+
+        x = sqrt( (-2._real64 * log(r) ) / r ) * x_1        
+
+    end function
 
 
 

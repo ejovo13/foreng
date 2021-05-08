@@ -15,33 +15,15 @@
 program gravitational_force
 
 use iso_fortran_env
+use foreng_science
+
 implicit none
 
     real(real64) :: satellite_mass = 1000 !! kg
-    real(real64), parameter :: earth_mass = 5.98E24 !! kg
+    real(real64), parameter :: E = EARTH_MASS !! kg
     real(real64) :: orbit_height = 3.8E7 !! meters
 
-    print *, "Force on satellite = ", calc_gravity(satellite_mass, earth_mass, orbit_height)
-
-
-
-
-contains 
-
-
-    function calc_gravity(m1, m2, r) result(F)
-
-        real(real64), parameter :: G = 6.672E-11 !! Gravitational constant, units = N*m^2/kg^2
-        real(real64), intent(in) :: m1 !! mass of body 1 in kg
-        real(real64), intent(in) :: m2 !! mass of body 2 in kg
-        real(real64), intent(in) :: r  !! distance between bodies in meters
-
-        real(real64) :: F !! Gravitational force
-
-        F = (G * m1 * m2) / (r*r)
-
-
-    end function
+    print *, "Force on satellite = ", calc_gravity(satellite_mass, E, orbit_height)
 
 
 
