@@ -50,40 +50,6 @@ implicit none
 
     print 123
 
-contains 
-
-    real function sind_series(x_, n_) result(sin_x)
-    !! Compute sine using a truncated taylor series
-        real, intent(in) :: x_ !! Angle in degrees
-        integer, intent(in) :: n_ !! Number of terms to use
-        integer :: i_
-        real :: x_rad
-
-        x_rad = deg_to_rad(x_)
-
-        sin_x = 0
-
-        do i_ = 1, n_
-
-            sin_x = sin_x + ( (-1)**(i_ - 1) )*( (x_rad ** (2 * i_ - 1)) / (fact((2 * i_) - 1)))        
-
-        end do
-
-
-    end function
-
-    recursive integer function fact(x) result (x_fact)
-    integer, intent(in) :: x
-
-    if (x == 0) then
-        x_fact = 1
-        return
-    end if
-    x_fact = x * fact(x - 1)
-
-end function
-
- 
 
 
 

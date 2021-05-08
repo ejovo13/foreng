@@ -1,6 +1,7 @@
 module foreng_math_misc
 
 use foreng_env
+use foreng_math_trig
 
 !=============================================================================!
 !=                           Factorial Interface                             =!
@@ -167,6 +168,26 @@ contains
 
     end function
 
+    real function sind_series(x_, n_) result(sin_x)
+    !! Compute sine using a truncated taylor series
+        real, intent(in) :: x_ !! Angle in degrees
+        integer, intent(in) :: n_ !! Number of terms to use
+        integer :: i_
+        real :: x_rad
+
+        x_rad = deg_to_rad(x_)
+
+        sin_x = 0
+
+        do i_ = 1, n_
+
+            sin_x = sin_x + ( (-1)**(i_ - 1) )*( (x_rad ** (2 * i_ - 1)) / (factorial((2 * i_) - 1)))        
+
+        end do
+
+
+    end function
+
 !=============================================================================!
 !=                            nth Root Functions                             =!
 !=============================================================================!
@@ -192,6 +213,39 @@ contains
         real(real64), parameter :: BASE = 10
 
         root_ = BASE**((1.0/n_)*log10(x_))
+
+    end function
+
+!=============================================================================!
+!=                           Fibonacci Functions                             =!
+!=============================================================================!
+
+    integer(int64) function fibonacci_loop(n) result(f_n)
+
+        integer(int64), intent(in) :: n!! Nth fibonacci to compute
+        
+        integer(int64) :: f_n_1, f_n_2 !! Previous two fibonacci numbers
+        integer(int64) :: i !! Looping index
+
+        if (n == 1 .or. n == 2) then
+            f_n = 1
+            return
+        else if (n > 2) then 
+
+            f_n_1 = 1
+            f_n_2 = 1
+
+            do i = 3, n
+
+                f_n = f_n_1 + f_n_2 !! Update current F number
+                f_n_2 = f_n_1 
+                f_n_1 = f_n !! Update previous two numbers
+
+            end do            
+
+        else 
+            print *, "N must be a natural number"
+        end if      
 
     end function
 

@@ -6,5 +6,5 @@ add_subdirectory(io)
 add_subdirectory(numeric)
 add_subdirectory(science)
 
-target_link_libraries(foreng math io numeric science)
+target_link_libraries(foreng foreng_math foreng_io foreng_numeric foreng_science)
 

@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 4.7% of total for modules and submodules.">114 statements</a>
+    title=" 5.3% of total for modules and submodules.">145 statements</a>
      </li> 
      
      
@@ -211,9 +211,13 @@
       
       <a class="list-group-item" href="../module/foreng_math_misc.html#proc-exp_series_r64">exp_series_r64</a>
       
+      <a class="list-group-item" href="../module/foreng_math_misc.html#proc-sind_series">sind_series</a>
+      
       <a class="list-group-item" href="../module/foreng_math_misc.html#proc-nth_root_r32">nth_root_r32</a>
       
       <a class="list-group-item" href="../module/foreng_math_misc.html#proc-nth_root_r64">nth_root_r64</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_misc.html#proc-fibonacci_loop">fibonacci_loop</a>
       
     </div>
   </div>
@@ -248,6 +252,8 @@
   <ul class="list-inline">
     
     <li><a href='../module/foreng_env.html'>foreng_env</a></li>
+    
+    <li><a href='../module/foreng_math_trig.html'>foreng_math_trig</a></li>
     
   </ul>
       </li>
@@ -313,9 +319,13 @@
       
       <a class="list-group-item" href="../module/foreng_math_misc.html#proc-exp_series_r64">exp_series_r64</a>
       
+      <a class="list-group-item" href="../module/foreng_math_misc.html#proc-sind_series">sind_series</a>
+      
       <a class="list-group-item" href="../module/foreng_math_misc.html#proc-nth_root_r32">nth_root_r32</a>
       
       <a class="list-group-item" href="../module/foreng_math_misc.html#proc-nth_root_r64">nth_root_r64</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_misc.html#proc-fibonacci_loop">fibonacci_loop</a>
       
     </div>
   </div>
@@ -1402,6 +1412,89 @@ public function <a href='../proc/exp_series_r64.html'>exp_series_r64</a>(x) resu
     
     
   <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-sind_series"></span><h3>
+public function <a href='../proc/sind_series.html'>sind_series</a>(x_, n_) result(sin_x)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Compute sine using a truncated taylor series</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x_</strong></td><td><p>Angle in degrees</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>n_</strong></td><td><p>Number of terms to use</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-nth_root_r32"></span><h3>
 public function <a href='../proc/nth_root_r32.html'>nth_root_r32</a>(x_, n_) result(root_)
     
@@ -1542,6 +1635,75 @@ public function <a href='../proc/nth_root_r64.html'>nth_root_r64</a>(x_, n_) res
   
   
      <h4>Return Value <small>real(kind=real64)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-fibonacci_loop"></span><h3>
+public function <a href='../proc/fibonacci_loop.html'>fibonacci_loop</a>(n) result(f_n)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Update current F number
+ Update previous two numbers</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=int64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>n</strong></td><td><p>Nth fibonacci to compute</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer(kind=int64)
   </small></h4>
   
     
