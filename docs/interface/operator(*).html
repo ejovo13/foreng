@@ -130,21 +130,21 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 0.1% of total for procedures.</p>Including implementation: 9 statements,  0.3% of total for procedures.">3 statements</a>
+    title="<p> 0.2% of total for procedures.</p>Including implementation: 23 statements,  0.8% of total for procedures.">5 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/radar.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/math_geom.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/radar.f90.html'>radar.f90</a></li>
+     <li><a href='../sourcefile/math_geom.f90.html'>math_geom.f90</a></li>
     
-     <li><a href='../module/radar.html'>radar</a></li>
+     <li><a href='../module/foreng_math_geom.html'>foreng_math_geom</a></li>
     
   
      <li class="active">operator(*)</li>
@@ -192,7 +192,11 @@
   <div id="modprocs-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/operator%28%2A%29.html#moduleprocedure-scalar_times_vector">scalar_times_vector</a>
+      <a class="list-group-item" href="../interface/operator%28%2A%29.html#moduleprocedure-scalar_times_vector3_r32">scalar_times_vector3_r32</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29.html#moduleprocedure-scalar_times_vector3_r64">scalar_times_vector3_r64</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29.html#moduleprocedure-scalar_times_vector3_int">scalar_times_vector3_int</a>
       
     </div>
   </div>
@@ -241,7 +245,11 @@
   <div id="modprocs-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../interface/operator%28%2A%29.html#moduleprocedure-scalar_times_vector">scalar_times_vector</a>
+      <a class="list-group-item" href="../interface/operator%28%2A%29.html#moduleprocedure-scalar_times_vector3_r32">scalar_times_vector3_r32</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29.html#moduleprocedure-scalar_times_vector3_r64">scalar_times_vector3_r64</a>
+      
+      <a class="list-group-item" href="../interface/operator%28%2A%29.html#moduleprocedure-scalar_times_vector3_int">scalar_times_vector3_int</a>
       
     </div>
   </div>
@@ -262,8 +270,8 @@
    
     
   <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-scalar_times_vector"></span><h3>
-public elemental function <a href='../proc/scalar_times_vector.html'>scalar_times_vector</a>(scalar, vec) result(v2)
+  <div class="panel-heading codesum"><span class="anchor" id="proc-scalar_times_vector3_r32"></span><h3>
+public function <a href='../proc/scalar_times_vector3_r32.html'>scalar_times_vector3_r32</a>(k, v1) result(v2)
     
     
    
@@ -291,12 +299,12 @@ public elemental function <a href='../proc/scalar_times_vector.html'>scalar_time
   
 <tr>
   
-  <td><span class="anchor" ></span>real,</td>
+  <td><span class="anchor" ></span>real(kind=real32),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>scalar</strong></td><td></td>
+  <td><strong>k</strong></td><td></td>
   
 </tr>
 
@@ -306,12 +314,12 @@ public elemental function <a href='../proc/scalar_times_vector.html'>scalar_time
   
 <tr>
   
-  <td><span class="anchor" ></span>class(<a href='../type/vector.html'>vector</a>),</td>
+  <td><span class="anchor" ></span>class(<a href='../type/vector3.html'>vector3</a>),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>vec</strong></td><td></td>
+  <td><strong>v1</strong></td><td></td>
   
 </tr>
 
@@ -326,7 +334,157 @@ public elemental function <a href='../proc/scalar_times_vector.html'>scalar_time
   
   
   
-     <h4>Return Value <small>type(<a href='../type/vector.html'>vector</a>)
+     <h4>Return Value <small>type(<a href='../type/vector3.html'>vector3</a>)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-scalar_times_vector3_r64"></span><h3>
+public function <a href='../proc/scalar_times_vector3_r64.html'>scalar_times_vector3_r64</a>(k, v1) result(v2)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/vector3.html'>vector3</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v1</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/vector3.html'>vector3</a>)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+   
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-scalar_times_vector3_int"></span><h3>
+public function <a href='../proc/scalar_times_vector3_int.html'>scalar_times_vector3_int</a>(k, v1) result(v2)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/vector3.html'>vector3</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>v1</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/vector3.html'>vector3</a>)
   </small></h4>
   
     

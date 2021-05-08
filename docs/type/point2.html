@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>15.5% of total for derived types.</p>Including implementation: 75 statements, 35.7% of total for derived types.">13 statements</a>
+    title="<p>16.6% of total for derived types.</p>Including implementation: 163 statements, 23.8% of total for derived types.">24 statements</a>
      </li> 
      
      
@@ -213,13 +213,35 @@
       
       <a class="list-group-item" href="../type/point2.html#boundprocedure-theta">theta</a>
       
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-to_array">to_array</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-dist">dist</a>
+      
       <a class="list-group-item" href="../type/point2.html#boundprocedure-from_pol">from_pol</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-assignment%28%3D%29">assignment(=)</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-operator%28%2B%29">operator(+)</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-operator%28-%29">operator(-)</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-add">add</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-subtract_point2">subtract_point2</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-unary_minus">unary_minus</a>
       
       <a class="list-group-item" href="../type/point2.html#boundprocedure-from_pol_r32">from_pol_r32</a>
       
       <a class="list-group-item" href="../type/point2.html#boundprocedure-from_pol_r64">from_pol_r64</a>
       
       <a class="list-group-item" href="../type/point2.html#boundprocedure-from_pol_int">from_pol_int</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-from_array_r32">from_array_r32</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-from_array_r64">from_array_r64</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-from_array_int">from_array_int</a>
       
     </div>
   </div>
@@ -291,13 +313,35 @@
       
       <a class="list-group-item" href="../type/point2.html#boundprocedure-theta">theta</a>
       
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-to_array">to_array</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-dist">dist</a>
+      
       <a class="list-group-item" href="../type/point2.html#boundprocedure-from_pol">from_pol</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-assignment%28%3D%29">assignment(=)</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-operator%28%2B%29">operator(+)</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-operator%28-%29">operator(-)</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-add">add</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-subtract_point2">subtract_point2</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-unary_minus">unary_minus</a>
       
       <a class="list-group-item" href="../type/point2.html#boundprocedure-from_pol_r32">from_pol_r32</a>
       
       <a class="list-group-item" href="../type/point2.html#boundprocedure-from_pol_r64">from_pol_r64</a>
       
       <a class="list-group-item" href="../type/point2.html#boundprocedure-from_pol_int">from_pol_int</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-from_array_r32">from_array_r32</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-from_array_r64">from_array_r64</a>
+      
+      <a class="list-group-item" href="../type/point2.html#boundprocedure-from_array_int">from_array_int</a>
       
     </div>
   </div>
@@ -666,6 +710,167 @@ public function <a href='../proc/point2_theta.html'>point2_theta</a>(self) resul
     
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-to_array"></span><h3>procedure, public :: <strong>to_array</strong>  => <a href='../proc/point2_to_array.html'>point2_to_array</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+public function <a href='../proc/point2_to_array.html'>point2_to_array</a>(self) result(array)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64),
+  dimension(2)</small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-dist"></span><h3>procedure, public :: <strong>dist</strong>  => <a href='../proc/point2_distance_between_point2.html'>point2_distance_between_point2</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+public function <a href='../proc/point2_distance_between_point2.html'>point2_distance_between_point2</a>(self, p2) result(dist)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64)
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-from_pol"></span><h3>generic, public :: <strong>from_pol</strong>  => <a href='../type/point2.html#boundprocedure-from_pol_r32'>from_pol_r32</a>, <a href='../type/point2.html#boundprocedure-from_pol_r64'>from_pol_r64</a>, <a href='../type/point2.html#boundprocedure-from_pol_int'>from_pol_int</a> 
     
   </h3></div>
@@ -904,6 +1109,705 @@ public function <a href='../proc/point2_from_polar_int.html'>point2_from_polar_i
     
 
          
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-assignment%28%3D%29"></span><h3>generic, public :: <strong>assignment(=)</strong>  => <a href='../type/point2.html#boundprocedure-from_array_r32'>from_array_r32</a>, <a href='../type/point2.html#boundprocedure-from_array_r64'>from_array_r64</a>, <a href='../type/point2.html#boundprocedure-from_array_int'>from_array_int</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+public subroutine <a href='../proc/point2_from_array_r32.html'>point2_from_array_r32</a>(point, array)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>point</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(2)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+public subroutine <a href='../proc/point2_from_array_r64.html'>point2_from_array_r64</a>(point, array)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>point</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(2)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+public subroutine <a href='../proc/point2_from_array_int.html'>point2_from_array_int</a>(point, array)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>point</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(2)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28%2B%29"></span><h3>generic, public :: <strong>operator(+)</strong>  => <a href='../type/point2.html#boundprocedure-add'>add</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+public function <a href='../proc/point2_plus_point2.html'>point2_plus_point2</a>(self, p2) result(p3)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/point2.html'>point2</a>)
+  </small></h4>
+  
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-operator%28-%29"></span><h3>generic, public :: <strong>operator(-)</strong>  => <a href='../type/point2.html#boundprocedure-subtract_point2'>subtract_point2</a>, <a href='../type/point2.html#boundprocedure-unary_minus'>unary_minus</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+public function <a href='../proc/point2_minus_point2.html'>point2_minus_point2</a>(self, p2) result(p3)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/point2.html'>point2</a>)
+  </small></h4>
+  
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+public function <a href='../proc/point2_unary_minus.html'>point2_unary_minus</a>(self) result(p3)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/point2.html'>point2</a>)
+  </small></h4>
+  
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-add"></span><h3>procedure, public :: <strong>add</strong>  => <a href='../proc/point2_plus_point2.html'>point2_plus_point2</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+public function <a href='../proc/point2_plus_point2.html'>point2_plus_point2</a>(self, p2) result(p3)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/point2.html'>point2</a>)
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-subtract_point2"></span><h3>procedure, public :: <strong>subtract_point2</strong>  => <a href='../proc/point2_minus_point2.html'>point2_minus_point2</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+public function <a href='../proc/point2_minus_point2.html'>point2_minus_point2</a>(self, p2) result(p3)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>p2</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/point2.html'>point2</a>)
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-unary_minus"></span><h3>procedure, public :: <strong>unary_minus</strong>  => <a href='../proc/point2_unary_minus.html'>point2_unary_minus</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+public function <a href='../proc/point2_unary_minus.html'>point2_unary_minus</a>(self) result(p3)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(<a href='../type/point2.html'>point2</a>)
+  </small></h4>
+  
+    
+
+        
       
       </li>
     
@@ -1165,6 +2069,243 @@ public function <a href='../proc/point2_from_polar_int.html'>point2_from_polar_i
      <h4>Return Value <small>type(<a href='../type/point2.html'>point2</a>)
   </small></h4>
   
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-from_array_r32"></span><h3>procedure, public :: <strong>from_array_r32</strong>  => <a href='../proc/point2_from_array_r32.html'>point2_from_array_r32</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+public subroutine <a href='../proc/point2_from_array_r32.html'>point2_from_array_r32</a>(point, array)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>point</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(2)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-from_array_r64"></span><h3>procedure, public :: <strong>from_array_r64</strong>  => <a href='../proc/point2_from_array_r64.html'>point2_from_array_r64</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+public subroutine <a href='../proc/point2_from_array_r64.html'>point2_from_array_r64</a>(point, array)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>point</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(2)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-from_array_int"></span><h3>procedure, public :: <strong>from_array_int</strong>  => <a href='../proc/point2_from_array_int.html'>point2_from_array_int</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+public subroutine <a href='../proc/point2_from_array_int.html'>point2_from_array_int</a>(point, array)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>point</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(2)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
     
 
         

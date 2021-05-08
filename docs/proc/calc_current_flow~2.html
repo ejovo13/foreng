@@ -197,7 +197,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public elemental function calc_current_flow(v_D_, I_O_, T_) result(i_D_)
+public elemental function calc_current_flow(v_D, I_O, T) result(i_D_)
     
     
    
@@ -226,12 +226,12 @@ public elemental function calc_current_flow(v_D_, I_O_, T_) result(i_D_)
   
 <tr>
   
-  <td><span class="anchor" id="variable-v_d_"></span>real(kind=16),</td>
+  <td><span class="anchor" id="variable-v_d~2"></span>real(kind=16),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>v_D_</strong></td><td><p>Voltage across the diode, in volts</p></td>
+  <td><strong>v_D</strong></td><td><p>Voltage across the diode, in volts</p></td>
   
 </tr>
 
@@ -241,12 +241,12 @@ public elemental function calc_current_flow(v_D_, I_O_, T_) result(i_D_)
   
 <tr>
   
-  <td><span class="anchor" id="variable-i_o_"></span>real(kind=16),</td>
+  <td><span class="anchor" id="variable-i_o~2"></span>real(kind=16),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>I_O_</strong></td><td><p>Leakage current of the diode, in amperes</p></td>
+  <td><strong>I_O</strong></td><td><p>Leakage current of the diode, in amperes</p></td>
   
 </tr>
 
@@ -256,12 +256,12 @@ public elemental function calc_current_flow(v_D_, I_O_, T_) result(i_D_)
   
 <tr>
   
-  <td><span class="anchor" id="variable-t_~2"></span>real(kind=16),</td>
+  <td><span class="anchor" id="variable-t~2"></span>real(kind=16),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>T_</strong></td><td><p>Temperature, in kelvins (K)</p></td>
+  <td><strong>T</strong></td><td><p>Temperature, in kelvins (K)</p></td>
   
 </tr>
 
@@ -275,9 +275,9 @@ public elemental function calc_current_flow(v_D_, I_O_, T_) result(i_D_)
     
     
     
-   <h3>Return Value <small><span class="anchor" id="variable-i_d_"></span>real(kind=16)
+   <h3>Return Value <small><span class="anchor" id="variable-i_d_"></span>integer
   </small></h3>
-    <p>Current flow through the diode in amperes</p>
+    
     
     
     

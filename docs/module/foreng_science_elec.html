@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for modules and submodules.">13 statements</a>
+    title=" 0.4% of total for modules and submodules.">13 statements</a>
      </li> 
      
      
@@ -293,7 +293,7 @@
     
   <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-calc_current_flow~2"></span><h3>
-public elemental function <a href='../proc/calc_current_flow~2.html'>calc_current_flow</a>(v_D_, I_O_, T_) result(i_D_)
+public elemental function <a href='../proc/calc_current_flow~2.html'>calc_current_flow</a>(v_D, I_O, T) result(i_D_)
     
     
    
@@ -326,7 +326,7 @@ public elemental function <a href='../proc/calc_current_flow~2.html'>calc_curren
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>v_D_</strong></td><td><p>Voltage across the diode, in volts</p></td>
+  <td><strong>v_D</strong></td><td><p>Voltage across the diode, in volts</p></td>
   
 </tr>
 
@@ -341,7 +341,7 @@ public elemental function <a href='../proc/calc_current_flow~2.html'>calc_curren
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>I_O_</strong></td><td><p>Leakage current of the diode, in amperes</p></td>
+  <td><strong>I_O</strong></td><td><p>Leakage current of the diode, in amperes</p></td>
   
 </tr>
 
@@ -356,7 +356,7 @@ public elemental function <a href='../proc/calc_current_flow~2.html'>calc_curren
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>T_</strong></td><td><p>Temperature, in kelvins (K)</p></td>
+  <td><strong>T</strong></td><td><p>Temperature, in kelvins (K)</p></td>
   
 </tr>
 
@@ -371,9 +371,9 @@ public elemental function <a href='../proc/calc_current_flow~2.html'>calc_curren
   
   
   
-     <h4>Return Value <small>real(kind=16)
+     <h4>Return Value <small>integer
   </small></h4>
-  <p>Current flow through the diode in amperes</p>
+  
     
 
   </div>

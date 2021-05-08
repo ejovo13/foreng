@@ -6,6 +6,7 @@ add_library(
     numeric_calculus.f90 
     numeric_matrices.f90 
     numeric_regression.f90 
+    numeric_conversion.f90
 
 )
 

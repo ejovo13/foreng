@@ -396,8 +396,29 @@ contains
 
     end subroutine
 
+!=============================================================================!
+!=                             Poisson Functions                            =!
+!=============================================================================!
 
 
+    function poisson(k, t, lamda) result (P)
+        ! Purpose:
+        !
+        !   To return the probability that the number of calls, k, is observed after a given
+        !   time, t.
+        !
+        ! Data dictionary : Declare values used inside the function
+        integer, intent(in) :: k         ! The number of observations in a given time
+        real, intent(in) :: t            ! The amount of time passed
+        real, intent(in) :: lamda        ! The paramater of a poisson distribution
+        real :: P                        ! The probability that k observations occured in time t
+        integer :: k_fact
+        integer :: fact
+    
+        k_fact = fact(k)
+        P = exp(-lamda * t) * (((lamda * t) ** k)/ k_fact)
+    
+    end function
 
 
 

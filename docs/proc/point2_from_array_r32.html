@@ -10,7 +10,7 @@
     <meta name="author" content="Evan Voyles" >
     <link rel="icon" href="../favicon.png">
 
-    <title>cross_product &ndash; Fortran Program</title>
+    <title>point2_from_array_r32 &ndash; Fortran Program</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -112,8 +112,8 @@
     
   
   <div class="row">
-    <h1>cross_product
-      <small>Function</small>
+    <h1>point2_from_array_r32
+      <small>Subroutine</small>
     
     </h1>
     
@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">7 statements</a>
+    title=" 0.2% of total for procedures.">6 statements</a>
      </li> 
      
      
@@ -147,7 +147,7 @@
      <li><a href='../module/foreng_math_geom.html'>foreng_math_geom</a></li>
     
   
-     <li class="active">cross_product</li>
+     <li class="active">point2_from_array_r32</li>
   </ol>
 </div>
 </div>
@@ -197,7 +197,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public function cross_product(v1, v2) result(normal)
+public subroutine point2_from_array_r32(point, array)
     
     
    
@@ -226,12 +226,12 @@ public function cross_product(v1, v2) result(normal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-v1"></span>real,</td>
-  <td>intent(in),</td>
+  <td><span class="anchor" id="variable-point~7"></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(out)</td>
   <td></td>
   
-  <td>dimension(3)</td><td>::</td>
-  <td><strong>v1</strong></td><td><p>Vectors to cross multiply</p></td>
+  <td></td><td>::</td>
+  <td><strong>point</strong></td><td></td>
   
 </tr>
 
@@ -241,12 +241,12 @@ public function cross_product(v1, v2) result(normal)
   
 <tr>
   
-  <td><span class="anchor" id="variable-v2"></span>real,</td>
+  <td><span class="anchor" id="variable-array~4"></span>real(kind=real32),</td>
   <td>intent(in),</td>
   <td></td>
   
-  <td>dimension(3)</td><td>::</td>
-  <td><strong>v2</strong></td><td><p>Vectors to cross multiply</p></td>
+  <td>dimension(2)</td><td>::</td>
+  <td><strong>array</strong></td><td></td>
   
 </tr>
 
@@ -254,15 +254,6 @@ public function cross_product(v1, v2) result(normal)
 </table>
 
     
-    
-    
-    
-    
-    
-    
-   <h3>Return Value <small><span class="anchor" id="variable-normal"></span>real,
-  dimension(3)</small></h3>
-    <p>Normal vector that is the output</p>
     
     
     
