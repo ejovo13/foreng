@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 7.6% of total for modules and submodules.">233 statements</a>
+    title=" 8.7% of total for modules and submodules.">258 statements</a>
      </li> 
      
      
@@ -205,6 +205,10 @@
       
       <a class="list-group-item" href="../module/foreng_math_prob.html#proc-urand_i64">urand_i64</a>
       
+      <a class="list-group-item" href="../module/foreng_math_prob.html#proc-poisson">poisson</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_prob.html#proc-standard_normal_rand">standard_normal_rand</a>
+      
     </div>
   </div>
 </div>
@@ -273,6 +277,8 @@
     
     <li><a href='../module/foreng_env.html'>foreng_env</a></li>
     
+    <li><a href='../module/foreng_math_misc.html'>foreng_math_misc</a></li>
+    
   </ul>
       </li>
       
@@ -330,6 +336,10 @@
       <a class="list-group-item" href="../module/foreng_math_prob.html#proc-urand_i32">urand_i32</a>
       
       <a class="list-group-item" href="../module/foreng_math_prob.html#proc-urand_i64">urand_i64</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_prob.html#proc-poisson">poisson</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_prob.html#proc-standard_normal_rand">standard_normal_rand</a>
       
     </div>
   </div>
@@ -2058,6 +2068,127 @@ public function <a href='../proc/urand_i64.html'>urand_i64</a>(min, max) result(
   <p>
 <script type="math/tex">x \sim \mathcal{U}[a, b]</script>
 </p>
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-poisson"></span><h3>
+public function <a href='../proc/poisson.html'>poisson</a>(k, t, lamda) result(P)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>t</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lamda</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-standard_normal_rand"></span><h3>
+public function <a href='../proc/standard_normal_rand.html'>standard_normal_rand</a>() result(x)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64)
+  </small></h4>
+  
     
 
   </div>

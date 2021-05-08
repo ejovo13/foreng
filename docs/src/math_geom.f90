@@ -7,6 +7,10 @@ use foreng_math_trig
 implicit none
 
 ! // TODO DOCUMENT
+
+!=============================================================================!
+!=                          Cross Product Interface                          =!
+!=============================================================================!
 interface cross_product
 
     module procedure cross_product_r32
@@ -14,6 +18,9 @@ interface cross_product
 
 end interface
 
+!=============================================================================!
+!=                             Point2 Interface                              =!
+!=============================================================================!
 type :: point2
 !! A point object with coordinates stored in cartesian coordinates
 
@@ -48,6 +55,9 @@ contains
 end type
 
 
+!=============================================================================!
+!=                             Point3 Interface                              =!
+!=============================================================================!
 type :: point3
 
     real(real64) :: x
@@ -87,6 +97,9 @@ contains
 end type
 
 
+!=============================================================================!
+!=                            Vector3 Interface                              =!
+!=============================================================================!
 type :: vector3
 
     real(real64) :: x
@@ -127,6 +140,33 @@ contains
 
 end type
 
+!=============================================================================!
+!=                              Line2 Interface                              =!
+!=============================================================================!
+
+type :: line2
+
+    real(real64) :: m
+    real(real64) :: b
+
+contains
+
+    procedure :: atx => line2_atx !! Evaluate y = mx + b for a given x
+    procedure :: aty => line2_aty !! Evaluate y = mx + b for a given y
+    procedure :: print => line2_print
+
+    generic :: assignment(=) => from_two_points
+
+    procedure :: from_two_points => line2_from_two_point2
+
+end type
+
+
+
+
+!=============================================================================!
+!=                         Operator(*) Interface                             =!
+!=============================================================================!
 interface operator(*)
 
     module procedure scalar_times_vector3_r32
@@ -134,24 +174,6 @@ interface operator(*)
     module procedure scalar_times_vector3_int
 
 end interface
-
-! interface operator(.dot.)
-
-!     module procedure vector3_dot_vector3
-
-! end interface 
-
-! interface operator(.cross.)
-
-!     module procedure vector3_cross_vector3
-
-! end interface
-
-! interface operator(.angle.) 
-
-!     module procedure vector3_angle_between_vector3
-
-! end interface
 
 contains 
 !=============================================================================!
@@ -728,5 +750,57 @@ contains
 
     end function
 
+!=============================================================================!
+!=                              Line2 Functions                              =!
+!=============================================================================!
+
+    function line2_atx (self, x) result (y)
+        
+        class(line2), intent(in) :: self
+        real(real64), intent(in) :: x
+        real(real64) :: y
+
+        y = self%m * x + self%b        
+    
+    end function
+
+    function line2_aty (self, y) result (x)
+        
+        class(line2), intent(in) :: self
+        real(real64), intent(in) :: y
+        real(real64) :: x
+
+        x = (y - self%b) / self%m      
+    
+    end function
+
+    subroutine line2_from_two_point2(line, two_points)
+
+        class(point2), dimension(2), intent(in), target :: two_points
+
+        type(point2), pointer :: p1, p2
+        class(line2), intent(out) :: line
+
+        p1 => two_points(1)
+        p2 => two_points(2)
+
+        print *, "p1 = ", p1
+        print *, "p2 = ", p2
+
+
+        line%m = (p2%y - p1%y) / (p2%x - p1%x)
+        line%b = p1%y - ( p1%x * line%m )
+
+    end subroutine
+
+    subroutine line2_print(self)
+
+        class(line2), intent(in) :: self
+
+        print 1, self%m, self%b
+
+        1 format("y = ", G11.5, "x + ", G11.5)
+
+    end subroutine
 
 end module

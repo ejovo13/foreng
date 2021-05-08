@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="13.4% of total for modules and submodules.">410 statements</a>
+    title="15.0% of total for modules and submodules.">448 statements</a>
      </li> 
      
      
@@ -201,6 +201,8 @@
       <a class="list-group-item" href="../module/foreng_math_geom.html#type-point3">point3</a>
       
       <a class="list-group-item" href="../module/foreng_math_geom.html#type-vector3">vector3</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_geom.html#type-line2">line2</a>
       
     </div>
   </div>
@@ -293,6 +295,10 @@
       
       <a class="list-group-item" href="../module/foreng_math_geom.html#proc-distance">distance</a>
       
+      <a class="list-group-item" href="../module/foreng_math_geom.html#proc-line2_atx">line2_atx</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_geom.html#proc-line2_aty">line2_aty</a>
+      
     </div>
   </div>
 </div>
@@ -331,6 +337,10 @@
       <a class="list-group-item" href="../module/foreng_math_geom.html#proc-vector3_from_array_r64">vector3_from_array_r64</a>
       
       <a class="list-group-item" href="../module/foreng_math_geom.html#proc-vector3_from_array_int">vector3_from_array_int</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_geom.html#proc-line2_from_two_point2">line2_from_two_point2</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_geom.html#proc-line2_print">line2_print</a>
       
     </div>
   </div>
@@ -421,6 +431,8 @@
       <a class="list-group-item" href="../module/foreng_math_geom.html#type-point3">point3</a>
       
       <a class="list-group-item" href="../module/foreng_math_geom.html#type-vector3">vector3</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_geom.html#type-line2">line2</a>
       
     </div>
   </div>
@@ -513,6 +525,10 @@
       
       <a class="list-group-item" href="../module/foreng_math_geom.html#proc-distance">distance</a>
       
+      <a class="list-group-item" href="../module/foreng_math_geom.html#proc-line2_atx">line2_atx</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_geom.html#proc-line2_aty">line2_aty</a>
+      
     </div>
   </div>
 </div>
@@ -551,6 +567,10 @@
       <a class="list-group-item" href="../module/foreng_math_geom.html#proc-vector3_from_array_r64">vector3_from_array_r64</a>
       
       <a class="list-group-item" href="../module/foreng_math_geom.html#proc-vector3_from_array_int">vector3_from_array_int</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_geom.html#proc-line2_from_two_point2">line2_from_two_point2</a>
+      
+      <a class="list-group-item" href="../module/foreng_math_geom.html#proc-line2_print">line2_print</a>
       
     </div>
   </div>
@@ -1381,6 +1401,86 @@ public function <a href='../proc/scalar_times_vector3_int.html'>scalar_times_vec
        <td></td></tr>
       
        <tr><td>procedure, public :: <strong><a href='../type/vector3.html#boundprocedure-unary_minus~2'>unary_minus</a></strong>  => vector3_unary_minus </td>
+       <td></td></tr>
+      
+       </tbody>
+       </table>
+     
+  </div>
+</div>
+
+     
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-line2"></span><h3>type, public :: <a href='../type/line2.html'>line2</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-m"></span>real(kind=real64),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>m</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-b"></span>real(kind=real64),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>b</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/line2.html#boundprocedure-atx'>atx</a></strong>  => line2_atx </td>
+       <td><p>Evaluate y = mx + b for a given x</p></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/line2.html#boundprocedure-aty'>aty</a></strong>  => line2_aty </td>
+       <td><p>Evaluate y = mx + b for a given y</p></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/line2.html#boundprocedure-print~4'>print</a></strong>  => line2_print </td>
+       <td></td></tr>
+      
+       <tr><td>generic, public :: <strong><a href='../type/line2.html#boundprocedure-assignment%28%3D%29~4'>assignment(=)</a></strong>  => from_two_points </td>
+       <td></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/line2.html#boundprocedure-from_two_points'>from_two_points</a></strong>  => line2_from_two_point2 </td>
        <td></td></tr>
       
        </tbody>
@@ -4311,6 +4411,156 @@ public function <a href='../proc/distance.html'>distance</a>(p1, p2) result(d1)
   </div>
 
     
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-line2_atx"></span><h3>
+public function <a href='../proc/line2_atx.html'>line2_atx</a>(self, x) result(y)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/line2.html'>line2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-line2_aty"></span><h3>
+public function <a href='../proc/line2_aty.html'>line2_aty</a>(self, y) result(x)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/line2.html'>line2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>y</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64)
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+    
     </section>
     <br>
     
@@ -5170,6 +5420,123 @@ public subroutine <a href='../proc/vector3_from_array_int.html'>vector3_from_arr
   
   <td>dimension(3)</td><td>::</td>
   <td><strong>array</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-line2_from_two_point2"></span><h3>
+public subroutine <a href='../proc/line2_from_two_point2.html'>line2_from_two_point2</a>(line, two_points)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/line2.html'>line2</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>line</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/point2.html'>point2</a>),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension(2), target</td><td>::</td>
+  <td><strong>two_points</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-line2_print"></span><h3>
+public subroutine <a href='../proc/line2_print.html'>line2_print</a>(self)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/line2.html'>line2</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
   
 </tr>
 

@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for source files.">3 statements</a>
+    title=" 2.8% of total for source files.">97 statements</a>
      </li> 
      
      
@@ -269,7 +269,173 @@
 <a name="ln-2"></a>
 <a name="ln-3"></a><span class="k">use </span><span class="n">foreng_env</span>
 <a name="ln-4"></a>
-<a name="ln-5"></a><span class="k">end module</span>
+<a name="ln-5"></a><span class="c">! This module provides an interface for a variety of different elimination methods</span>
+<a name="ln-6"></a><span class="c">! to solve systems of linear equations.</span>
+<a name="ln-7"></a>
+<a name="ln-8"></a><span class="k">INTERFACE </span><span class="n">gauss_elim</span>
+<a name="ln-9"></a>
+<a name="ln-10"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_sing_32</span>
+<a name="ln-11"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_sing_64</span>
+<a name="ln-12"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_sing_128</span>
+<a name="ln-13"></a>
+<a name="ln-14"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_mult_32</span>
+<a name="ln-15"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_mult_64</span>
+<a name="ln-16"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_mult_128</span>
+<a name="ln-17"></a>
+<a name="ln-18"></a>    <span class="c">! ERROR RETURNS:</span>
+<a name="ln-19"></a>    <span class="c">!----------------</span>
+<a name="ln-20"></a>    <span class="c">! 111 - Error allocating memory for augmented matrix</span>
+<a name="ln-21"></a>    <span class="c">! 999 - Nonsingular matrix</span>
+<a name="ln-22"></a>
+<a name="ln-23"></a><span class="k">END INTERFACE </span>
+<a name="ln-24"></a>
+<a name="ln-25"></a><span class="k">INTERFACE </span><span class="n">inverse</span>
+<a name="ln-26"></a>
+<a name="ln-27"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_inverse_32</span>
+<a name="ln-28"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_inverse_64</span>
+<a name="ln-29"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">gauss_elim_inverse_128</span>
+<a name="ln-30"></a>
+<a name="ln-31"></a><span class="k">END INTERFACE </span>
+<a name="ln-32"></a>
+<a name="ln-33"></a><span class="k">INTERFACE </span><span class="n">lu</span>
+<a name="ln-34"></a>
+<a name="ln-35"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">lu_decomp_32</span>
+<a name="ln-36"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">lu_decomp_64</span>
+<a name="ln-37"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">lu_decomp_128</span>
+<a name="ln-38"></a>
+<a name="ln-39"></a><span class="k">END INTERFACE</span>
+<a name="ln-40"></a>
+<a name="ln-41"></a><span class="k">INTERFACE </span><span class="n">eliminate_column</span>
+<a name="ln-42"></a>
+<a name="ln-43"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">eliminate_column_32</span>
+<a name="ln-44"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">eliminate_column_64</span>
+<a name="ln-45"></a>    <span class="k">MODULE PROCEDURE </span><span class="n">eliminate_column_128</span> 
+<a name="ln-46"></a>
+<a name="ln-47"></a><span class="k">END INTERFACE</span>
+<a name="ln-48"></a>
+<a name="ln-49"></a>
+<a name="ln-50"></a><span class="k">INTERFACE</span>  <span class="c">! Explicit declaration of gauss elimination functions</span>
+<a name="ln-51"></a>
+<a name="ln-52"></a>    <span class="k">MODULE FUNCTION </span><span class="n">gauss_elim_sing_32</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-53"></a>
+<a name="ln-54"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>            <span class="c">! System of linear equations</span>
+<a name="ln-55"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">)),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>  <span class="c">! RHS of the equation Ax = b</span>
+<a name="ln-56"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="kd">::</span> <span class="n">x</span>              <span class="c">! Solution to the system of equations</span>
+<a name="ln-57"></a>
+<a name="ln-58"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-59"></a>
+<a name="ln-60"></a><span class="k">    MODULE FUNCTION </span><span class="n">gauss_elim_sing_64</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-61"></a>
+<a name="ln-62"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>            <span class="c">! System of linear equations</span>
+<a name="ln-63"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">)),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>  <span class="c">! RHS of the equation Ax = b</span>
+<a name="ln-64"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="kd">::</span> <span class="n">x</span>              <span class="c">! Solution to the system of equations</span>
+<a name="ln-65"></a>
+<a name="ln-66"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-67"></a>
+<a name="ln-68"></a><span class="k">    MODULE FUNCTION </span><span class="n">gauss_elim_sing_128</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-69"></a>
+<a name="ln-70"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>            <span class="c">! System of linear equations</span>
+<a name="ln-71"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">)),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>  <span class="c">! RHS of the equation Ax = b</span>
+<a name="ln-72"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="kd">::</span> <span class="n">x</span>  <span class="c">! Solution to the system of equations</span>
+<a name="ln-73"></a>
+<a name="ln-74"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-75"></a>
+<a name="ln-76"></a><span class="k">    MODULE FUNCTION </span><span class="n">gauss_elim_mult_32</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-77"></a>
+<a name="ln-78"></a>        
+<a name="ln-79"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>               <span class="c">! System of linear equations</span>
+<a name="ln-80"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>               <span class="c">! RHS of the equation Ax = b</span>
+<a name="ln-81"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="kd">::</span> <span class="n">x</span>  <span class="c">! Solution to the system of equations</span>
+<a name="ln-82"></a>
+<a name="ln-83"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-84"></a>
+<a name="ln-85"></a><span class="k">    MODULE FUNCTION </span><span class="n">gauss_elim_mult_64</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-86"></a>
+<a name="ln-87"></a>        
+<a name="ln-88"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>               <span class="c">! System of linear equations</span>
+<a name="ln-89"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>               <span class="c">! RHS of the equation Ax = b</span>
+<a name="ln-90"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="kd">::</span> <span class="n">x</span>  <span class="c">! Solution to the system of equations</span>
+<a name="ln-91"></a>
+<a name="ln-92"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-93"></a>
+<a name="ln-94"></a><span class="k">    MODULE FUNCTION </span><span class="n">gauss_elim_mult_128</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a name="ln-95"></a>
+<a name="ln-96"></a>        
+<a name="ln-97"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>              <span class="c">! System of linear equations</span>
+<a name="ln-98"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span>              <span class="c">! RHS of the equation Ax = b</span>
+<a name="ln-99"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="kd">::</span> <span class="n">x</span> <span class="c">! Solution to the system of equations</span>
+<a name="ln-100"></a>
+<a name="ln-101"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-102"></a>
+<a name="ln-103"></a><span class="k">    MODULE FUNCTION </span><span class="n">gauss_elim_inverse_32</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">A_inv</span><span class="p">)</span>
+<a name="ln-104"></a>
+<a name="ln-105"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-106"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="kd">::</span> <span class="n">A_inv</span>
+<a name="ln-107"></a>
+<a name="ln-108"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-109"></a>
+<a name="ln-110"></a><span class="k">    MODULE FUNCTION </span><span class="n">gauss_elim_inverse_64</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">A_inv</span><span class="p">)</span>
+<a name="ln-111"></a>
+<a name="ln-112"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-113"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="kd">::</span> <span class="n">A_inv</span>
+<a name="ln-114"></a>
+<a name="ln-115"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-116"></a>
+<a name="ln-117"></a><span class="k">    MODULE FUNCTION </span><span class="n">gauss_elim_inverse_128</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span><span class="n">A_inv</span><span class="p">)</span>
+<a name="ln-118"></a>
+<a name="ln-119"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-120"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">DIM</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="kd">::</span> <span class="n">A_inv</span>
+<a name="ln-121"></a>
+<a name="ln-122"></a>    <span class="k">END FUNCTION</span>
+<a name="ln-123"></a>
+<a name="ln-124"></a><span class="k">    MODULE SUBROUTINE </span><span class="n">eliminate_column_32</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">icol</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+<a name="ln-125"></a>
+<a name="ln-126"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-127"></a>        <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">icol</span>
+<a name="ln-128"></a>        <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">order</span>
+<a name="ln-129"></a>
+<a name="ln-130"></a>    <span class="k">END SUBROUTINE</span>
+<a name="ln-131"></a>
+<a name="ln-132"></a><span class="k">    MODULE SUBROUTINE </span><span class="n">eliminate_column_64</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">icol</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+<a name="ln-133"></a>
+<a name="ln-134"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-135"></a>        <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">icol</span>
+<a name="ln-136"></a>        <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">order</span>
+<a name="ln-137"></a>
+<a name="ln-138"></a>    <span class="k">END SUBROUTINE</span>
+<a name="ln-139"></a>
+<a name="ln-140"></a><span class="k">    MODULE SUBROUTINE </span><span class="n">eliminate_column_128</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">icol</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+<a name="ln-141"></a>
+<a name="ln-142"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-143"></a>        <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">icol</span>
+<a name="ln-144"></a>        <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">order</span>
+<a name="ln-145"></a>
+<a name="ln-146"></a>    <span class="k">END SUBROUTINE</span>
+<a name="ln-147"></a>
+<a name="ln-148"></a><span class="k">    MODULE SUBROUTINE </span><span class="n">lu_decomp_32</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+<a name="ln-149"></a>
+<a name="ln-150"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-151"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span>
+<a name="ln-152"></a>
+<a name="ln-153"></a>    <span class="k">END SUBROUTINE</span>
+<a name="ln-154"></a>
+<a name="ln-155"></a><span class="k">    MODULE SUBROUTINE </span><span class="n">lu_decomp_64</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+<a name="ln-156"></a>
+<a name="ln-157"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-158"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real64</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span>
+<a name="ln-159"></a>
+<a name="ln-160"></a>    <span class="k">END SUBROUTINE</span>
+<a name="ln-161"></a>
+<a name="ln-162"></a><span class="k">    MODULE SUBROUTINE </span><span class="n">lu_decomp_128</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+<a name="ln-163"></a>
+<a name="ln-164"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">A</span>
+<a name="ln-165"></a>        <span class="kt">REAL</span><span class="p">(</span><span class="n">real128</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span> <span class="kd">::</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span>
+<a name="ln-166"></a>
+<a name="ln-167"></a>    <span class="k">END SUBROUTINE</span>
+<a name="ln-168"></a>
+<a name="ln-169"></a><span class="k">END INTERFACE</span>
+<a name="ln-170"></a>
+<a name="ln-171"></a><span class="k">end module</span>
 </pre></div>
 
     </section>

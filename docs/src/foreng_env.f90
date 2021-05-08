@@ -1,7 +1,7 @@
 module foreng_env
 !! Top level module for all of the useful functions written for Fortran for Scientists and Engineers
 
-use iso_fortran_env, only: real64, real32, int64, int32, int16
+use iso_fortran_env, only: real64, real32, int64, int32, int16, real128
 
 implicit none
 

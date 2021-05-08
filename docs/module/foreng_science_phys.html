@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for modules and submodules.">17 statements</a>
+    title=" 0.9% of total for modules and submodules.">26 statements</a>
      </li> 
      
      
@@ -187,6 +187,8 @@
       
       <a class="list-group-item" href="../module/foreng_science_phys.html#proc-calc_decibels">calc_decibels</a>
       
+      <a class="list-group-item" href="../module/foreng_science_phys.html#proc-calc_gravity">calc_gravity</a>
+      
     </div>
   </div>
 </div>
@@ -220,6 +222,8 @@
   <ul class="list-inline">
     
     <li><a href='../module/foreng_env.html'>foreng_env</a></li>
+    
+    <li><a href='../module/foreng_science_const.html'>foreng_science_const</a></li>
     
   </ul>
       </li>
@@ -260,6 +264,8 @@
       <a class="list-group-item" href="../module/foreng_science_phys.html#proc-calc_tension">calc_tension</a>
       
       <a class="list-group-item" href="../module/foreng_science_phys.html#proc-calc_decibels">calc_decibels</a>
+      
+      <a class="list-group-item" href="../module/foreng_science_phys.html#proc-calc_gravity">calc_gravity</a>
       
     </div>
   </div>
@@ -468,6 +474,96 @@ public function <a href='../proc/calc_decibels.html'>calc_decibels</a>(P1_, P2_)
      <h4>Return Value <small>real
   </small></h4>
   
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-calc_gravity"></span><h3>
+public function <a href='../proc/calc_gravity.html'>calc_gravity</a>(m1, m2, r) result(F)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>m1</strong></td><td><p>mass of body 1 in kg</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>m2</strong></td><td><p>mass of body 2 in kg</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>r</strong></td><td><p>distance between bodies in meters</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=real64)
+  </small></h4>
+  <p>Gravitational force</p>
     
 
   </div>

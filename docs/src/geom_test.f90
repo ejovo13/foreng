@@ -7,10 +7,9 @@ implicit none
 
     type(point2) :: p1, p2, p3
     real(real64) :: dp
-
-    type(point3) :: p3_1, p3_2
-
+    type(point3) :: p3_1
     type(vector3) :: v1, v2, v3
+    type(line2) :: line
 
 
     v1 = [1, 2, 3]
@@ -19,6 +18,12 @@ implicit none
 
     p1 = point2(10, 9)
     p2 = p2%from_pol(10, 90)
+
+    line = [p1, p2]
+
+    call line%print()
+
+    print *, "line.atx(10) = ", line%atx(10.d0)
 
     call p1%print()
     call p1%print_pol()
@@ -66,8 +71,6 @@ implicit none
 
 
     call p3_1%print_sph()
-
-
 
 
     ! print *, "dot product = ", dp
