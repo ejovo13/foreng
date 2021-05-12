@@ -113,7 +113,7 @@
   
   <div class="row">
     <h1>to_lower
-      <small>Subroutine</small>
+      <small>Function</small>
     
     </h1>
     
@@ -130,7 +130,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">4 statements</a>
+    title=" 0.2% of total for procedures.">8 statements</a>
      </li> 
      
      
@@ -197,7 +197,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-public subroutine to_lower(char)
+public elemental function to_lower(char) result(char_upper)
     
     
    
@@ -206,6 +206,8 @@ public subroutine to_lower(char)
   
 
 
+    
+    <p>Convert an uppercase alpha character to its lowercase counterpart. If the passed character is not uppercase, return the same character.</p>
     
 
     <h3>Arguments</h3>
@@ -227,7 +229,7 @@ public subroutine to_lower(char)
 <tr>
   
   <td><span class="anchor" id="variable-char~13"></span>character(len=1),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -238,6 +240,15 @@ public subroutine to_lower(char)
 </tbody>
 </table>
 
+    
+    
+    
+    
+    
+    
+    
+   <h3>Return Value <small><span class="anchor" id="variable-char_upper"></span>character(len=1)
+  </small></h3>
     
     
     

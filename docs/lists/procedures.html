@@ -332,23 +332,28 @@ All Procedures &ndash; Fortran Program
 			 
 			   <tr><td><a href='../proc/is_alph.html'>is_alph</a></td><td><a href='../module/chapter_4.html'>chapter_4</a></td><td>Function</td><td><p>Test whether an ASCII character is a letter</p></td></tr>
 			 
-			   <tr><td><a href='../proc/is_alph~2.html'>is_alph</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_alph~2.html'>is_alph</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td><p>Check if a character belongs to the alphabet
+ This function checks the ASCII collating sequence of the passed character and returns true if the character belongs to the Roman alphabet.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/is_alphnum.html'>is_alphnum</a></td><td><a href='../module/chapter_4.html'>chapter_4</a></td><td>Function</td><td><p>Test whether an ASCII character is alpha-numeric</p></td></tr>
 			 
-			   <tr><td><a href='../proc/is_alphnum~2.html'>is_alphnum</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_alphnum~2.html'>is_alphnum</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td><p>Check if a character is alphanumeric
+ This function checks the ASCII collating sequence of the passed character and returns true if the character is alpha (A-Z, a-z) or numeric (0-9)</p></td></tr>
 			 
 			   <tr><td><a href='../proc/is_lower.html'>is_lower</a></td><td><a href='../module/chapter_4.html'>chapter_4</a></td><td>Function</td><td><p>Test whether an ASCII character is a lowercase letter</p></td></tr>
 			 
-			   <tr><td><a href='../proc/is_lower~2.html'>is_lower</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_lower~2.html'>is_lower</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td><p>Check if a character is a lowercase alpha character
+ Returns true if the ASCII value of char lies between LOWER_A_ASCII and LOWER_Z_ASCII</p></td></tr>
 			 
 			   <tr><td><a href='../proc/is_num.html'>is_num</a></td><td><a href='../module/chapter_4.html'>chapter_4</a></td><td>Function</td><td><p>Test whether an ASCII character is numeric</p></td></tr>
 			 
-			   <tr><td><a href='../proc/is_num~2.html'>is_num</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_num~2.html'>is_num</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td><p>Check if a character is a numerical digit.
+ Return true if a character is between 0-9</p></td></tr>
 			 
 			   <tr><td><a href='../proc/is_upper.html'>is_upper</a></td><td><a href='../module/chapter_4.html'>chapter_4</a></td><td>Function</td><td><p>Test whether an ASCII character is an uppercase letter </p></td></tr>
 			 
-			   <tr><td><a href='../proc/is_upper~2.html'>is_upper</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/is_upper~2.html'>is_upper</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td><p>Check if a character is a uppercase alpha character
+ Returns true if the ASCII value of char lies between UPPER_A_ASCII and UPPER_Z_ASCII</p></td></tr>
 			 
 			   <tr><td><a href='../interface/kelvin_to_celcius.html'>kelvin_to_celcius</a></td><td><a href='../module/foreng_science_temp.html'>foreng_science_temp</a></td><td>Interface</td><td></td></tr>
 			 
@@ -709,11 +714,11 @@ All Procedures &ndash; Fortran Program
 			 
 			   <tr><td><a href='../proc/to_lower.html'>to_lower</a></td><td><a href='../module/chapter_4.html'>chapter_4</a></td><td>Subroutine</td><td><p>Convert a single character to lowercase</p></td></tr>
 			 
-			   <tr><td><a href='../proc/to_lower~2.html'>to_lower</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/to_lower~2.html'>to_lower</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td><p>Convert an uppercase alpha character to its lowercase counterpart. If the passed character is not uppercase, return the same character.</p></td></tr>
 			 
 			   <tr><td><a href='../proc/to_upper.html'>to_upper</a></td><td><a href='../module/chapter_4.html'>chapter_4</a></td><td>Subroutine</td><td><p>Convert a single character to uppercase</p></td></tr>
 			 
-			   <tr><td><a href='../proc/to_upper~2.html'>to_upper</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/to_upper~2.html'>to_upper</a></td><td><a href='../module/foreng_io_string.html'>foreng_io_string</a></td><td>Function</td><td><p>Convert a lowercase alpha character to its uppercase counterpart. If the passed character is not lowercase, return the same character.</p></td></tr>
 			 
 			   <tr><td><a href='../interface/union.html'>union</a></td><td><a href='../module/foreng_math_sets.html'>foreng_math_sets</a></td><td>Interface</td><td><p>Compute the union of two sets</p></td></tr>
 			 
