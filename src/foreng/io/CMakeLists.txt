@@ -3,7 +3,7 @@ add_library(
     foreng_io
 
     io.f90
-    io_string.f90
+    io_char.f90
 
 )
 

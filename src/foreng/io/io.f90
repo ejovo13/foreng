@@ -1,6 +1,6 @@
 module foreng_io
 
-    use foreng_io_string
+    use foreng_io_char
 
 
 
