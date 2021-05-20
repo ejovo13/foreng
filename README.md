@@ -1,10 +1,6 @@
 ## Fortran for Scientists and Engineers 
 
-This repository is a collection of all the programming exercises in the book *Fortran for Scientists and Engineers*. I worked through the exercises to become 
-fluent in the Fortran programming language. My motivations for learning Fortran are because I am currently working as a research assistant in the physics department 
-of Kalamazoo College, and I am working with Fortran source code. I'm also quite interested in breaking through into the field of Numerical Analysis.
+Fortran is the dominant language used in HPC and scientific computing applications. In fact, according to the [https://www.tiobe.com/tiobe-index/](TIOBE) Index, Fortran is now back in the top 20, a jump from 34 since last year's ranking. To learn this archaic (some would say "dinosaur") language, I worked through the exercises in the book [https://www.amazon.com/FORTRAN-SCIENTISTS-ENGINEERS-Stephen-Chapman/dp/0073385891](Fortran for Scientists and Engineers) which focused on taking advantages of the modern features (2008/2015 Standard) when writing new code.
 
-Working through the textbook exercises taught me how to write high quality, well-documented code for Engineering applications. Demonstrations of some of the more interesting problems will
-be displayed in each chapter's subfolder's README.
+This repository is a collection of my solutions to a majority of the exercises. My motivations for learning Fortran are because I am currently working as a research assistant in the physics department of Kalamazoo College, and I am working with Fortran source code. I'm also quite interested in breaking through into the field of Numerical Analysis. Working through the textbook exercises taught me how to write high quality, well-documented code for Engineering applications. Demonstrations of some of the more interesting problems have been compiled into the "Foreng" module, with complete documentation [https://ejovo13.github.io/fortran_for_engineers/](here)
 
-This entire practice section will eventually be reorganized and turned into a Fortran module that is based off of the exercises in this book.
