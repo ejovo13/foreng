@@ -1,6 +1,6 @@
 title: Fortran for Engineers (Foreng)
 project: Foreng
-graph: true
+project_download: https://github.com/ejovo13/fortran_for_engineers/releases/tag/v1.0
 src_dir: ./src
 output_dir: ./docs
 project_dir: ./
