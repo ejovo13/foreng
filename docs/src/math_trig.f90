@@ -1,4 +1,5 @@
 module foreng_math_trig
+!! Trigonometric functions defined for inputs whose units are degrees instead of radians.
 
 use foreng_env
 

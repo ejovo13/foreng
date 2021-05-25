@@ -1,4 +1,7 @@
-module foreng_io_string
+module foreng_io_char
+!! A module to deal with the manipulation of characters based on their ASCII collating sequence.
+!!
+!! This module provides public parameters that are common ASCII cutoff values when dealing with alphanumeric characters.
 
 implicit none
 
@@ -12,8 +15,6 @@ implicit none
 
 
 contains
-
-! // TODO DOCUMENT THE FUCK OUT OF THIS CODE
 
     logical elemental function is_alphnum(char)
     !! Check if a character is alphanumeric

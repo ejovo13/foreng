@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Testing this program.">
+   <meta name="description" content="A Fortran library containing the solutions to the textbook "Fortran for Scientists and Engineers" by Stephen Chapman.">
     
     <meta name="author" content="Evan Voyles" >
     <link rel="icon" href="../favicon.png">
 
-    <title>foreng_io_string &ndash; Fortran Program</title>
+    <title>foreng_io_char &ndash; Fortran Program</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -112,7 +112,7 @@
     
   
   <div class="row">
-    <h1>foreng_io_string 
+    <h1>foreng_io_char 
     <small>Module</small>
     
     </h1>
@@ -135,17 +135,17 @@
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/io_string.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/io_char.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/io_string.f90.html'>io_string.f90</a></li>
+     <li><a href='../sourcefile/io_char.f90.html'>io_char.f90</a></li>
     
   
-     <li class="active">foreng_io_string</li>
+     <li class="active">foreng_io_char</li>
   </ol>
 </div>
 </div>
@@ -173,19 +173,19 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-zero_ascii">ZERO_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-zero_ascii">ZERO_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-nine_ascii">NINE_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-nine_ascii">NINE_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-upper_a_ascii">UPPER_A_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-upper_a_ascii">UPPER_A_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-upper_z_ascii">UPPER_Z_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-upper_z_ascii">UPPER_Z_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-lower_a_ascii">LOWER_A_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-lower_a_ascii">LOWER_A_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-lower_z_ascii">LOWER_Z_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-lower_z_ascii">LOWER_Z_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-upper_lower_offset">UPPER_LOWER_OFFSET</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-upper_lower_offset">UPPER_LOWER_OFFSET</a>
       
     </div>
   </div>
@@ -207,19 +207,19 @@
   <div id="funcs-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_alphnum~2">is_alphnum</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_alphnum~2">is_alphnum</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_alph~2">is_alph</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_alph~2">is_alph</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_num~2">is_num</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_num~2">is_num</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_lower~2">is_lower</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_lower~2">is_lower</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_upper~2">is_upper</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_upper~2">is_upper</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-to_lower~2">to_lower</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-to_lower~2">to_lower</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-to_upper~2">to_upper</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-to_upper~2">to_upper</a>
       
     </div>
   </div>
@@ -240,7 +240,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    
+    <p>A module to deal with the manipulation of characters based on their ASCII collating sequence.</p>
+<p>This module provides public parameters that are common ASCII cutoff values when dealing with alphanumeric characters.</p>
       
     
   
@@ -262,19 +263,19 @@
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-zero_ascii">ZERO_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-zero_ascii">ZERO_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-nine_ascii">NINE_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-nine_ascii">NINE_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-upper_a_ascii">UPPER_A_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-upper_a_ascii">UPPER_A_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-upper_z_ascii">UPPER_Z_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-upper_z_ascii">UPPER_Z_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-lower_a_ascii">LOWER_A_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-lower_a_ascii">LOWER_A_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-lower_z_ascii">LOWER_Z_ASCII</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-lower_z_ascii">LOWER_Z_ASCII</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#variable-upper_lower_offset">UPPER_LOWER_OFFSET</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#variable-upper_lower_offset">UPPER_LOWER_OFFSET</a>
       
     </div>
   </div>
@@ -296,19 +297,19 @@
   <div id="funcs-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_alphnum~2">is_alphnum</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_alphnum~2">is_alphnum</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_alph~2">is_alph</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_alph~2">is_alph</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_num~2">is_num</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_num~2">is_num</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_lower~2">is_lower</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_lower~2">is_lower</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-is_upper~2">is_upper</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-is_upper~2">is_upper</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-to_lower~2">to_lower</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-to_lower~2">to_lower</a>
       
-      <a class="list-group-item" href="../module/foreng_io_string.html#proc-to_upper~2">to_upper</a>
+      <a class="list-group-item" href="../module/foreng_io_char.html#proc-to_upper~2">to_upper</a>
       
     </div>
   </div>

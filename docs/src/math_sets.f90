@@ -1,5 +1,6 @@
 module foreng_math_sets
-
+!! Contains functions that deal with the mathematical definition of sets. Find the union of two rank 1 arrays with \(\verb|union|\). Find 
+!! the intersection with \(\verb|intersection|\). Check if a given x belongs to a set with \(\verb|belongs_to|\)
 use foreng_env
 
 implicit none
