@@ -1,4 +1,6 @@
 title: Fortran for Engineers (Foreng)
+project: Foreng
+graph: true
 src_dir: ./src
 output_dir: ./docs
 project_dir: ./
