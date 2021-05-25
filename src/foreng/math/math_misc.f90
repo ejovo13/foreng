@@ -1,4 +1,5 @@
 module foreng_math_misc
+!! Miscellaneous Mathematic functions
 
 use foreng_env
 use foreng_math_trig

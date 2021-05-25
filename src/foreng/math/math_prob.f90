@@ -1,6 +1,5 @@
-!! Contrain functions used to compute distributions
-
 module foreng_math_prob
+!! Contains functions used to compute probability distributions
 
 use foreng_env
 use foreng_math_misc
