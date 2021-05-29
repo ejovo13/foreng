@@ -16,6 +16,6 @@ author_pic: ./media/thomas_1.png
 display: public
 exclude: 
 
-Formath is a set of Fortran modules that were developped while completing the exercises to Chapman's "Fortran for Scientists and Engineers"
+Foreng is a set of Fortran modules that were developped while completing the exercises to Chapman's "Fortran for Scientists and Engineers"
 
 @Note This Library is a work in process
