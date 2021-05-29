@@ -1,11 +1,11 @@
 title: Fortran for Engineers (Foreng)
 project: Foreng
-project_download: https://github.com/ejovo13/fortran_for_engineers/releases/tag/v1.0
+project_download: https://github.com/ejovo13/foreng/releases/tag/v1.0
 src_dir: ./src
 output_dir: ./docs
 project_dir: ./
 media_dir: ./media
-project_github: https://github.com/ejovo13/fortran_for_engineers
+project_github: https://github.com/ejovo13/foreng
 project_website: https://github.com/ejovo13
 summary: A Fortran library containing the solutions to the textbook "Fortran for Scientists and Engineers" by Stephen Chapman.
 author: Evan Voyles
