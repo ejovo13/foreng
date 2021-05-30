@@ -23,7 +23,11 @@ target_link_libraries(mpi_test PUBLIC ${MPI_Fortran_LIBRARIES})
 
 add_executable(open_mp_test open_mp_test.f90)
 target_link_libraries(open_mp_test PUBLIC OpenMP::OpenMP_Fortran ${EULER_LIB})
-target_include_directories(open_mp_test PUBLIC /home/ejovo13/inc/Fortran_modules)
+target_include_directories(open_mp_test PUBLIC /home/ejovo13/local/include/Fortran_modules)
+
+# add_executable(coarray_test coarray_test.f90)
+
+# target_compile_options(coarray_test -fcoarray=single)
 
 
 # if (CMAKE_Fortran_COMPILER_ID STREQUAL "GNU") 
