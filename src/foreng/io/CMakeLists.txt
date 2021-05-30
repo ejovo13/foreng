@@ -2,6 +2,8 @@ add_library(
     
     foreng_io
 
+    OBJECT
+
     io.f90
     io_char.f90
 

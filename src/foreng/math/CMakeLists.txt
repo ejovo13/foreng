@@ -2,6 +2,8 @@ add_library(
     
     foreng_math 
 
+    OBJECT
+
     math.f90 
     math_trig.f90 
     math_sets.f90 

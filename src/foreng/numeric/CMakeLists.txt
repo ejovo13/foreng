@@ -2,6 +2,8 @@ add_library(
     
     foreng_numeric 
 
+    OBJECT
+
     numeric.f90 
     numeric_calculus.f90 
     numeric_matrices.f90 
