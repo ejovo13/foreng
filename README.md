@@ -10,5 +10,5 @@ Foreng can be built with Cmake. Because chapter 17 explores parallel programming
 
 ## Documentation
 
-Demonstrations of some of the more interesting problems have been compiled into the "Foreng" module, with complete documentation [here](https://ejovo13.github.io/fortran_for_engineers/)
+Demonstrations of some of the more interesting problems have been compiled into the "Foreng" module, with complete documentation [here](https://ejovo13.github.io/foreng/)
 
